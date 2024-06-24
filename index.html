@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>SeguryRaf</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+    <link rel="icon" href="#"> <!--poner logo de segury-->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="menu container">
+            <input type="checkbox" id="menu">
+            <label for="menu" class="no_display_en_desk">
+                <img src="imagenes/menu.png" class="menu" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" onclick="closeMenu()"> SeguryRaf</a></li>
+                    <li><a href="historia.html" onclick="closeMenu()"> Historia</a></li>
+                    <li><a href="servicios.html" onclick="closeMenu()"> Servicios</a></li>
+                    <li><a href="contacto.html" onclick="closeMenu()"> Contacto</a></li>
+                    <li><a href="contratar.html" onclick="closeMenu()"> Contratar un servicio</a></li>
+                    <li><a href="trabaja.html" onclick="closeMenu()"> Trabaja con nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="blog container" id="noticias">
+        <h2>Nuevas noticias</h2>
+        <p>
+            Aquí encontrarás trabajos realizados a pedido de nuestros clientes.
+        </p>
+        <div class="blog-content">
+            <div class="blog-1">
+                <img src="imagenes/img12.jpeg" alt="">
+                <div class="blog-txt">
+                    <p>
+                        Texto
+                    </p>
+                    <a href="#" class="btn-4">Leer más</a>
+                </div>
+            </div>
+            <div class="blog-1">
+                <img src="imagenes/img9.jpeg" alt="">
+                <div class="blog-txt">
+                    <p>
+                        Texto
+                    </p>
+                    <a href="#" class="btn-4">Leer más</a>
+                </div>
+            </div>
+            <div class="blog-1">
+                <img src="imagenes/img8.jpeg" alt="">
+                <div class="blog-txt">
+                    <p>
+                        Texto
+                    </p>
+                    <a href="#" class="btn-4">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer container" id="contacto">
+        <h2>Nuestras redes</h2>
+        <div class="linkredes">
+            <a href="#" class="ig" target="_blank"> <img src="imagenes/instagram_white_28dp.png" alt=""></a> 
+            <a href="#" class="fb" target="_blank"> <img src="imagenes/facebook_white_28dp.png" alt=""></a> 
+            <a href="#" class="twt" target="_blank"> <img src="imagenes/twitter_white_28dp.png" alt=""></a> 
+        </div>
+
+        <div class="footer-txt">
+            <p>
+                <hr>
+                Copyright 2024 © - SolBot - Diseño y Desarrollo Web
+            </p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/543493434516" class="btn-wsp" target="_blank">
+        <img src="imagenes/wpp.webp" alt="WhatsApp">
+    </a>
+    <script src="menu.js"></script> <!-- Asegúrate de enlazar tu archivo JavaScript -->
+</body>
+</html>

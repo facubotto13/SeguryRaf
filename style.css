@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*font-family: 'Bebas Neue', cursive;*/
+
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* Estilos del header */
+.header {
+    background-color: #6f7f89;
+    background-image: url(imagenes/fondo.jpg);
+    background-size: cover; /* Hace que la imagen cubra todo el área del header */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Ajusta la altura del header */
+    color: white; /* Ajusta el color del texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center;
+}
+
+/* Estilos del menú */
+.menu.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    position: fixed; /* Para mantener el menú fijo en la parte superior */
+    top: 0;
+    left: 0;
+    background-color: transparent; /* Fondo transparente por defecto */
+    transition: background-color 0.3s; /* Transición suave para el cambio de fondo */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+/* Clase que se añadirá al hacer scroll */
+.menu.container.scrolled {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+}
+
+.logo img {
+    height: 50px; /* Ajusta la altura del logo */
+}
+
+/* Estilos del checkbox y label para el menú responsive */
+#menu {
+    display: none;
+}
+
+.no_display_en_desk {
+    display: none;
+}
+
+.menu img.menu {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Estilos del navbar */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente la lista dentro de la barra de navegación */
+    align-items: center; /* Centra verticalmente la lista dentro de la barra de navegación */
+    width: 100%;
+}
+
+.navbar ul {
+    list-style: none; /* Elimina las viñetas de la lista */
+    display: flex; /* Aplica Flexbox para los elementos de la lista */
+    gap: 20px; /* Espacio entre los elementos de la lista */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+}
+
+/* Asegúrate de que los enlaces de navegación estén estilizados */
+.navbar a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #000; /* Color del texto, puedes ajustarlo según tu diseño */
+    font-weight: bold; /* Texto en negrita */
+    padding: 10px; /* Relleno alrededor de los enlaces */
+    transition: background 0.3s; /* Transición suave para el fondo */
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos del contenido del header */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-txt h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.header-txt span {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Estilos de la sección del blog */
+.blog {
+    background-color: rgb(255, 255, 255);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.blog p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.blog-1 {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    flex: 1;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.blog-1:hover {
+    transform: translateY(-10px);
+}
+
+.blog-1 img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-txt {
+    padding: 20px;
+    text-align: center;
+}
+
+.blog-txt p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.btn-4 {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.btn-4:hover {
+    background-color: #555;
+}
+
+/* Estilos del footer */
+.footer {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    text-align: center; /* Centra el contenido del footer */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.footer h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.linkredes {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los iconos */
+    margin-bottom: 20px;
+}
+
+.linkredes a {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para transformaciones y opacidad */
+}
+
+.linkredes a:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+    opacity: 0.8; /* Reduce la opacidad al pasar el mouse */
+}
+
+.footer-txt {
+    text-align: center; /* Centra el contenido */
+    color: #fff; /* Color del texto blanco */
+    padding: 20px; /* Relleno alrededor del contenido */
+}
+
+.footer-txt p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    font-size: 0.9em; /* Ajusta el tamaño del texto */
+    line-height: 1.5; /* Ajusta el espacio entre líneas */
+}
+
+.footer-txt hr {
+    border: none; /* Elimina el borde predeterminado de la línea horizontal */
+    height: 1px; /* Altura de la línea */
+    background-color: #fff; /* Color de la línea */
+    width: 60%; /* Anchura de la línea */
+}
+
+/* Estilos del botón de WhatsApp */
+.btn-wsp {
+    display: inline-block;
+    padding: 10px;
+}
+
+.btn-wsp img {
+    width: 90px; /* Tamaño de la imagen */
+    height: 90px;
+    display: block; /* Para evitar que la imagen tenga un espacio inferior no deseado */
+}
+
+.btn-wsp:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Posicionamiento fijo en la esquina inferior derecha */
+.btn-wsp {
+    position: fixed;
+    bottom: 20px; /* Espacio desde la parte inferior */
+    right: 20px; /* Espacio desde la parte derecha */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
