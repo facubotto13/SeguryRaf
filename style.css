@@ -157,6 +157,7 @@ body, html {
     width: 100%;
     height: auto;
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+    border-radius: 2rem;
 }
 .service-imagen-Modulo1 {
     float: left; /* O right para alinear a la derecha */
@@ -164,7 +165,11 @@ body, html {
     width: 45%;
     height: auto;
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+    border-radius: 2rem;
+    box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.5); /* Color de la sombra y desenfoque */;
 }
+
+
 
 /* Estilo para el texto del blog */
 .blog-txt {
@@ -185,6 +190,8 @@ body, html {
 
 .blog-1:hover .blog-txt{
     opacity: 1; /* El texto se vuelve visible */
+    border-bottom-left-radius: 2rem; /* Radio de la esquina inferior izquierda */
+    border-bottom-right-radius: 2rem; /* Radio de la esquina inferior derecha */
 }
 
 /* Opcional: Estilo para el botón "Leer más" */
@@ -215,10 +222,11 @@ body, html {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo difuminado */
+    
 }
 
 .modal-content {
-    overflow: auto; /* Limpia el float */
+    overflow: hidden; /* Limpia el float */
     background-color: white;
     margin: 5% auto; /* Centrar el modal */
     padding: 20px;
