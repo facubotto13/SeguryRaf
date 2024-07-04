@@ -222,7 +222,6 @@ button[type="submit"]:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     width: 100%;
     position: fixed; /* Para mantener el menú fijo en la parte superior */
     top: 0;
@@ -260,17 +259,17 @@ button[type="submit"]:hover {
 /* Estilos del navbar */
 .navbar {
     display: flex;
-    justify-content: center; /* Centra horizontalmente la lista dentro de la barra de navegación */
-    align-items: center; /* Centra verticalmente la lista dentro de la barra de navegación */
     width: 100%;
 }
 
 .navbar ul {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     list-style: none; /* Elimina las viñetas de la lista */
     display: flex; /* Aplica Flexbox para los elementos de la lista */
     gap: 20px; /* Espacio entre los elementos de la lista */
     margin: 0; /* Elimina el margen predeterminado */
-    padding: 0; /* Elimina el relleno predeterminado */
 }
 
 /* Asegúrate de que los enlaces de navegación estén estilizados */
@@ -285,6 +284,11 @@ button[type="submit"]:hover {
 .navbar a:hover {
     background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
     border-radius: 5px; /* Bordes redondeados */
+}
+
+.navbar .logo-cabeza{
+    width: 5.5rem;
+    height: auto;
 }
 
     </style>
@@ -346,8 +350,11 @@ button[type="submit"]:hover {
             <img src="imagenes/menu.png" class="menu" alt="">
         </label>
         <nav class="navbar">
+            <a href="index.html">
+                <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza">
+            </a>  
             <ul>
-                <li><a href="index.html" onclick="closeMenu()"> SeguryRaf</a></li>
+                <li><a href="index.html#noticias" onclick="closeMenu()"> Novedades</a></li>
                 <li><a href="historia.html" onclick="closeMenu()"> Historia</a></li>
                 <li><a href="servicios.html" onclick="closeMenu()"> Servicios</a></li>
                 <li><a href="contacto.html" onclick="closeMenu()"> Contacto</a></li>

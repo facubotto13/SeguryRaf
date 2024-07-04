@@ -32,7 +32,6 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     width: 100%;
     position: fixed; /* Para mantener el menú fijo en la parte superior */
     top: 0;
@@ -41,6 +40,7 @@ body, html {
     transition: background-color 0.3s; /* Transición suave para el cambio de fondo */
     z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
 }
+
 
 /* Clase que se añadirá al hacer scroll */
 .menu.container.scrolled {
@@ -70,17 +70,18 @@ body, html {
 /* Estilos del navbar */
 .navbar {
     display: flex;
-    justify-content: center; /* Centra horizontalmente la lista dentro de la barra de navegación */
-    align-items: center; /* Centra verticalmente la lista dentro de la barra de navegación */
     width: 100%;
 }
 
 .navbar ul {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     list-style: none; /* Elimina las viñetas de la lista */
     display: flex; /* Aplica Flexbox para los elementos de la lista */
     gap: 20px; /* Espacio entre los elementos de la lista */
     margin: 0; /* Elimina el margen predeterminado */
-    padding: 0; /* Elimina el relleno predeterminado */
+
 }
 
 /* Asegúrate de que los enlaces de navegación estén estilizados */
@@ -95,6 +96,11 @@ body, html {
 .navbar a:hover {
     background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
     border-radius: 5px; /* Bordes redondeados */
+}
+
+.navbar .logo-cabeza{
+    width: 5.5rem;
+    height: auto;
 }
 
 /* Estilos del contenido del header */
