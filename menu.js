@@ -6,3 +6,44 @@ document.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+// menu.js
+document.addEventListener('DOMContentLoaded', () => {
+    const modals = document.querySelectorAll('.modal');
+    const btns = document.querySelectorAll('.btn-4');
+    const closeBtns = document.querySelectorAll('.close-btn');
+    const volverBtns = document.querySelectorAll('.volver-btn');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = btn.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+            } else {
+                console.error(`Modal with ID ${modalId} not found.`);
+            }
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.modal').style.display = 'none';
+        });
+    });
+
+    volverBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.modal').style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', (e) => {
+        modals.forEach(modal => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
