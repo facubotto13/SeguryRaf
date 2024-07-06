@@ -347,54 +347,37 @@ body, html {
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
 
-    .header {
-        background-size: contain; /* Ajusta la imagen al tamaño del header */
+    .menu {
+        padding: 20px;
+    }
+    .menu label {
+        display: initial;
     }
 
-    .header-content {
-        padding: 10px; /* Reduce el padding para dispositivos móviles */
+    .menu label img.menu {
+        width: 50px; /* Ancho ajustado para dispositivos móviles */
+        height: auto; /* Altura automática */
+        margin-top: -30px;
     }
-
-    .header-txt h1 {
-        font-size: 2.5em; /* Reduce el tamaño del título principal */
-    }
-
-    .header-txt span {
-        font-size: 1.2em; /* Reduce el tamaño del texto secundario */
-        margin-top: 8px; /* Reduce el margen superior */
-    }
-
-    .menu.container {
-        justify-content: space-around; /* Ajusta el espacio entre elementos del menú */
-        padding: 10px; /* Añade espacio alrededor del menú */
-    }
-
-    .menu img.menu {
-        width: 50px; /* Reduce el tamaño del ícono del menú */
-        height: 50px;
-    }
-
-    .navbar {
+    .menu .navbar {
+        position: fixed; /* Fija el menú en la pantalla */
         flex-direction: column; /* Cambia la dirección de los elementos del menú */
-        align-items: center;
+        top: 0; /* Alinea el menú en la parte superior */
+        left: -100%; /* Inicia fuera de la pantalla a la izquierda */
+        width: 100%; /* Ancho del menú */
+        height: 100vh; /* Alto del menú cubre toda la pantalla */
         background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente para el menú */
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh; /* Alto total de la pantalla */
-        width: 100%;
-        transform: translateX(-100%); /* Oculta inicialmente el menú */
-        transition: transform 0.3s ease-in-out; /* Transición suave para mostrar/ocultar el menú */
-        z-index: 999; /* Asegura que esté por encima del contenido */
+        transition: left 0.5s ease; /* Transición suave al mostrar/ocultar */
+        z-index: 1000; /* Asegura que esté por encima de otros elementos */
     }
 
     .menu.container.scrolled {
         background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
     }
-
+    
     #menu:checked ~ .navbar {
-        transform: translateX(0); /* Muestra el menú al hacer clic */
+        left: 0; /* Muestra el menú desplazándolo desde la izquierda */
     }
 
     .navbar ul {
@@ -402,23 +385,54 @@ body, html {
         margin-top: 20px; /* Espacio superior */
         padding: 0;
     }
-
-    .navbar a {
-        padding: 15px; /* Ajusta el padding de los enlaces del menú */
-        color: white; /* Color del texto */
-        text-decoration: none; /* Quita subrayado */
-        font-weight: bold; /* Texto en negrita */
+    
+    .menu .navbar ul {
+        list-style-type: none; /* Quita los estilos de lista */
+        padding: 0;
+        margin: 0;
     }
-
-    .navbar a:hover {
-        background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
-        border-radius: 0; /* Elimina el borde redondeado */
+    
+    .menu .navbar ul li {
+        width: 100%; /* Ancho completo del elemento de lista */
+        text-align: center; /* Centra el texto dentro de los elementos de lista */
     }
-
-    .navbar .logo-cabeza {
-        width: 120px; /* Ajusta el tamaño del logo */
-        margin-top: 20px; /* Espacio superior */
-        margin-bottom: 20px; /* Espacio inferior */
+    
+    .menu .navbar ul li a {
+        display: block; /* Convierte los enlaces en bloques para ocupar todo el ancho */
+        padding: 15px 20px; /* Espaciado interno de los enlaces */
+        text-decoration: none; /* Quita la subrayado de los enlaces */
+        color: #fff; /* Color del texto */
+        transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    }
+    
+    .menu .navbar ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al pasar el mouse */
+    }
+    
+    .menu .navbar a:active {
+        color: #ffffff; /* Color del texto activo */
+    }
+    .logo {
+        display: none;
+    }
+    .header {
+        min-height: 35vh;
+    }
+    .header-content {
+        
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-txt {
+        margin-bottom: 25px;
+        
+    }
+    .header-txt h1{
+        margin: 0px;
+        
+    }
+    .header-txt span{
+        margin: 0px; 
     }
 
 
