@@ -15,11 +15,11 @@ body, html {
 .header {
     background-color: #6f7f89;
     background-image: url(imagenes/fondo4.png);
-    background-size: cover; /* Hace que la imagen cubra todo el área del header */
+    background-size: cover; /* Ajusta la imagen al tamaño del header */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: 100vh; /* Ajusta la altura del header */
-    color: white; /* Ajusta el color del texto */
+    min-height: 100vh; /* Mínimo 100% del viewport */
+    color: white; /* Color del texto */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centra verticalmente */
@@ -36,11 +36,10 @@ body, html {
     position: fixed; /* Para mantener el menú fijo en la parte superior */
     top: 0;
     left: 0;
-    background-color: transparent; /* Fondo transparente por defecto */
+    background-color: transparent; /* Fondo transparente */
     transition: background-color 0.3s; /* Transición suave para el cambio de fondo */
     z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
 }
-
 
 /* Clase que se añadirá al hacer scroll */
 .menu.container.scrolled {
@@ -81,13 +80,12 @@ body, html {
     display: flex; /* Aplica Flexbox para los elementos de la lista */
     gap: 20px; /* Espacio entre los elementos de la lista */
     margin: 0; /* Elimina el margen predeterminado */
-
 }
 
 /* Asegúrate de que los enlaces de navegación estén estilizados */
 .navbar a {
     text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #000; /* Color del texto, puedes ajustarlo según tu diseño */
+    color: #000000; /* Color del texto */
     font-weight: bold; /* Texto en negrita */
     padding: 10px; /* Relleno alrededor de los enlaces */
     transition: background 0.3s; /* Transición suave para el fondo */
@@ -98,7 +96,7 @@ body, html {
     border-radius: 5px; /* Bordes redondeados */
 }
 
-.navbar .logo-cabeza{
+.navbar .logo-cabeza {
     width: 5.5rem;
     height: auto;
 }
@@ -343,4 +341,120 @@ body, html {
     bottom: 20px; /* Espacio desde la parte inferior */
     right: 20px; /* Espacio desde la parte derecha */
     z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+
+/* Media query para pantallas de ancho máximo 991px */
+@media (max-width: 991px) {
+
+    .header {
+        background-size: contain; /* Ajusta la imagen al tamaño del header */
+    }
+
+    .header-content {
+        padding: 10px; /* Reduce el padding para dispositivos móviles */
+    }
+
+    .header-txt h1 {
+        font-size: 2.5em; /* Reduce el tamaño del título principal */
+    }
+
+    .header-txt span {
+        font-size: 1.2em; /* Reduce el tamaño del texto secundario */
+        margin-top: 8px; /* Reduce el margen superior */
+    }
+
+    .menu.container {
+        justify-content: space-around; /* Ajusta el espacio entre elementos del menú */
+        padding: 10px; /* Añade espacio alrededor del menú */
+    }
+
+    .menu img.menu {
+        width: 50px; /* Reduce el tamaño del ícono del menú */
+        height: 50px;
+    }
+
+    .navbar {
+        flex-direction: column; /* Cambia la dirección de los elementos del menú */
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente para el menú */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh; /* Alto total de la pantalla */
+        width: 100%;
+        transform: translateX(-100%); /* Oculta inicialmente el menú */
+        transition: transform 0.3s ease-in-out; /* Transición suave para mostrar/ocultar el menú */
+        z-index: 999; /* Asegura que esté por encima del contenido */
+    }
+
+    .menu.container.scrolled {
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+    }
+
+    #menu:checked ~ .navbar {
+        transform: translateX(0); /* Muestra el menú al hacer clic */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Alinea los elementos del menú en columna */
+        margin-top: 20px; /* Espacio superior */
+        padding: 0;
+    }
+
+    .navbar a {
+        padding: 15px; /* Ajusta el padding de los enlaces del menú */
+        color: white; /* Color del texto */
+        text-decoration: none; /* Quita subrayado */
+        font-weight: bold; /* Texto en negrita */
+    }
+
+    .navbar a:hover {
+        background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
+        border-radius: 0; /* Elimina el borde redondeado */
+    }
+
+    .navbar .logo-cabeza {
+        width: 120px; /* Ajusta el tamaño del logo */
+        margin-top: 20px; /* Espacio superior */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+
+
+    .footer {
+        padding: 15px; /* Ajusta el padding del footer */
+    }
+
+    .footer h2 {
+        font-size: 1.5em; /* Reduce el tamaño del título */
+    }
+
+    .linkredes {
+        margin-bottom: 15px; /* Reduce el margen inferior */
+    }
+
+    .linkredes a {
+        width: 24px; /* Reduce el tamaño de los iconos de redes sociales */
+        height: 24px;
+    }
+
+    .footer-txt p {
+        font-size: 0.8em; /* Reduce el tamaño del texto */
+    }
+
+    .footer-txt hr {
+        width: 40%; /* Reduce la anchura de la línea horizontal */
+    }
+
+    .btn-wsp {
+        bottom: 10px; /* Reduce el espacio desde la parte inferior */
+        right: 10px; /* Reduce el espacio desde la parte derecha */
+        padding: 8px; /* Ajusta el padding del botón */
+    }
+
+    .btn-wsp img {
+        width: 60px; /* Reduce el tamaño de la imagen */
+        height: 60px;
+    }
 }

@@ -20,24 +20,29 @@
         <div class="menu container">
             <input type="checkbox" id="menu">
             <label for="menu" class="no_display_en_desk">
-                <img src="imagenes/menu.png" class="menu" alt="">
+                <img src="imagenes/menu.png" class="menu" alt="Menú">
             </label>
             <nav class="navbar">
                 <a href="index.html">
-                <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza">
-            </a>    
+                    <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza" alt="Logo">
+                </a>    
                 <ul>
-                    <li><a href="#noticias" onclick="closeMenu()"> Novedades</a></li>
-                    <li><a href="historia.html" onclick="closeMenu()"> Historia</a></li>
-                    <li><a href="servicios.html" onclick="closeMenu()"> Servicios</a></li>
-                    <li><a href="contacto.html" onclick="closeMenu()"> Contacto</a></li>
-                    <li><a href="contratar.html" onclick="closeMenu()"> Contratar un servicio</a></li>
-                    <li><a href="trabaja.html" onclick="closeMenu()"> Trabaja con nosotros</a></li>
+                    <li><a href="#noticias" onclick="closeMenu()">Novedades</a></li>
+                    <li><a href="historia.html" onclick="closeMenu()">Historia</a></li>
+                    <li><a href="servicios.html" onclick="closeMenu()">Servicios</a></li>
+                    <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+                    <li><a href="contratar.html" onclick="closeMenu()">Contratar un servicio</a></li>
+                    <li><a href="trabaja.html" onclick="closeMenu()">Trabaja con nosotros</a></li>
                 </ul>
             </nav>
         </div>
-
     </header>
+    <script>
+        function closeMenu() {
+            document.getElementById('menu').checked = false;
+        }
+    </script>
+
     <section class="blog container" id="noticias">
         <h2>Nuevas noticias</h2>
         <h3>
