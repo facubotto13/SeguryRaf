@@ -416,7 +416,7 @@ body, html {
         display: none;
     }
     .header {
-        min-height: 35vh;
+        min-height: 33vh;
     }
     .header-content {
         
@@ -434,8 +434,7 @@ body, html {
     .header-txt span{
         margin: 0px; 
     }
-
-
+    
     .footer {
         padding: 15px; /* Ajusta el padding del footer */
     }
