@@ -14,7 +14,7 @@ body, html {
 /* Estilos del header */
 .header {
     background-color: #6f7f89;
-    background-image: url(imagenes/fondo.jpg);
+    background-image: url(imagenes/fondo4.png);
     background-size: cover; /* Hace que la imagen cubra todo el área del header */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -206,7 +206,7 @@ body, html {
     padding: 10px 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #ff6600; /* Color de fondo del botón */
+    background-color: #4C87C1; /* Color de fondo del botón */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -214,7 +214,7 @@ body, html {
 }
 
 .btn-4:hover {
-    background-color: #cc5200; /* Color de fondo del botón al pasar el puntero */
+    background-color: #143c63; /* Color de fondo del botón al pasar el puntero */
 }
 
 /* Estilos para el modal */
@@ -240,6 +240,10 @@ body, html {
     width: 85%; /* 85% del ancho de la pantalla */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.4s; /* Animación de entrada */
+}
+
+.modal p{
+    text-align: justify;
 }
 
 @keyframes fadeIn {
