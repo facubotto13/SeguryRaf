@@ -28,6 +28,12 @@ body {
   padding: 0;
 }
 
+.container-map .text {
+    background-color: #f2f2f2; /* Fondo gris más claro */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 .header {
     position: relative;
     height: 50vh; /* Ocupa toda la altura de la pantalla */
@@ -318,6 +324,209 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
+/* Media query para pantallas de ancho máximo 991px */
+@media (max-width: 991px) {
+
+.menu {
+    padding: 20px;
+}
+.menu label {
+    display: initial;
+}
+
+.menu label img.menu {
+    width: 50px; /* Ancho ajustado para dispositivos móviles */
+    height: auto; /* Altura automática */
+    margin-top: -30px;
+}
+.menu .navbar {
+    position: fixed; /* Fija el menú en la pantalla */
+    flex-direction: column; /* Cambia la dirección de los elementos del menú */
+    top: 0; /* Alinea el menú en la parte superior */
+    left: -100%; /* Inicia fuera de la pantalla a la izquierda */
+    width: 100%; /* Ancho del menú */
+    height: 100vh; /* Alto del menú cubre toda la pantalla */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente para el menú */
+    transition: left 0.5s ease; /* Transición suave al mostrar/ocultar */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.menu.container.scrolled {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+}
+
+#menu:checked ~ .navbar {
+    left: 0; /* Muestra el menú desplazándolo desde la izquierda */
+}
+
+.navbar ul {
+    flex-direction: column; /* Alinea los elementos del menú en columna */
+    margin-top: 20px; /* Espacio superior */
+    padding: 0;
+}
+
+.navbar img {
+display: block; /* Asegura que la imagen se comporte como un bloque */
+margin: 0 auto; /* Centra la imagen horizontalmente */
+max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+}
+
+.menu .navbar ul {
+    list-style-type: none; /* Quita los estilos de lista */
+    padding: 0;
+    margin: 0;
+}
+
+.menu .navbar ul li {
+    width: 100%; /* Ancho completo del elemento de lista */
+    text-align: center; /* Centra el texto dentro de los elementos de lista */
+}
+
+.menu .navbar ul li a {
+    display: block; /* Convierte los enlaces en bloques para ocupar todo el ancho */
+    padding: 15px 20px; /* Espaciado interno de los enlaces */
+    text-decoration: none; /* Quita la subrayado de los enlaces */
+    color: #fff; /* Color del texto */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.menu .navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al pasar el mouse */
+}
+
+.menu .navbar a:active {
+    color: #ffffff; /* Color del texto activo */
+}
+.logo {
+    display: none;
+}
+.header {
+    min-height: 33vh;
+}
+.header-content {
+    
+    flex-direction: column;
+    text-align: center;
+}
+.header-txt {
+    margin-bottom: 25px;
+    
+}
+.header-txt h1{
+    margin: 0px;
+    
+}
+.header-txt span{
+    margin: 0px; 
+}
+
+.header h1 {
+    text-align: center;
+    margin-top: -130px;
+}
+
+.contact-form-container {
+    max-width: 85%;
+    padding: 15px; /* Reduce el padding general */
+    box-shadow: none; /* Elimina la sombra en pantallas más pequeñas */
+    margin-top: -90px;
+}
+
+.contact-form-container h2 {
+    font-size: 1.8em; /* Reduce el tamaño del título */
+    margin-bottom: 15px; /* Añade un margen inferior para separar del formulario */
+}
+
+.contact-form-container h2::after {
+    width: 60px; /* Reduce el ancho de la línea */
+}
+
+.form-group label {
+    font-size: 0.9em; /* Reduce el tamaño del texto de etiqueta */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 95%;
+    padding: 8px; /* Ajusta el padding interior */
+    font-size: 0.9em; /* Reduce el tamaño del texto de entrada */
+}
+
+button[type="submit"] {
+    width: 100%;
+    font-size: 1em; /* Reduce el tamaño del texto del botón */
+}
+.container-map {
+    margin-top: 20px; /* Reduce el margen superior en dispositivos móviles */
+}
+
+.container-map .text {
+    padding: 10px;
+    background-color: #f2f2f2; /* Fondo gris más claro */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.container-map .text h2,
+.container-map .text h3 {
+    margin-bottom: 8px; /* Espaciado inferior más pequeño */
+}
+
+.container-map .text h3 {
+    margin-top: 15px; /* Espaciado superior más pequeño para subtítulos */
+    }
+
+.footer {
+    padding: 15px; /* Ajusta el padding del footer */
+}
+
+.footer h2 {
+    font-size: 1.5em; /* Reduce el tamaño del título */
+}
+
+.linkredes {
+    margin-bottom: 15px; /* Reduce el margen inferior */
+}
+
+.linkredes a {
+    width: 24px; /* Reduce el tamaño de los iconos de redes sociales */
+    height: 24px;
+}
+
+.footer-txt p {
+    font-size: 0.8em; /* Reduce el tamaño del texto */
+}
+
+.footer-txt hr {
+    width: 40%; /* Reduce la anchura de la línea horizontal */
+}
+
+.btn-wsp {
+    bottom: 10px; /* Reduce el espacio desde la parte inferior */
+    right: 10px; /* Reduce el espacio desde la parte derecha */
+    padding: 8px; /* Ajusta el padding del botón */
+}
+
+.btn-wsp img {
+    width: 60px; /* Reduce el tamaño de la imagen */
+    height: 60px;
+}
+
+.blog.container p {
+    margin-top: -140px;
+}
+
+.blog-txt {
+    margin-top: 150px;
+}
+
+.blog-1 {
+    margin-bottom: 15px;
+}
+}
+
     </style>
 </head>
 
@@ -357,11 +566,11 @@ button[type="submit"]:hover {
     <div class="menu container">
         <input type="checkbox" id="menu">
         <label for="menu" class="no_display_en_desk">
-            <img src="imagenes/menu.png" class="menu" alt="">
+            <img src="imagenes/logo.webp" class="menu" alt="Menú">
         </label>
         <nav class="navbar">
             <a href="index.html">
-                <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza">
+                <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza" alt="Logo">
             </a>  
             <ul>
                 <li><a href="index.html#noticias" onclick="closeMenu()"> Novedades</a></li>
@@ -390,7 +599,6 @@ button[type="submit"]:hover {
                  - Celular +54 9 3492 681340
                 <h3>Recursos Humanos</h3>
                  - Celular +54 9 3492 276468
-            
         </div>
     </div>
   </body>
