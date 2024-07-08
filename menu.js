@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.img.menu');
+    const navbar = document.querySelector('.menu .navbar');
+    const menuContainer = document.querySelector('.menu.container');
+
+    menuToggle.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+        menuContainer.classList.toggle('scrolled'); // Ajustar según sea necesario
+    });
+
+    // Cerrar el menú si se hace clic en el mismo botón de toggle
+    menuToggle.addEventListener('click', function(event) {
+        if (navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+            menuContainer.classList.remove('scrolled'); // Ajustar según sea necesario
+        }
+    });
+});
+
+
 document.addEventListener('scroll', function() {
     const header = document.querySelector('.menu.container');
     if (window.scrollY > 50) {

@@ -45,6 +45,8 @@ body, html {
 .menu.container.scrolled {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+    height: 5.3rem;
+    
 }
 
 .logo img {
@@ -84,12 +86,16 @@ body, html {
 
 /* Asegúrate de que los enlaces de navegación estén estilizados */
 .navbar a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #000000; /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    padding: 10px; /* Relleno alrededor de los enlaces */
-    transition: background 0.3s; /* Transición suave para el fondo */
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    transition: background 0.3s;
+    line-height: 1; /* Restablecer line-height a su valor normal */
+    display:inline-flex; /* Asegurar que el elemento tenga el tamaño del contenido */
 }
+
+
 
 .navbar a:hover {
     background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
@@ -357,24 +363,24 @@ body, html {
     .menu label img.menu {
         width: 50px; /* Ancho ajustado para dispositivos móviles */
         height: auto; /* Altura automática */
-        margin-top: -30px;
     }
     .menu .navbar {
-        position: fixed; /* Fija el menú en la pantalla */
-        flex-direction: column; /* Cambia la dirección de los elementos del menú */
-        top: 0; /* Alinea el menú en la parte superior */
-        left: -100%; /* Inicia fuera de la pantalla a la izquierda */
-        width: 100%; /* Ancho del menú */
-        height: 100vh; /* Alto del menú cubre toda la pantalla */
-        background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente para el menú */
-        transition: left 0.5s ease; /* Transición suave al mostrar/ocultar */
-        z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    }
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: -100%; /* Inicialmente fuera de la pantalla a la izquierda */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: left 0.5s ease;
+    z-index: 1000;
+}
 
-    .menu.container.scrolled {
-        background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
-    }
+.menu.container.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 3rem;
+}
     
     #menu:checked ~ .navbar {
         left: 0; /* Muestra el menú desplazándolo desde la izquierda */
@@ -397,12 +403,28 @@ body, html {
         text-align: center; /* Centra el texto dentro de los elementos de lista */
     }
     
+    .navbar a {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s;
+        line-height: 1;
+        width: 12rem;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navbar .logo-cabeza {
+        align-items: center;
+        align-items: center;
+    }
+    
     .menu .navbar ul li a {
-        display: block; /* Convierte los enlaces en bloques para ocupar todo el ancho */
-        padding: 15px 20px; /* Espaciado interno de los enlaces */
-        text-decoration: none; /* Quita la subrayado de los enlaces */
-        color: #fff; /* Color del texto */
-        transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        display:inline-block;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s;
+        line-height: 1; /* Ajustar line-height al tamaño del texto */
     }
     
     .menu .navbar ul li a:hover {
