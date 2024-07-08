@@ -45,7 +45,6 @@ body, html {
 .menu.container.scrolled {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
-    height: 7rem;
     
 }
 
@@ -93,11 +92,14 @@ body, html {
     transition: background 0.3s;
     line-height: 1; /* Restablecer line-height a su valor normal */
     display:inline-flex; /* Asegurar que el elemento tenga el tamaño del contenido */
-    text-align: center;
-    font-size: 1.2rem;
 }
 
 
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados */
+}
 
 .navbar .logo-cabeza {
     width: 5.5rem;
@@ -378,6 +380,8 @@ body, html {
 .menu.container.scrolled {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    
 
 }
     
@@ -434,7 +438,7 @@ body, html {
         display: none;
     }
     .header {
-        min-height: 14rem;
+        min-height: 33vh;
     }
     .header-content {
         
@@ -485,8 +489,7 @@ body, html {
     }
 
     .btn-wsp img {
-        width: 5rem; /* Reduce el tamaño de la imagen */
-        height: 5rem;
-        
+        width: 60px; /* Reduce el tamaño de la imagen */
+        height: 60px;
     }
 }

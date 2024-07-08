@@ -136,18 +136,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Función para desplazamiento suave
-function scrollToSection(event) {
-    event.preventDefault(); // Evita el comportamiento por defecto del enlace
-
-    const targetId = event.currentTarget.getAttribute("href").substring(1); // Obtiene el id del objetivo (sin el '#')
-    const targetSection = document.getElementById(targetId); // Busca el elemento por su id
-
-    if (targetSection) {
-        const offsetTop = targetSection.offsetTop; // Calcula la posición superior del elemento
-        window.scrollTo({
-            top: offsetTop,
-            behavior: "smooth" // Hace el desplazamiento suave
-        });
-    }
-}

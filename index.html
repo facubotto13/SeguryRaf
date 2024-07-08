@@ -23,7 +23,7 @@
                     <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza" alt="Logo">
                 </a>  
                 <ul>
-                    <li><a href="#noticias" onclick="closeMenu(); scrollToSection(event)">Noticias</a></li>
+                    <li><a href="#noticias" onclick="closeMenu(); scrollToSection(event)">Novedades</a></li>
                     <li><a href="historia.html" onclick="closeMenu()">Historia</a></li>
                     <li><a href="servicios.html" onclick="closeMenu()">Servicios</a></li>
                     <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
@@ -143,6 +143,22 @@
     </a>
 
     <script src="menu.js"></script> <!-- Asegúrate de enlazar tu archivo JavaScript -->
-    
+    <script>
+        // Función para desplazamiento suave
+        function scrollToSection(event) {
+            event.preventDefault(); // Evita el comportamiento por defecto del enlace
+
+            const targetId = event.currentTarget.getAttribute("href").substring(1); // Obtiene el id del objetivo (sin el '#')
+            const targetSection = document.getElementById(targetId); // Busca el elemento por su id
+
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop; // Calcula la posición superior del elemento
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth" // Hace el desplazamiento suave
+                });
+            }
+        }
+    </script>
 </body>
 </html>
