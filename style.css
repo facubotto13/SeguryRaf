@@ -92,6 +92,7 @@ body, html {
     transition: background 0.3s;
     line-height: 1; /* Restablecer line-height a su valor normal */
     display:inline-flex; /* Asegurar que el elemento tenga el tamaño del contenido */
+    margin-left: 1rem;
 }
 
 
@@ -102,7 +103,7 @@ body, html {
 }
 
 .navbar .logo-cabeza {
-    width: 5.5rem;
+    width: 6rem;
     height: auto;
 }
 
