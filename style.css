@@ -393,6 +393,7 @@ body, html {
         flex-direction: column; /* Alinea los elementos del menú en columna */
         margin-top: 20px; /* Espacio superior */
         padding: 0;
+        text-align: center;
     }
     
     .menu .navbar ul {

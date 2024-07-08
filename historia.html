@@ -184,6 +184,7 @@
 .menu.container.scrolled {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+    height: 4.1rem;
 }
 
 .logo img {
@@ -223,15 +224,14 @@
 
 /* Asegúrate de que los enlaces de navegación estén estilizados */
 .navbar a {
-        display: inline-block;
-        text-decoration: none;
-        color: #000000;
-        transition: background-color 0.3s;
-        line-height: 1;
-        width: 8rem;
-        align-content: center;
-        margin-left: auto;
-        margin-right: auto;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    transition: background 0.3s;
+    line-height: 1;
+    display: inline-flex;
+        text-align: center;
     }
 
 .navbar a:hover {
@@ -295,6 +295,7 @@
         flex-direction: column; /* Alinea los elementos del menú en columna */
         margin-top: 20px; /* Espacio superior */
         padding: 0;
+        text-align: center;
     }
 
     .navbar img {
