@@ -274,12 +274,16 @@ button[type="submit"]:hover {
 
 /* Asegúrate de que los enlaces de navegación estén estilizados */
 .navbar a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #000; /* Color del texto, puedes ajustarlo según tu diseño */
-    font-weight: bold; /* Texto en negrita */
-    padding: 10px; /* Relleno alrededor de los enlaces */
-    transition: background 0.3s; /* Transición suave para el fondo */
-}
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s;
+        line-height: 1;
+        width: 8rem;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
 .navbar a:hover {
     background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
@@ -289,6 +293,7 @@ button[type="submit"]:hover {
 .navbar .logo-cabeza{
     width: 5.5rem;
     height: auto;
+    padding: 0.5rem;
 }
 
 /* Media query para pantallas de ancho máximo 991px */
@@ -352,11 +357,12 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
 }
 
 .menu .navbar ul li a {
-        display:inline-flex;
+        display:inline-block;
         text-decoration: none;
         color: #fff;
         transition: background-color 0.3s;
         line-height: 1; /* Ajustar line-height al tamaño del texto */
+        padding: 0.5rem;
     }
 
 .menu .navbar ul li a:hover {

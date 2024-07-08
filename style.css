@@ -409,15 +409,12 @@ body, html {
         color: #fff;
         transition: background-color 0.3s;
         line-height: 1;
-        width: 12rem;
+        width: 8rem;
         align-content: center;
         margin-left: auto;
         margin-right: auto;
     }
-    .navbar .logo-cabeza {
-        align-items: center;
-        align-items: center;
-    }
+
     
     .menu .navbar ul li a {
         display:inline-block;
