@@ -235,6 +235,7 @@ button[type="submit"]:hover {
 .menu.container.scrolled {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+    height: 4.5rem;
 }
 
 .logo img {
@@ -274,26 +275,23 @@ button[type="submit"]:hover {
 
 /* Asegúrate de que los enlaces de navegación estén estilizados */
 .navbar a {
-        display: inline-block;
-        text-decoration: none;
-        color: #000000;
-        transition: background-color 0.3s;
-        line-height: 1;
-        width: 8rem;
-        align-content: center;
-        margin-left: auto;
-        margin-right: auto;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    transition: background 0.3s;
+    line-height: 1;
+    display: inline-flex;
+    text-align: center;
+    font-size: 1.2rem;
     }
 
-.navbar a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
-    border-radius: 5px; /* Bordes redondeados */
-}
 
 .navbar .logo-cabeza{
     width: 5.5rem;
     height: auto;
     padding: 0.5rem;
+    margin-left: -2.3rem;
 }
 
 /* Media query para pantallas de ancho máximo 991px */
@@ -328,7 +326,7 @@ button[type="submit"]:hover {
     left: -100%; /* Inicia fuera de la pantalla a la izquierda */
     width: 100%; /* Ancho del menú */
     height: 100vh; /* Alto del menú cubre toda la pantalla */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente para el menú */
+    background-color: rgba(0, 0, 0, 0.65); /* Fondo semi-transparente para el menú */
     transition: left 0.5s ease; /* Transición suave al mostrar/ocultar */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
@@ -474,9 +472,9 @@ button[type="submit"] {
 }
 
 .btn-wsp img {
-    width: 60px; /* Reduce el tamaño de la imagen */
-    height: 60px;
-}
+        width: 5rem; /* Reduce el tamaño de la imagen */
+        height: 5rem;
+    }
 
 .blog.container p {
     margin-top: -140px;
