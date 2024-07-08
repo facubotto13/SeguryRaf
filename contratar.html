@@ -270,7 +270,7 @@ button[type="submit"]:hover {
 .navbar a {
         display: inline-block;
         text-decoration: none;
-        color: #fff;
+        color: #000000;
         transition: background-color 0.3s;
         line-height: 1;
         width: 8rem;
@@ -292,7 +292,16 @@ button[type="submit"]:hover {
 
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
-
+    #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Opacidad del video */
+    z-index: 0; /* Asegura que el video esté detrás del texto */
+    height: 6.5rem;
+}
     .menu {
         padding: 0.6rem;
         z-index: 1500;
