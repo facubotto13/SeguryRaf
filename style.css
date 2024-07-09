@@ -92,6 +92,7 @@ body, html {
     transition: background 0.3s;
     line-height: 1; /* Restablecer line-height a su valor normal */
     display:inline-flex; /* Asegurar que el elemento tenga el tamaño del contenido */
+    margin-left: 1rem;
 }
 
 
@@ -102,7 +103,7 @@ body, html {
 }
 
 .navbar .logo-cabeza {
-    width: 5.5rem;
+    width: 6rem;
     height: auto;
 }
 
@@ -351,7 +352,7 @@ body, html {
 
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
-
+    
     .menu {
         padding: 0.6rem;
         z-index: 1500;
@@ -380,6 +381,8 @@ body, html {
 .menu.container.scrolled {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    
 
 }
     
@@ -391,6 +394,7 @@ body, html {
         flex-direction: column; /* Alinea los elementos del menú en columna */
         margin-top: 20px; /* Espacio superior */
         padding: 0;
+        text-align: center;
     }
     
     .menu .navbar ul {
