@@ -340,7 +340,7 @@ button[type="submit"]:hover {
     height: 6.5rem;
 }
     .menu {
-        padding: 0.6rem;
+        
         z-index: 1500;
         position: fixed;
     }
@@ -351,7 +351,9 @@ button[type="submit"]:hover {
 .menu label img.menu {
     width: 50px; /* Ancho ajustado para dispositivos móviles */
     height: auto; /* Altura automática */
+    margin-top: -2rem;
 }
+
 .menu .navbar {
     position: fixed; /* Fija el menú en la pantalla */
     flex-direction: column; /* Cambia la dirección de los elementos del menú */
@@ -367,6 +369,7 @@ button[type="submit"]:hover {
 .menu.container.scrolled {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+    height: 3rem;
 }
 
 #menu:checked ~ .navbar {
