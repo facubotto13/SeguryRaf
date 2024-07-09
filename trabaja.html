@@ -256,6 +256,8 @@ button[type="submit"]:hover {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    z-index: 1500;
+    position:relative;
 }
 
 /* Estilos del navbar */
@@ -283,7 +285,7 @@ button[type="submit"]:hover {
     transition: background 0.3s;
     line-height: 1;
     display: inline-flex;
-    text-align: center;
+        text-align: center;
     }
 
 
@@ -346,18 +348,28 @@ button[type="submit"]:hover {
 }
 
 .navbar ul {
-    flex-direction: column; /* Alinea los elementos del menú en columna */
-    margin-top: 20px; /* Espacio superior */
-    padding: 0;
-    text-align: center;
+        flex-direction: column; /* Alinea los elementos del menú en columna */
+        margin-top: 20px; /* Espacio superior */
+        padding: 0;
+        text-align: center;
+    }
+.navbar a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+    line-height: 1;
+    width: 8rem;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 .navbar img {
-display: block; /* Asegura que la imagen se comporte como un bloque */
-margin: 0 auto; /* Centra la imagen horizontalmente */
-max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
-height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
-}
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    }
 
 .menu .navbar ul {
     list-style-type: none; /* Quita los estilos de lista */
