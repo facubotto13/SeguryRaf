@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Cambia el fondo cada 5 segundos (5000 milisegundos)
-  setInterval(changeBackground, 7000);
+  setInterval(changeBackground, 5000);
 });
 
 
