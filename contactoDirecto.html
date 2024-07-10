@@ -866,7 +866,7 @@ button[type="submit"] {
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>SeguryRaf</h2>
-        <form action="https://formsubmit.co/joaquin_sola@hotmail.com" method="POST">
+        <form method="POST" action="https://formsubmit.co/joaquin_sola@hotmail.com">
             <div class="form-group">
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required>
@@ -885,6 +885,10 @@ button[type="submit"] {
             </div>
             <button type="submit">Enviar</button>
 
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Formulario Enviado!">
+            <input type="hidden" name="_template" value="table">
         </form>
         </div>
     </div>
