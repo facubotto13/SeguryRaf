@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqzDBIC08BNNTq7MNyk-eINcYEiqhw1_g&callback=console.debug&libraries=maps,marker&v=beta"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Establecer siempre la altura del mapa explícitamente para definir el tamaño del div
+ *elemento que contiene el mapa. */
+.text {
+    width: 50%;
+    padding: 20px; /* Ajusta el padding según tus necesidades */
+}
+
+/* Opcional: Hace que la página de muestra llene la ventana. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-map .text {
+    background-color: #f2f2f2; /* Fondo gris más claro */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.header {
+    position: relative;
+    height: 50vh; /* Ocupa toda la altura de la pantalla */
+    
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Opacidad del video */
+    z-index: 0; /* Asegura que el video esté detrás del texto */
+    height: 10rem;
+
+}
+
+.header h1 {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 3em;
+    text-align: center;
+    z-index: 1; /* Asegura que esté encima del video */
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container-map {
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #4C87C1;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container-map .text {
+    text-align: center;
+}
+
+/* Estilos para el contenedor del formulario */
+.contact-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.contact-form-container h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: #4C87C1;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4C87C1;
+    outline: none;
+    box-shadow: 0 0 5px rgba(145, 38, 76, 0.5);
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #4C87C1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #18446F;
+}
+
+/* Estilos del footer */
+.footer {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    text-align: center; /* Centra el contenido del footer */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.footer h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.linkredes {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los iconos */
+    margin-bottom: 20px;
+}
+
+.linkredes a {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para transformaciones y opacidad */
+}
+
+.linkredes a:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+    opacity: 0.8; /* Reduce la opacidad al pasar el mouse */
+}
+
+.footer-txt {
+    text-align: center; /* Centra el contenido */
+    color: #fff; /* Color del texto blanco */
+    padding: 20px; /* Relleno alrededor del contenido */
+}
+
+.footer-txt p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    font-size: 0.9em; /* Ajusta el tamaño del texto */
+    line-height: 1.5; /* Ajusta el espacio entre líneas */
+}
+
+.footer-txt hr {
+    border: none; /* Elimina el borde predeterminado de la línea horizontal */
+    height: 1px; /* Altura de la línea */
+    background-color: #fff; /* Color de la línea */
+    width: 60%; /* Anchura de la línea */
+}
+
+/* Estilos del botón de WhatsApp */
+.btn-wsp {
+    display: inline-block;
+    padding: 10px;
+}
+
+.btn-wsp img {
+    width: 90px; /* Tamaño de la imagen */
+    height: 90px;
+    display: block; /* Para evitar que la imagen tenga un espacio inferior no deseado */
+}
+
+.btn-wsp:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Posicionamiento fijo en la esquina inferior derecha */
+.btn-wsp {
+    position: fixed;
+    bottom: 20px; /* Espacio desde la parte inferior */
+    right: 20px; /* Espacio desde la parte derecha */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilos del menú */
+.menu.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed; /* Para mantener el menú fijo en la parte superior */
+    top: 0;
+    left: 0;
+    background-color: transparent; /* Fondo transparente por defecto */
+    transition: background-color 0.3s; /* Transición suave para el cambio de fondo */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+/* Clase que se añadirá al hacer scroll */
+.menu.container.scrolled {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para distinguir el menú */
+    height: 4.1rem;
+}
+
+.logo img {
+    height: 50px; /* Ajusta la altura del logo */
+}
+
+/* Estilos del checkbox y label para el menú responsive */
+#menu {
+    display: none;
+}
+
+#map{
+    width: 50%;
+    height: 500px; /* Ajusta la altura según tus necesidades */
+}
+
+.no_display_en_desk {
+    display: none;
+}
+
+.menu img.menu {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1500;
+    position:relative;
+}
+
+/* Estilos del navbar */
+.navbar {
+    display: flex;
+    width: 100%;
+}
+
+.navbar ul {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    list-style: none; /* Elimina las viñetas de la lista */
+    display: flex; /* Aplica Flexbox para los elementos de la lista */
+    gap: 20px; /* Espacio entre los elementos de la lista */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+/* Asegúrate de que los enlaces de navegación estén estilizados */
+.navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    transition: background 0.3s;
+    line-height: 1;
+    display: inline-flex;
+        text-align: center;
+    }
+
+
+.navbar .logo-cabeza{
+    width: 6rem;
+    height: auto;
+    padding: 0.5rem;
+}
+
+.text h2{
+    text-decoration: underline;
+}
+
+/* Media query para pantallas de ancho máximo 991px */
+@media (max-width: 991px) {
+    #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Opacidad del video */
+    z-index: 0; /* Asegura que el video esté detrás del texto */
+    height: 6.5rem;
+}
+    .menu {
+        height: 1.2rem;
+    }
+    .menu.container.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 1.2rem;
+}
+    .menu label {
+        display: initial;
+    }
+    .menu img.menu {
+        width: 50px; /* Ancho ajustado para dispositivos móviles */
+        height: auto; /* Altura automática */
+        margin-left: -1.2rem;
+        margin-top: 0.4rem;
+    }
+    .menu.container.scrolled img.menu{
+        width: 50px; /* Ancho ajustado para dispositivos móviles */
+        height: auto; /* Altura automática */
+        margin-left: -1.2rem;
+        margin-top: 0.4rem;
+    }
+    .menu .navbar {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: -100%; /* Inicialmente fuera de la pantalla a la izquierda */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: left 0.5s ease;
+    z-index: 1000;
+}
+
+
+
+#menu:checked ~ .navbar {
+    left: 0; /* Muestra el menú desplazándolo desde la izquierda */
+}
+
+.navbar ul {
+    flex-direction: column; /* Alinea los elementos del menú en columna */
+    margin-top: 20px; /* Espacio superior */
+    padding: 0;
+    text-align: center;
+}
+.navbar a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+    line-height: 1;
+    width: 8rem;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.navbar img {
+display: block; /* Asegura que la imagen se comporte como un bloque */
+margin: 0 auto; /* Centra la imagen horizontalmente */
+max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+}
+
+.menu .navbar ul {
+    list-style-type: none; /* Quita los estilos de lista */
+    padding: 0;
+    margin: 0;
+}
+
+.menu .navbar ul li {
+    width: 100%; /* Ancho completo del elemento de lista */
+    text-align: center; /* Centra el texto dentro de los elementos de lista */
+}
+
+.menu .navbar ul li a {
+        display:inline-block;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s;
+        line-height: 1; /* Ajustar line-height al tamaño del texto */
+        padding: 0.5rem;
+    }
+
+.menu .navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al pasar el mouse */
+}
+
+.menu .navbar a:active {
+    color: #ffffff; /* Color del texto activo */
+}
+.logo {
+    display: none;
+}
+.header {
+    min-height: 33vh;
+}
+.header-content {
+    
+    flex-direction: column;
+    text-align: center;
+}
+.header-txt {
+    margin-bottom: 25px;
+    
+}
+.header-txt h1{
+    margin: 0px;
+    
+}
+.header-txt span{
+    margin: 0px; 
+}
+
+.header h1 {
+    text-align: center;
+    margin-top: -130px;
+}
+
+.contact-form-container {
+    max-width: 85%;
+    padding: 15px; /* Reduce el padding general */
+    box-shadow: none; /* Elimina la sombra en pantallas más pequeñas */
+    margin-top: -90px;
+}
+
+.contact-form-container h2 {
+    font-size: 1.8em; /* Reduce el tamaño del título */
+    margin-bottom: 15px; /* Añade un margen inferior para separar del formulario */
+}
+
+.contact-form-container h2::after {
+    width: 60px; /* Reduce el ancho de la línea */
+}
+
+.form-group label {
+    font-size: 0.9em; /* Reduce el tamaño del texto de etiqueta */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 95%;
+    padding: 8px; /* Ajusta el padding interior */
+    font-size: 0.9em; /* Reduce el tamaño del texto de entrada */
+}
+
+button[type="submit"] {
+    width: 100%;
+    font-size: 1em; /* Reduce el tamaño del texto del botón */
+}
+.container-map {
+    margin-top: 20px; /* Reduce el margen superior en dispositivos móviles */
+}
+
+.container-map .text {
+    padding: 10px;
+    background-color: #f2f2f2; /* Fondo gris más claro */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.container-map .text h2,
+.container-map .text h3 {
+    margin-bottom: 8px; /* Espaciado inferior más pequeño */
+}
+
+.container-map .text h3 {
+    margin-top: 15px; /* Espaciado superior más pequeño para subtítulos */
+    }
+
+.footer {
+    padding: 15px; /* Ajusta el padding del footer */
+}
+
+.footer h2 {
+    font-size: 1.5em; /* Reduce el tamaño del título */
+}
+
+.linkredes {
+    margin-bottom: 15px; /* Reduce el margen inferior */
+}
+
+.linkredes a {
+    width: 24px; /* Reduce el tamaño de los iconos de redes sociales */
+    height: 24px;
+}
+
+.footer-txt p {
+    font-size: 0.8em; /* Reduce el tamaño del texto */
+}
+
+.footer-txt hr {
+    width: 40%; /* Reduce la anchura de la línea horizontal */
+}
+
+.btn-wsp {
+    bottom: 10px; /* Reduce el espacio desde la parte inferior */
+    right: 10px; /* Reduce el espacio desde la parte derecha */
+    padding: 8px; /* Ajusta el padding del botón */
+}
+
+.btn-wsp img {
+    width: 60px; /* Reduce el tamaño de la imagen */
+    height: 60px;
+}
+
+.blog.container p {
+    margin-top: -140px;
+}
+
+.blog-txt {
+    margin-top: 150px;
+}
+
+.blog-1 {
+    margin-bottom: 15px;
+}
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <video autoplay muted loop id="background-video">
+            <source src="imagenes/Agregar texto (1).mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+        <h1>Contactate con nosotros</h1>
+    </div>
+
+    <div class="contact-form-container">
+        <h2>SeguryRaf</h2>
+        <form action="enviar_formulario.php" method="post">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Asunto:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div class="menu container">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="no_display_en_desk">
+            <img src="imagenes/logo.webp" class="menu" alt="Menú">
+        </label>
+        <nav class="navbar">
+            <a href="index.html">
+                <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza" alt="Logo">
+            </a>  
+            <ul>
+                <li><a href="index.html" onclick="closeMenu()"> Noticias</a></li>
+                <li><a href="historia.html" onclick="closeMenu()"> Historia</a></li>
+                <li><a href="servicios.html" onclick="closeMenu()"> Servicios</a></li>
+                <li><a href="contacto.html" onclick="closeMenu()"> Contacto</a></li>
+                <li><a href="contratar.html" onclick="closeMenu()"> Contratar un servicio</a></li>
+                <li><a href="trabaja.html" onclick="closeMenu()"> Trabaja con nosotros</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h2>Donde estamos ubicados? </h2>
+      <div class="container-map">
+        <div id="map">
+            <gmp-map center="-31.254730224609375,-61.48515319824219" zoom="14" map-id="DEMO_MAP_ID">
+                <gmp-advanced-marker position="-31.254730224609375,-61.48515319824219" title="My location"></gmp-advanced-marker>
+              </gmp-map>
+        </div>
+        <div class="text">
+            <h2>Nuestras oficinas</h2>
+                <h3>Oficina Administrativa</h3>
+                 - Belgrano 606, Rafaela <br><br>
+                 - Celular +54 9 3492 410336
+                <h3>Oficina Operativa</h3>
+                 - Belgrano 741, Rafaela <br><br>
+                 - Celular +54 9 3492 681340
+                <h3>Recursos Humanos</h3>
+                 - Celular +54 9 3492 276468
+        </div>
+    </div>
+  </body>
+</html>
+
+
+    <footer class="footer container" id="contacto">
+        <h2>Nuestras redes</h2>
+        <div class="linkredes">
+            <a href="" class="ig" target="_blank"> <img src="imagenes/instagram_white_28dp.png" alt=""></a> 
+            <a href="" class="fb" target="_blank"> <img src="imagenes/facebook_white_28dp.png" alt=""></a> 
+            <a href="" class="twt" target="_blank"> <img src="imagenes/twitter_white_28dp.png" alt=""></a> 
+        </div>
+
+        <div class="footer-txt">
+            <p>
+                <hr>
+                Copyright 2024 © - SolBot - Diseño y Desarrollo Web
+            </p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/543493434516" class="btn-wsp" target="_blank">
+        <img src="imagenes/wpp.webp" alt="WhatsApp">
+    </a>
+    <script src="menu.js"></script> <!-- Asegúrate de enlazar tu archivo JavaScript -->
+
+</body>
+</html>
