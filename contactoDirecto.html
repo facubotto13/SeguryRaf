@@ -503,19 +503,20 @@ button[type="submit"]:hover {
         }
 
         .botonera{
-        width: 100%;
-        text-align:center;
-        align-items: center;
-        margin-top: -2rem;
-        margin-bottom: -2rem;
+        display: flex; /* Usa flexbox para alinear elementos */
+        flex-direction: column; /* Alinea los elementos en una columna */
+        justify-content: center; /* Centra horizontalmente los elementos */
+        align-items: center; /* Centra verticalmente los elementos */
+        height: 8rem; /* Ajusta la altura según tu diseño */
+        margin-top: -1rem;
     }
         .botonera button{
-        margin-left: 2rem;
-        text-align:center;
-        margin-bottom: 2rem;
+        margin-top: 1rem; /* Añade margen superior entre botones */
         width: 20rem;
-        height: 7rem;
-        font-size: 15rem;
+        height: 6rem;
+        font-size: 1.5rem; /* Ajusta el tamaño de la letra según tus necesidades */
+        text-align: center; /* Centra el texto dentro del botón */
+
     }
     #background-video {
     position: absolute;
