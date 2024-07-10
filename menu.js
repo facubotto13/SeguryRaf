@@ -174,4 +174,48 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.header');
+  const images = [
+      'imagenes/fondo4.png',
+      'imagenes/camara.jpeg',
+  ]; // Lista de imágenes de fondo
+  let currentIndex = 0;
+
+  // Crear las capas de fondo y de contenido
+  const backgroundLayer = document.createElement('div');
+  backgroundLayer.classList.add('background-layer');
+  backgroundLayer.style.backgroundImage = `url(${images[currentIndex]})`; // Establecer la primera imagen
+  header.appendChild(backgroundLayer);
+
+  const foregroundLayer = document.createElement('div');
+  foregroundLayer.classList.add('foreground-layer');
+  header.appendChild(foregroundLayer);
+
+  // Función para cambiar el fondo con transición suave
+  function changeBackground() {
+      const nextIndex = (currentIndex + 1) % images.length;
+      const nextImage = new Image();
+      nextImage.src = images[nextIndex];
+      nextImage.onload = function() {
+          backgroundLayer.style.opacity = '0'; // Inicia la transición
+          setTimeout(() => {
+              backgroundLayer.style.backgroundImage = `url(${nextImage.src})`;
+              foregroundLayer.innerHTML = ''; // Limpiar contenido previo si necesario
+              currentIndex = nextIndex;
+              backgroundLayer.style.opacity = '1'; // Finaliza la transición
+          }, 1000); // Tiempo de espera para asegurar la transición completa
+      };
+  }
+
+  // Cambia el fondo cada 5 segundos (5000 milisegundos)
+  setInterval(changeBackground, 7000);
+});
+
+
+
+
+
+
+
 
