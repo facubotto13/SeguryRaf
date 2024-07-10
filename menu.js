@@ -65,7 +65,7 @@ function closeMenu() {
       });
   
       // Event listener para cerrar el menú al hacer clic en enlaces internos (#)
-      document.querySelectorAll('a[href^="#noticias"]').forEach(function(anchor) {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(event) {
           var targetId = anchor.getAttribute('href').substring(1);
           var targetElement = document.getElementById(targetId);
