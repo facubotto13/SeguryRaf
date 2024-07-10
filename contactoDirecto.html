@@ -329,8 +329,193 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
+ /* Estilos para el botón */
+        #contacto-Contratar {
+        padding: 10px 20px;
+        font-size: 25px;
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #0056b3;
+        border-bottom-width: 4px; /* Grosor del borde inferior */
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #contacto-Otro {
+        padding: 10px 20px;
+        font-size: 25px;
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #0056b3;
+        border-bottom-width: 4px; /* Grosor del borde inferior */
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #contacto-Otro2 {
+        padding: 10px 20px;
+        font-size: 25px;
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #0056b3;
+        border-bottom-width: 4px; /* Grosor del borde inferior */
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #contacto-Contratar:hover {
+        transform: translateY(2px); /* Efecto de elevación */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
+        #contacto-Otro:hover {
+        transform: translateY(2px); /* Efecto de elevación */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
+        #contacto-Otro2:hover {
+        transform: translateY(2px); /* Efecto de elevación */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1000000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con opacidad */
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto; /* 10% de margen superior */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px; /* Ancho máximo del modal */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+    .botonera{
+        text-align:center;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+    }
+    .botonera button{
+        margin-left: 2rem;
+        text-align:center;
+        width: 20rem;
+        height: 7rem;
+        font-size: 15rem;
+    }
+
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
+
+/* Estilos para el botón */
+#contacto-Contratar {
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #0056b3;
+        border-bottom-width: 4px; /* Grosor del borde inferior */
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #contacto-Otro {
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #0056b3;
+        border-bottom-width: 4px; /* Grosor del borde inferior */
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #contacto-Otro2 {
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #0056b3;
+        border-bottom-width: 4px; /* Grosor del borde inferior */
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #contacto-Contratar:hover {
+        transform: translateY(2px); /* Efecto de elevación */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
+        #contacto-Otro:hover {
+        transform: translateY(2px); /* Efecto de elevación */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
+        #contacto-Otro2:hover {
+        transform: translateY(2px); /* Efecto de elevación */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
+
+        .botonera{
+        text-align:center;
+        align-items: center;
+        margin-top: -2rem;
+        margin-bottom: -2rem;
+    }
+        .botonera button{
+        margin-left: 2rem;
+        text-align:center;
+        margin-bottom: 2rem;
+        width: 20rem;
+        height: 7rem;
+        font-size: 15rem;
+    }
     #background-video {
     position: absolute;
     top: 0;
@@ -580,9 +765,98 @@ button[type="submit"] {
         </video>
         <h1>Contactate con nosotros</h1>
     </div>
+<div class="botonera">
+    <!-- TRABAJA CON NOSOTROS-->
+    <button id="contacto-Contratar">Trabaja con nosotros</button>
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="enviar_cv.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Puesto al que aplica:</label>
+                    <select id="service" name="service" required>
+                        <option value="">Seleccione un puesto</option>
+                        <option value="vigilancia">Vigilancia</option>
+                        <option value="monitoreo">Monitoreo</option>
+                        <option value="control_ingresos">Control de Ingresos</option>
+                        <option value="instalacion_camaras">Instalación de Cámaras</option>
+                        <option value="vigilancia_rutas">Vigilancia en Rutas</option>
+                        <option value="seguridad_eventos">Seguridad de Eventos</option>
+                        <option value="limpieza">Limpieza</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje adicional:</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cv">Adjuntar currículum:</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                </div>
+                <button type="submit">Enviar solicitud</button>
+            </form>
+        </div>
+    </div>
 
-    <div class="contact-form-container">
-        <h2>SeguryRaf</h2>
+    <!-- CONTRATA SERVICIO-->
+    <button id="contacto-Otro">Contratar un servicio</button>
+    <div id="modalOtroForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="enviar_solicitud.php" method="post">
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Servicio Deseado:</label>
+                    <select id="service" name="service" required>
+                        <option value="">Seleccione un servicio</option>
+                        <option value="vigilancia">Vigilancia</option>
+                        <option value="monitoreo">Monitoreo</option>
+                        <option value="control_ingresos">Control de Ingresos</option>
+                        <option value="instalacion_camaras">Instalación de Cámaras</option>
+                        <option value="vigilancia_rutas">Vigilancia en Rutas</option>
+                        <option value="seguridad_eventos">Seguridad de Eventos</option>
+                        <option value="limpieza">Limpieza</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje Adicional:</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- CONTACTO-->
+    <button id="contacto-Otro2">Contactar</button>
+    <div id="modalOtroForm2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>SeguryRaf</h2>
         <form action="enviar_formulario.php" method="post">
             <div class="form-group">
                 <label for="name">Nombre:</label>
@@ -602,7 +876,10 @@ button[type="submit"] {
             </div>
             <button type="submit">Enviar</button>
         </form>
+        </div>
     </div>
+</div>
+
 
     <div class="menu container">
         <input type="checkbox" id="menu">
@@ -666,6 +943,31 @@ button[type="submit"] {
         <img src="imagenes/wpp.webp" alt="WhatsApp">
     </a>
     <script src="menu.js"></script> <!-- Asegúrate de enlazar tu archivo JavaScript -->
+    <script>
+        document.getElementById('contacto-Contratar').addEventListener('click', function() {
+            document.getElementById('modalForm').style.display = 'block';
+        });
+        
+        document.getElementById('contacto-Otro').addEventListener('click', function() {
+            document.getElementById('modalOtroForm').style.display = 'block';
+        });
 
+        document.getElementById('contacto-Otro2').addEventListener('click', function() {
+            document.getElementById('modalOtroForm2').style.display = 'block';
+        });
+
+        document.querySelectorAll('.close').forEach(function(closeButton) {
+            closeButton.addEventListener('click', function() {
+                closeButton.parentElement.parentElement.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('modalForm')) {
+                document.getElementById('modalForm').style.display = 'none';
+            }
+        }
+    )
+    </script>
 </body>
 </html>
