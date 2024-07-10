@@ -1,3 +1,19 @@
+ // Función para desplazamiento suave
+ function scrollToSection(event) {
+  event.preventDefault(); // Evita el comportamiento por defecto del enlace
+
+  const targetId = event.currentTarget.getAttribute("href").substring(1); // Obtiene el id del objetivo (sin el '#')
+  const targetSection = document.getElementById(targetId); // Busca el elemento por su id
+
+  if (targetSection) {
+      const offsetTop = targetSection.offsetTop; // Calcula la posición superior del elemento
+      window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth" // Hace el desplazamiento suave
+      });
+  }
+}
+
 function closeMenu() {
     var menu = document.querySelector('.menu');
     if (menu) {
@@ -49,7 +65,7 @@ function closeMenu() {
       });
   
       // Event listener para cerrar el menú al hacer clic en enlaces internos (#)
-      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      document.querySelectorAll('a[href^="#noticias"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(event) {
           var targetId = anchor.getAttribute('href').substring(1);
           var targetElement = document.getElementById(targetId);
