@@ -136,3 +136,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.getElementById("toggle-ver").addEventListener("click", function() {
+  var hiddenElements = document.querySelectorAll(".blog-1.hidden");
+  var visibleElements = document.querySelectorAll(".blog-1:not(.hidden)");
+
+  if (this.textContent === "Ver más") {
+      hiddenElements.forEach(function(element) {
+          element.classList.remove("hidden");
+      });
+      this.textContent = "Ver menos";
+  } else {
+      hiddenElements.forEach(function(element) {
+          element.classList.add("hidden");
+      });
+      visibleElements.forEach(function(element, index) {
+          if (index >= 3) {
+              element.classList.add("hidden");
+          }
+      });
+      this.textContent = "Ver más";
+  }
+});
