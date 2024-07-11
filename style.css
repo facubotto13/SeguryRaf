@@ -180,7 +180,6 @@ body, html {
 .blog p {
     font-size: 1.2em;
     color: #ffffff;
-    margin-bottom: 40px;
 }
 
 /* Estilo para el contenedor del blog */
@@ -271,7 +270,7 @@ body, html {
 .btn-4 {
     display: inline-block;
     padding: 10px 20px;
-    margin-top: 10px;
+    margin-top: -5rem;
     margin-bottom: 10px;
     background-color: #4C87C1; /* Color de fondo del botón */
     color: white;
