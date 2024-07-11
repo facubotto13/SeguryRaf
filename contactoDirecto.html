@@ -627,6 +627,7 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
 .header {
     position: relative;
     height: 50vh; /* Ocupa toda la altura de la pantalla */
+    margin-bottom: -5rem;
     
 }
 .header-content {
@@ -773,50 +774,6 @@ button[type="submit"] {
         <h1>Contactate con nosotros</h1>
     </div>
 <div class="botonera">
-    <!-- TRABAJA CON NOSOTROS-->
-    <button id="contacto-Contratar">Trabaja con nosotros</button>
-    <div id="modalForm" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Trabaja con nosotros</h2>
-            <form action="enviar_cv.php" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="name">Nombre completo:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Teléfono:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="position">Puesto al que aplica:</label>
-                    <select id="service" name="service" required>
-                        <option value="">Seleccione un puesto</option>
-                        <option value="vigilancia">Vigilancia</option>
-                        <option value="monitoreo">Monitoreo</option>
-                        <option value="control_ingresos">Control de Ingresos</option>
-                        <option value="instalacion_camaras">Instalación de Cámaras</option>
-                        <option value="vigilancia_rutas">Vigilancia en Rutas</option>
-                        <option value="seguridad_eventos">Seguridad de Eventos</option>
-                        <option value="limpieza">Limpieza</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje adicional:</label>
-                    <textarea id="message" name="message" rows="5"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="cv">Adjuntar currículum:</label>
-                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-                </div>
-                <button type="submit">Enviar solicitud</button>
-            </form>
-        </div>
-    </div>
 
     <!-- CONTRATA SERVICIO-->
     <button id="contacto-Otro">Contratar un servicio</button>
@@ -858,7 +815,50 @@ button[type="submit"] {
             </form>
         </div>
     </div>
-
+<!-- TRABAJA CON NOSOTROS-->
+<button id="contacto-Contratar">Trabaja con nosotros</button>
+<div id="modalForm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Trabaja con nosotros</h2>
+        <form action="enviar_cv.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="position">Puesto al que aplica:</label>
+                <select id="service" name="service" required>
+                    <option value="">Seleccione un puesto</option>
+                    <option value="vigilancia">Vigilancia</option>
+                    <option value="monitoreo">Monitoreo</option>
+                    <option value="control_ingresos">Control de Ingresos</option>
+                    <option value="instalacion_camaras">Instalación de Cámaras</option>
+                    <option value="vigilancia_rutas">Vigilancia en Rutas</option>
+                    <option value="seguridad_eventos">Seguridad de Eventos</option>
+                    <option value="limpieza">Limpieza</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje adicional:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cv">Adjuntar currículum:</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+            </div>
+            <button type="submit">Enviar solicitud</button>
+        </form>
+    </div>
+</div>
 
     <!-- CONTACTO-->
     <button id="contacto-Otro2">Contactar</button>
