@@ -62,6 +62,7 @@ body {
     font-size: 3em;
     text-align: center;
     z-index: 1; /* Asegura que esté encima del video */
+    margin-top: -70px;
 }
 
 .container {
@@ -73,6 +74,11 @@ body {
     margin: 0 auto;
     padding: 20px;
     display: flex;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
 }
 
 h2 {
@@ -319,6 +325,11 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
+.botonera {
+    margin-top: -130px;
+}
+
+
  /* Estilos para el botón */
         #contacto-Contratar {
         padding: 10px 20px;
@@ -354,15 +365,15 @@ button[type="submit"]:hover {
         transition: transform 0.3s, box-shadow 0.3s;
         }
         #contacto-Contratar:hover {
-        transform: translateY(2px); /* Efecto de elevación */
+        transform: translateY(10px); /* Efecto de elevación */
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
         }
         #contacto-Otro:hover {
-        transform: translateY(2px); /* Efecto de elevación */
+        transform: translateY(10px); /* Efecto de elevación */
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
         }
         #contacto-Otro2:hover {
-        transform: translateY(2px); /* Efecto de elevación */
+        transform: translateY(10px); /* Efecto de elevación */
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
         }
         /* Estilos para el modal */
@@ -420,7 +431,7 @@ button[type="submit"]:hover {
         }
         button[type="submit"] {
             padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #2863a7;
             color: white;
             border: none;
             border-radius: 5px;
@@ -428,7 +439,7 @@ button[type="submit"]:hover {
             
         }
         button[type="submit"]:hover {
-            background-color: #218838;
+            background-color: #65a8f4;
         }
     .botonera{
         text-align:center;
@@ -780,14 +791,14 @@ button[type="submit"] {
     <div id="modalOtroForm" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Contratar un Servicio</h2>
+            <h2>Contratar un servicio</h2>
             <form action="enviar_solicitud.php" method="post">
                 <div class="form-group">
                     <label for="name">Nombre completo:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
+                    <label for="email">Correo electrónico:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
@@ -795,23 +806,23 @@ button[type="submit"] {
                     <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="service">Servicio Deseado:</label>
+                    <label for="service">Servicio deseado:</label>
                     <select id="service" name="service" required>
                         <option value="">Seleccione un servicio</option>
                         <option value="vigilancia">Vigilancia</option>
                         <option value="monitoreo">Monitoreo</option>
-                        <option value="control_ingresos">Control de Ingresos</option>
-                        <option value="instalacion_camaras">Instalación de Cámaras</option>
-                        <option value="vigilancia_rutas">Vigilancia en Rutas</option>
-                        <option value="seguridad_eventos">Seguridad de Eventos</option>
+                        <option value="control_ingresos">Control de ingresos</option>
+                        <option value="instalacion_camaras">Instalación de cámaras</option>
+                        <option value="vigilancia_rutas">Vigilancia en rutas</option>
+                        <option value="seguridad_eventos">Seguridad de eventos</option>
                         <option value="limpieza">Limpieza</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Mensaje Adicional:</label>
+                    <label for="message">Mensaje adicional:</label>
                     <textarea id="message" name="message" rows="5"></textarea>
                 </div>
-                <button type="submit">Enviar Solicitud</button>
+                <button type="submit">Enviar solicitud</button>
             </form>
         </div>
     </div>
@@ -840,10 +851,10 @@ button[type="submit"] {
                     <option value="">Seleccione un puesto</option>
                     <option value="vigilancia">Vigilancia</option>
                     <option value="monitoreo">Monitoreo</option>
-                    <option value="control_ingresos">Control de Ingresos</option>
-                    <option value="instalacion_camaras">Instalación de Cámaras</option>
-                    <option value="vigilancia_rutas">Vigilancia en Rutas</option>
-                    <option value="seguridad_eventos">Seguridad de Eventos</option>
+                    <option value="control_ingresos">Control de ingresos</option>
+                    <option value="instalacion_camaras">Instalación de cámaras</option>
+                    <option value="vigilancia_rutas">Vigilancia en rutas</option>
+                    <option value="seguridad_eventos">Seguridad de eventos</option>
                     <option value="limpieza">Limpieza</option>
                 </select>
             </div>
@@ -868,15 +879,15 @@ button[type="submit"] {
             <h2>SeguryRaf</h2>
         <form method="POST" action="https://formsubmit.co/joaquin_sola@hotmail.com">
             <div class="form-group">
-                <label for="name">Nombre:</label>
+                <label for="name">Nombre completo:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
+                <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="subject">Asunto:</label>
+                <label for="subject">Asunto del mensaje:</label>
                 <input type="text" id="subject" name="subject" required>
             </div>
             <div class="form-group">
@@ -912,7 +923,7 @@ button[type="submit"] {
             </ul>
         </nav>
     </div>
-    <h2>Donde estamos ubicados? </h2>
+    <h1>¿Dónde estamos ubicados? </h1>
       <div class="container-map">
         <div id="map">
             <gmp-map center="-31.254730224609375,-61.48515319824219" zoom="14" map-id="DEMO_MAP_ID">
