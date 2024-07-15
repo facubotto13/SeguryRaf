@@ -177,8 +177,9 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('.header');
   const images = [
-      'imagenes/fondo4.png',
-      'imagenes/camara.jpeg',
+      'imagenes/1.png',
+      'imagenes/2.png',
+      'imagenes/3.png',
   ]; // Lista de imágenes de fondo
   let currentIndex = 0;
 
