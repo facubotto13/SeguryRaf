@@ -188,6 +188,7 @@ body, html {
     flex-wrap: wrap;
     gap: 60px; /* Espacio entre los elementos del blog */
     justify-content: center;
+    margin: 3rem;
 }
     
 .blog-1 {
