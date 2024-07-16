@@ -109,6 +109,8 @@ body, html {
     width: 100%;
 }
 
+
+
 .navbar ul {
     width: 80%;
     justify-content: end;
@@ -129,6 +131,7 @@ body, html {
     line-height: 1; /* Restablecer line-height a su valor normal */
     display:inline-flex; /* Asegurar que el elemento tenga el tamaño del contenido */
     margin-left: 1rem;
+    
 }
 
 
@@ -136,6 +139,7 @@ body, html {
 .navbar a:hover {
     background: rgba(255, 255, 255, 0.2); /* Fondo transparente al pasar el mouse */
     border-radius: 5px; /* Bordes redondeados */
+    
 }
 
 .navbar .logo-cabeza {
@@ -152,6 +156,7 @@ body, html {
     height: 100%;
     padding: 20px;
     text-align: center;
+    
 }
 
 .header-txt h1 {
@@ -207,7 +212,7 @@ body, html {
     width: 100%;
     height: auto;
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 .service-imagen-Modulo1 {
     float: left; /* O right para alinear a la derecha */
@@ -253,26 +258,24 @@ body, html {
     text-align: center;
     opacity: 0; /* Inicialmente invisible */
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-    height: 6rem;
+    height: 7rem;
 }
 
 /* Estilo cuando el puntero está sobre el contenedor del blog */
 .blog-1:hover .service-imagen {
     opacity: 0.5; /* La imagen se opaca */
+    
 }
 
 .blog-1:hover .blog-txt{
     opacity: 1; /* El texto se vuelve visible */
-    border-bottom-left-radius: 2rem; /* Radio de la esquina inferior izquierda */
-    border-bottom-right-radius: 2rem; /* Radio de la esquina inferior derecha */
+    margin-bottom: 3px;
 }
 
 /* Opcional: Estilo para el botón "Leer más" */
 .btn-4 {
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: -5rem;
-    margin-bottom: 10px;
+    padding: 10px 20px; 
     background-color: #4C87C1; /* Color de fondo del botón */
     color: white;
     text-decoration: none;
@@ -466,6 +469,29 @@ body, html {
         width: 100%; /* Ancho completo del elemento de lista */
         text-align: center; /* Centra el texto dentro de los elementos de lista */
     }
+
+    .blog-txt {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+        color: white;
+        width: 100%;
+        text-align: center;
+        opacity: 0; /* Inicialmente invisible */
+        transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+        height: 100%;
+    }
+
+    .btn-4 {
+        display: inline-block;
+        padding: 10px 20px; 
+        background-color: #4C87C1; /* Color de fondo del botón */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+        
+    }
     
     .navbar a {
         display: inline-block;
@@ -550,7 +576,7 @@ body, html {
     }
 
     .btn-wsp img {
-        width: 60px; /* Reduce el tamaño de la imagen */
-        height: 60px;
+        width: 80px; /* Reduce el tamaño de la imagen */
+        height: 80px;
     }
 }

@@ -210,9 +210,31 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Cambia el fondo cada 5 segundos (5000 milisegundos)
-  setInterval(changeBackground, 5000);
+  setInterval(changeBackground, 6000);
 });
 
+
+// Función para mostrar más noticias al hacer clic en el botón "Ver más"
+function mostrarMas() {
+  var noticiasOcultas = document.querySelectorAll('.blog-1.hidden');
+  noticiasOcultas.forEach(function(noticia) {
+      noticia.classList.remove('hidden');
+  });
+
+  // Re-initialize Swiper
+  swiper.update();
+}
+
+// Inicialización de Swiper
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  loop: true,
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+});
 
 
 
