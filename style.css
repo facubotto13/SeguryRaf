@@ -187,6 +187,15 @@ body, html {
 }
 
 /* Estilo para el contenedor del blog */
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    margin: 3rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
     
 .blog-1 {
     position: relative;
@@ -574,5 +583,16 @@ body, html {
     .btn-wsp img {
         width: 80px; /* Reduce el tamaño de la imagen */
         height: 80px;
+    }
+}
+
+/* Estilos para monitores con resolución HD (1280x720) */
+@media (min-width: 1280px) and (max-width: 1919px) {
+    .blog-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.3rem;
+        justify-content: center;
+        margin: 3rem;
     }
 }
