@@ -166,7 +166,7 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
           element.classList.add("hidden");
       });
       visibleElements.forEach(function(element, index) {
-          if (index >= 4) {
+          if (index >= 3) {
               element.classList.add("hidden");
           }
       });
