@@ -183,42 +183,49 @@ document.addEventListener('DOMContentLoaded', function() {
   ]; // Lista de imágenes de fondo
   let currentIndex = 0;
 
-  // Crear la capa de fondo y la capa de contenido
-  const backgroundLayer = document.createElement('div');
-  backgroundLayer.classList.add('background-layer', 'visible');
-  backgroundLayer.style.backgroundImage = `url(${images[currentIndex]})`; // Establecer la primera imagen
-  header.appendChild(backgroundLayer);
+  // Crear las tres capas de fondo y la capa de contenido
+  const backgroundLayer1 = document.createElement('div');
+  backgroundLayer1.classList.add('background-layer', 'visible');
+  backgroundLayer1.style.backgroundImage = `url(${images[0]})`;
+  header.appendChild(backgroundLayer1);
+
+  const backgroundLayer2 = document.createElement('div');
+  backgroundLayer2.classList.add('background-layer');
+  backgroundLayer2.style.backgroundImage = `url(${images[1]})`;
+  header.appendChild(backgroundLayer2);
+
+  const backgroundLayer3 = document.createElement('div');
+  backgroundLayer3.classList.add('background-layer');
+  backgroundLayer3.style.backgroundImage = `url(${images[2]})`;
+  header.appendChild(backgroundLayer3);
 
   const foregroundLayer = document.createElement('div');
   foregroundLayer.classList.add('foreground-layer');
   header.appendChild(foregroundLayer);
 
-  // Pre-cargar todas las imágenes para evitar transiciones bruscas
-  images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-
   // Función para cambiar el fondo con transición suave
   function changeBackground() {
     const nextIndex = (currentIndex + 1) % images.length;
-    const nextImage = new Image();
-    nextImage.src = images[nextIndex];
-    nextImage.onload = function() {
-      backgroundLayer.style.opacity = '0';
 
-      setTimeout(() => {
-        backgroundLayer.style.backgroundImage = `url(${nextImage.src})`;
-        backgroundLayer.style.opacity = '1';
-        currentIndex = nextIndex;
-        console.log(`Current image index is now ${currentIndex}`);
-      }, 1000); // Asegurar suficiente tiempo para la transición de opacidad
-    };
+    const layers = [backgroundLayer1, backgroundLayer2, backgroundLayer3];
+    const currentLayer = layers[currentIndex];
+    const nextLayer = layers[nextIndex];
+
+    console.log(`Changing from image ${currentIndex + 1} to image ${nextIndex + 1}`);
+
+    nextLayer.classList.add('visible');
+    currentLayer.classList.remove('visible');
+
+    currentIndex = nextIndex;
+    console.log(`Current image index is now ${currentIndex}`);
   }
 
   // Cambia el fondo cada 6 segundos (6000 milisegundos)
   setInterval(changeBackground, 6000);
 });
+
+
+
 
 
 

@@ -19,7 +19,7 @@ body, html {
 .header {
     position: relative;
     overflow: hidden;
-    height: 100vh; /* Ajusta según sea necesario */
+  
   }
   
   .background-layer {
@@ -32,6 +32,7 @@ body, html {
     background-position: center;
     transition: opacity 1s ease-in-out;
     opacity: 0;
+    z-index: 1;
   }
   
   .background-layer.visible {
@@ -40,13 +41,9 @@ body, html {
   
   .foreground-layer {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   
-  
-
-
-
 
 
 .blog-1 .swiper-container{
@@ -163,6 +160,15 @@ body, html {
 }
 
 /* Estilos de la sección del blog */
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    margin: 3rem;
+
+}
+
 .blog {
     background-color: rgb(255, 255, 255);
     padding: 50px 0;
@@ -438,13 +444,7 @@ h3 {
     height: 4rem;
 }
 
-.blog-content {
-    display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: center;
-    
-}
+
     
     #menu:checked ~ .navbar {
         left: 0; /* Muestra el menú desplazándolo desde la izquierda */
@@ -480,6 +480,8 @@ h3 {
         transition: opacity 0.3s ease; /* Transición suave para la opacidad */
         height: 100%;
     }
+
+  
 
     .btn-4 {
         display: inline-block;
@@ -577,28 +579,5 @@ h3 {
     .btn-wsp img {
         width: 80px; /* Reduce el tamaño de la imagen */
         height: 80px;
-    }
-}
-
-/* Estilos para monitores con resolución HD (1280x720) */
-@media (min-width: 1280px) and (max-width: 1919px) {
-    .blog-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.3rem;
-        justify-content: center;
-        margin: 3rem;
-    }
-}
-
-@media (min-width: 1920px){
-    .blog-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 3rem;
-        justify-content: center;
-        margin: 3rem;
-        margin-left: 10rem;
-        margin-right: 10rem;
     }
 }
