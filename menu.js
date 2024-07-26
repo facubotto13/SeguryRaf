@@ -229,6 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 // Función para mostrar más noticias al hacer clic en el botón "Ver más"
 function mostrarMas() {
   var noticiasOcultas = document.querySelectorAll('.blog-1.hidden');

@@ -33,7 +33,6 @@ body, html {
     transition: opacity 1s ease-in-out;
     opacity: 0;
     z-index: 1;
-    z-index: 1;
   }
   
   .background-layer.visible {
@@ -42,7 +41,6 @@ body, html {
   
   .foreground-layer {
     position: relative;
-    z-index: 2;
     z-index: 2;
   }
   
