@@ -18,11 +18,16 @@ body, html {
 /* Estilos del header */
 .header {
     position: relative;
-    overflow: hidden;
-  
-  }
-  
-  .background-layer {
+    background-color: transparent;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.background-layer {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,20 +35,25 @@ body, html {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: opacity 1s ease-in-out;
-    opacity: 0;
-    z-index: 1;
-  }
-  
-  .background-layer.visible {
-    opacity: 1;
-  }
-  
-  .foreground-layer {
+    background-repeat: no-repeat;
+    transition: opacity 0.7s ease-in-out; /* Transición suave de opacidad */
+    z-index: 1; /* Capa inferior */
+}
+
+.foreground-layer {
     position: relative;
-    z-index: 2;
-  }
-  
+    z-index: 2; /* Capa superior */
+    color: white; /* Color del texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
 
 
 .blog-1 .swiper-container{
@@ -160,15 +170,6 @@ body, html {
 }
 
 /* Estilos de la sección del blog */
-.blog-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    justify-content: center;
-    margin: 3rem;
-
-}
-
 .blog {
     background-color: rgb(255, 255, 255);
     padding: 50px 0;
@@ -445,8 +446,6 @@ body, html {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 4rem;
 }
-
-
     
     #menu:checked ~ .navbar {
         left: 0; /* Muestra el menú desplazándolo desde la izquierda */
@@ -483,8 +482,6 @@ body, html {
         height: 100%;
     }
 
-  
-
     .btn-4 {
         display: inline-block;
         padding: 10px 20px; 
@@ -493,7 +490,7 @@ body, html {
         text-decoration: none;
         border-radius: 5px;
         transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-        
+        margin-top: 75px;
     }
     
     .navbar a {
