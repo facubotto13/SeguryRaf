@@ -183,11 +183,15 @@ document.addEventListener('DOMContentLoaded', function() {
   ]; // Lista de imágenes de fondo
   let currentIndex = 0;
 
-  // Crear la capa de fondo y la capa de contenido
-  const backgroundLayer = document.createElement('div');
-  backgroundLayer.classList.add('background-layer', 'visible');
-  backgroundLayer.style.backgroundImage = `url(${images[currentIndex]})`; // Establecer la primera imagen
-  header.appendChild(backgroundLayer);
+  // Crear las dos capas de fondo y la capa de contenido
+  const backgroundLayer1 = document.createElement('div');
+  backgroundLayer1.classList.add('background-layer', 'visible');
+  backgroundLayer1.style.backgroundImage = `url(${images[currentIndex]})`; // Establecer la primera imagen
+  header.appendChild(backgroundLayer1);
+
+  const backgroundLayer2 = document.createElement('div');
+  backgroundLayer2.classList.add('background-layer');
+  header.appendChild(backgroundLayer2);
 
   const foregroundLayer = document.createElement('div');
   foregroundLayer.classList.add('foreground-layer');
@@ -201,24 +205,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Función para cambiar el fondo con transición suave
   function changeBackground() {
+    // Calcular el próximo índice
     const nextIndex = (currentIndex + 1) % images.length;
     const nextImage = new Image();
     nextImage.src = images[nextIndex];
-    nextImage.onload = function() {
-      backgroundLayer.style.opacity = '0';
 
-      setTimeout(() => {
-        backgroundLayer.style.backgroundImage = `url(${nextImage.src})`;
-        backgroundLayer.style.opacity = '1';
-        currentIndex = nextIndex;
-        console.log(`Current image index is now ${currentIndex}`);
-      }, 1000); // Asegurar suficiente tiempo para la transición de opacidad
+    // Cambiar el fondo cuando la nueva imagen esté cargada
+    nextImage.onload = function() {
+      const currentLayer = currentIndex % 2 === 0 ? backgroundLayer1 : backgroundLayer2;
+      const nextLayer = currentIndex % 2 === 0 ? backgroundLayer2 : backgroundLayer1;
+
+      console.log(`Changing from image ${currentIndex + 1} to image ${nextIndex + 1}`);
+
+      nextLayer.style.backgroundImage = `url(${nextImage.src})`;
+      nextLayer.classList.add('visible');
+      currentLayer.classList.remove('visible');
+
+      currentIndex = nextIndex;
+      console.log(`Current image index is now ${currentIndex}`);
     };
   }
 
   // Cambia el fondo cada 6 segundos (6000 milisegundos)
   setInterval(changeBackground, 6000);
 });
+
 
 
 
