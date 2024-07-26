@@ -166,7 +166,7 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
           element.classList.add("hidden");
       });
       visibleElements.forEach(function(element, index) {
-          if (index >= 3) {
+          if (index >= 4) {
               element.classList.add("hidden");
           }
       });
@@ -177,17 +177,27 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('.header');
   const images = [
-      'imagenes/1.png',
-      'imagenes/2.png',
-      'imagenes/3.png',
+    'imagenes/1.png',
+    'imagenes/2.png',
+    'imagenes/3.png',
   ]; // Lista de imágenes de fondo
   let currentIndex = 0;
 
-  // Crear las capas de fondo y de contenido
-  const backgroundLayer = document.createElement('div');
-  backgroundLayer.classList.add('background-layer');
-  backgroundLayer.style.backgroundImage = `url(${images[currentIndex]})`; // Establecer la primera imagen
-  header.appendChild(backgroundLayer);
+  // Crear las tres capas de fondo y la capa de contenido
+  const backgroundLayer1 = document.createElement('div');
+  backgroundLayer1.classList.add('background-layer', 'visible');
+  backgroundLayer1.style.backgroundImage = `url(${images[0]})`;
+  header.appendChild(backgroundLayer1);
+
+  const backgroundLayer2 = document.createElement('div');
+  backgroundLayer2.classList.add('background-layer');
+  backgroundLayer2.style.backgroundImage = `url(${images[1]})`;
+  header.appendChild(backgroundLayer2);
+
+  const backgroundLayer3 = document.createElement('div');
+  backgroundLayer3.classList.add('background-layer');
+  backgroundLayer3.style.backgroundImage = `url(${images[2]})`;
+  header.appendChild(backgroundLayer3);
 
   const foregroundLayer = document.createElement('div');
   foregroundLayer.classList.add('foreground-layer');
@@ -195,23 +205,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Función para cambiar el fondo con transición suave
   function changeBackground() {
-      const nextIndex = (currentIndex + 1) % images.length;
-      const nextImage = new Image();
-      nextImage.src = images[nextIndex];
-      nextImage.onload = function() {
-          backgroundLayer.style.opacity = '0'; // Inicia la transición
-          setTimeout(() => {
-              backgroundLayer.style.backgroundImage = `url(${nextImage.src})`;
-              foregroundLayer.innerHTML = ''; // Limpiar contenido previo si necesario
-              currentIndex = nextIndex;
-              backgroundLayer.style.opacity = '1'; // Finaliza la transición
-          }, 1000); // Tiempo de espera para asegurar la transición completa
-      };
+    const nextIndex = (currentIndex + 1) % images.length;
+
+    const layers = [backgroundLayer1, backgroundLayer2, backgroundLayer3];
+    const currentLayer = layers[currentIndex];
+    const nextLayer = layers[nextIndex];
+
+    console.log(`Changing from image ${currentIndex + 1} to image ${nextIndex + 1}`);
+
+    nextLayer.classList.add('visible');
+    currentLayer.classList.remove('visible');
+
+    currentIndex = nextIndex;
+    console.log(`Current image index is now ${currentIndex}`);
   }
 
-  // Cambia el fondo cada 5 segundos (5000 milisegundos)
+  // Cambia el fondo cada 6 segundos (6000 milisegundos)
   setInterval(changeBackground, 6000);
 });
+
+
+
 
 
 // Función para mostrar más noticias al hacer clic en el botón "Ver más"
