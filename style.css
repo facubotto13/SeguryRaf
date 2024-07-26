@@ -18,16 +18,11 @@ body, html {
 /* Estilos del header */
 .header {
     position: relative;
-    background-color: transparent;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.background-layer {
+    overflow: hidden;
+    height: 100vh; /* Ajusta según sea necesario */
+  }
+  
+  .background-layer {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,22 +30,20 @@ body, html {
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    transition: opacity 0.7s ease-in-out; /* Transición suave de opacidad */
-    z-index: 1; /* Capa inferior */
-}
-
-.foreground-layer {
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+  }
+  
+  .background-layer.visible {
+    opacity: 1;
+  }
+  
+  .foreground-layer {
     position: relative;
-    z-index: 2; /* Capa superior */
-    color: white; /* Color del texto */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
+    z-index: 1;
+  }
+  
+  
 
 
 
@@ -188,15 +181,7 @@ body, html {
 }
 
 /* Estilo para el contenedor del blog */
-.blog-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    justify-content: center;
-    margin: 3rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
-}
+
     
 .blog-1 {
     position: relative;
@@ -452,6 +437,14 @@ h3 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 4rem;
 }
+
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    
+}
     
     #menu:checked ~ .navbar {
         left: 0; /* Muestra el menú desplazándolo desde la izquierda */
@@ -595,5 +588,17 @@ h3 {
         gap: 1.3rem;
         justify-content: center;
         margin: 3rem;
+    }
+}
+
+@media (min-width: 1920px){
+    .blog-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        justify-content: center;
+        margin: 3rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
     }
 }

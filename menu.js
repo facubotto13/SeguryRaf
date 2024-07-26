@@ -177,15 +177,15 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('.header');
   const images = [
-      'imagenes/1.png',
-      'imagenes/2.png',
-      'imagenes/3.png',
+    'imagenes/1.png',
+    'imagenes/2.png',
+    'imagenes/3.png',
   ]; // Lista de imágenes de fondo
   let currentIndex = 0;
 
-  // Crear las capas de fondo y de contenido
+  // Crear la capa de fondo y la capa de contenido
   const backgroundLayer = document.createElement('div');
-  backgroundLayer.classList.add('background-layer');
+  backgroundLayer.classList.add('background-layer', 'visible');
   backgroundLayer.style.backgroundImage = `url(${images[currentIndex]})`; // Establecer la primera imagen
   header.appendChild(backgroundLayer);
 
@@ -193,25 +193,33 @@ document.addEventListener('DOMContentLoaded', function() {
   foregroundLayer.classList.add('foreground-layer');
   header.appendChild(foregroundLayer);
 
+  // Pre-cargar todas las imágenes para evitar transiciones bruscas
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
   // Función para cambiar el fondo con transición suave
   function changeBackground() {
-      const nextIndex = (currentIndex + 1) % images.length;
-      const nextImage = new Image();
-      nextImage.src = images[nextIndex];
-      nextImage.onload = function() {
-          backgroundLayer.style.opacity = '0'; // Inicia la transición
-          setTimeout(() => {
-              backgroundLayer.style.backgroundImage = `url(${nextImage.src})`;
-              foregroundLayer.innerHTML = ''; // Limpiar contenido previo si necesario
-              currentIndex = nextIndex;
-              backgroundLayer.style.opacity = '1'; // Finaliza la transición
-          }, 1000); // Tiempo de espera para asegurar la transición completa
-      };
+    const nextIndex = (currentIndex + 1) % images.length;
+    const nextImage = new Image();
+    nextImage.src = images[nextIndex];
+    nextImage.onload = function() {
+      backgroundLayer.style.opacity = '0';
+
+      setTimeout(() => {
+        backgroundLayer.style.backgroundImage = `url(${nextImage.src})`;
+        backgroundLayer.style.opacity = '1';
+        currentIndex = nextIndex;
+        console.log(`Current image index is now ${currentIndex}`);
+      }, 1000); // Asegurar suficiente tiempo para la transición de opacidad
+    };
   }
 
-  // Cambia el fondo cada 5 segundos (5000 milisegundos)
+  // Cambia el fondo cada 6 segundos (6000 milisegundos)
   setInterval(changeBackground, 6000);
 });
+
 
 
 // Función para mostrar más noticias al hacer clic en el botón "Ver más"
