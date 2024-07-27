@@ -335,8 +335,8 @@ body, html {
 
 /* Estilos del footer */
 .footer {
-    background-color: #333; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
+    background-color: #868686; /* Fondo oscuro */
+    color: #000000; /* Texto blanco */
     padding: 20px;
     text-align: center; /* Centra el contenido del footer */
     margin-top: 20px; /* Espacio superior */
@@ -351,8 +351,15 @@ body, html {
 .linkredes {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px; /* Espacio entre los iconos */
     margin-bottom: 20px;
+}
+
+.linkredes a img {
+    width: 40px;  /* Ajusta el tamaño según tus necesidades */
+    height: 40px; /* Ajusta el tamaño según tus necesidades */
+    object-fit: contain;
 }
 
 .linkredes a {
@@ -369,7 +376,7 @@ body, html {
 
 .footer-txt {
     text-align: center; /* Centra el contenido */
-    color: #fff; /* Color del texto blanco */
+    color: #000000; /* Color del texto blanco */
     padding: 20px; /* Relleno alrededor del contenido */
 }
 
@@ -382,7 +389,7 @@ body, html {
 .footer-txt hr {
     border: none; /* Elimina el borde predeterminado de la línea horizontal */
     height: 1px; /* Altura de la línea */
-    background-color: #fff; /* Color de la línea */
+    background-color: #000000; /* Color de la línea */
     width: 60%; /* Anchura de la línea */
 }
 
