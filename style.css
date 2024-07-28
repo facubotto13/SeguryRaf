@@ -246,13 +246,17 @@ body, html {
 .blog-txt {
     position: absolute;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     width: 100%;
     text-align: center;
-    opacity: 0; /* Inicialmente invisible */
-    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-    height: 7rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    height: 100%;
+}
+
+.blog-txt .btn-4{
+    color: #ffffff;
 }
 
 /* Estilo cuando el puntero está sobre el contenedor del blog */

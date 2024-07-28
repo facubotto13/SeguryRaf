@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
+/*
 document.getElementById("toggle-ver").addEventListener("click", function() {
   var hiddenElements = document.querySelectorAll(".blog-1.hidden");
   var visibleElements = document.querySelectorAll(".blog-1:not(.hidden)");
@@ -269,7 +269,7 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
       this.textContent = "Ver más";
   }
 });
-
+*/
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('.header');
   const images = [
