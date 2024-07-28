@@ -197,6 +197,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//FUNCION PARA QUE SE CIERRE EL MENU CUANDO ME DESPLAZO EN LA PANTALLA CON EL ANCLAJE #
+document.addEventListener("DOMContentLoaded", function() {
+  const menuCheckbox = document.getElementById('menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (link.getAttribute('href').startsWith('#')) {
+        menuCheckbox.checked = false;
+      }
+    });
+  });
+});
+
+
+
+
+
 
 document.addEventListener('scroll', function() {
     const header = document.querySelector('.menu.container');

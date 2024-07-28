@@ -438,9 +438,17 @@ body, html {
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
     
-    .menu {
-        height: 4rem;
-    }
+
+
+.menu:checked + label + .navbar {
+    display: block;
+    /* Otros estilos para cuando el menú está abierto */
+}
+    .menu.open {
+        display: block;
+        /* Otros estilos para cuando el menú está abierto */
+      }
+
     .menu label {
         display: initial;
     }

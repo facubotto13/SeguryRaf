@@ -18,12 +18,12 @@
             <label for="menu" class="no_display_en_desk">
                 <img src="imagenes/logo.webp" class="menu" alt="Menú">
             </label>
-            <nav class="navbar">
+            <nav id="hamburguermenu" class="navbar">
                 <a href="index.html">
                     <img src="imagenes/Logo-removebg-preview.png" class="logo-cabeza" alt="Logo">
                 </a>  
                 <ul>
-                    <li><a href="#noticias" onclick="closeMenu(); scrollToSection(event)">Noticias</a></li>
+                    <li><a href="#noticias" class="nav-link">Noticias</a></li>
                     <li><a href="historia.html" onclick="closeMenu()">Historia</a></li>
                     <li><a href="servicios.html" onclick="closeMenu()">Servicios</a></li>
                     <li><a href="contactoDirecto.html" onclick="closeMenu()">Contacto</a></li>
@@ -31,6 +31,7 @@
             </nav>
         </div>
     </header>
+    
 
     <section class="blog container" id="noticias">
         <h2>Nuevas noticias</h2>
