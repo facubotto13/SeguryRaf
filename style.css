@@ -472,6 +472,10 @@ body, html {
         text-align: center; /* Centra el texto dentro de los elementos de lista */
     }
 
+    .a{
+        justify-content: center;
+    }
+
     .blog-txt {
         position: absolute;
         bottom: 0;
@@ -503,7 +507,6 @@ body, html {
         color: #fff;
         transition: background-color 0.3s;
         line-height: 1;
-        width: 8rem;
         align-content: center;
         margin-left: auto;
         margin-right: auto;

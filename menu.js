@@ -1,3 +1,99 @@
+ //MODAL SERVICIO
+document.addEventListener('DOMContentLoaded', (event) => {
+  var modal = document.getElementById("myModal");
+  var blog1 = document.querySelector(".blog-1");
+  var span = document.getElementsByClassName("close")[0];
+
+  // Verifica si el modal fue encontrado
+  if (!modal) {
+      console.error('Modal with ID "myModal" not found.');
+      return;
+  }
+
+  // Verifica si el bloque de noticias fue encontrado
+  if (!blog1) {
+      console.error('Element with class "blog-1" not found.');
+      return;
+  }
+
+  // Verifica si el botón de cierre fue encontrado
+  if (!span) {
+      console.error('Element with class "close" not found.');
+      return;
+  }
+
+  // Cuando el usuario hace clic en el bloque de noticias, se abre el modal
+  blog1.onclick = function() {
+      modal.style.display = "block";
+  }
+
+  // Cuando el usuario hace clic en <span> (x), se cierra el modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // Cuando el usuario hace clic en cualquier parte fuera del modal, se cierra el modal
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+});
+
+//ABRIR MODAL SIN BOTON
+// scripts.js
+document.addEventListener('DOMContentLoaded', (event) => {
+  var modal = document.getElementById("myModal");
+  var blogs = document.querySelectorAll(".blog-1");
+  var span = document.getElementsByClassName("close")[0];
+  var modalTitle = document.getElementById("modalTitle");
+  var modalContent = document.getElementById("modalContent");
+  var modalImage = document.getElementById("modalImage");
+
+  // Verifica si el modal fue encontrado
+  if (!modal) {
+      console.error('Modal with ID "myModal" not found.');
+      return;
+  }
+
+  // Verifica si el botón de cierre fue encontrado
+  if (!span) {
+      console.error('Element with class "close" not found.');
+      return;
+  }
+
+  // Añade el evento de clic a cada bloque de noticias
+  blogs.forEach(function(blog) {
+      blog.onclick = function(event) {
+          var title = blog.getAttribute("data-title");
+          var content = blog.getAttribute("data-content");
+          var image = blog.getAttribute("data-image");
+
+          // Actualiza el contenido del modal
+          modalTitle.textContent = title;
+          modalContent.textContent = content;
+          modalImage.src = image;
+
+          // Muestra el modal
+          modal.style.display = "block";
+      }
+  });
+
+  // Cuando el usuario hace clic en <span> (x), se cierra el modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // Cuando el usuario hace clic en cualquier parte fuera del modal, se cierra el modal
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+});
+
+
+ 
  // Función para desplazamiento suave
  function scrollToSection(event) {
   event.preventDefault(); // Evita el comportamiento por defecto del enlace
@@ -249,6 +345,9 @@ var swiper = new Swiper('.swiper-container', {
       prevEl: '.swiper-button-prev',
   },
 });
+
+
+
 
 
 
