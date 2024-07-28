@@ -364,6 +364,9 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
+//EXTRACION DE TEXTO DEL MODAL DE SERVICIOS
+
+
 
 
 
