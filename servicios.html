@@ -98,14 +98,13 @@ p {
 }
 
 .blog-txt {
-    padding: 1rem;
+    padding: 1.3rem;
     text-align: center;
 }
 .blog-1 .mas {
   width: 10%;
   height: auto;
   float: right;
-  margin-top: -30px;
   border-bottom: 0px solid #ccc;
   
 }
@@ -117,6 +116,44 @@ p {
     font-weight: bold; /* Hace que la letra sea más gruesa */
     font-family: 'Bebas Neue', cursive;
 }
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 .btn-4 {
   border-radius: 5px;
@@ -148,31 +185,35 @@ p {
 
 /* Estilos para el modal */
 .modal {
-    display: none;
+    display: none; /* Oculto por defecto */
     position: fixed;
-    z-index: 10000;
+    z-index: 1000; /* Por encima del resto del contenido */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
-    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo difuminado */
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 10px;
+    background-color: white;
+    margin: 5% auto; /* Centrar el modal */
+    padding: 20px;
     border: 1px solid #888;
-    width: 60%;
-    height: 70%;
+    width: 85%; /* 85% del ancho de la pantalla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.4s; /* Animación de entrada */
     border-radius: 2rem;
 }
 
-.modal-content p{
+.modal p{
     text-align: justify;
+}
+
+.modal-body {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
 }
 
 /* Estilos específicos para la imagen dentro del modal */
@@ -198,6 +239,10 @@ p {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+p{
+    margin-bottom: 0px;
 }
 
 
@@ -624,44 +669,78 @@ p {
             Elegí la mejor atención y asesoramiento para lo que necesites.
         </p>
         <div class="blog-content">
-            <div class="blog-1" data-title="Seguridad Empresarial" data-content="La seguridad empresarial es un conjunto de estrategias y medidas diseñadas para proteger los activos, la información y las personas dentro de una organización. Este ámbito incluye la implementación de sistemas de vigilancia, control de acceso, ciberseguridad y protocolos de emergencia, con el objetivo de prevenir y mitigar riesgos tanto internos como externos. A través de una combinación de tecnología avanzada y prácticas operativas efectivas, la seguridad empresarial busca crear un entorno seguro y confiable que permita a las empresas operar de manera eficiente y sin interrupciones." data-image="imagenes/imagen seguridad empresarial.jpg">
+            <!-- Blog 1 -->
+        <div class="blog-1" onclick="openModal('modal1')">
                 <img src="imagenes/imagen seguridad empresarial.jpg" alt="">
-                <div class="blog-txt">
+                    <div class="blog-txt">
                     <p>Seguridad Empresarial</p>
                     <img src="imagenes/mas.png" class="mas">
-                    
-                </div>
-            </div>
-        
-            <div class="blog-1" data-title="Instalación de cámaras de seguridad" data-content="La instalación de cámaras de seguridad es una medida esencial para garantizar la vigilancia y protección continuas en cualquier entorno empresarial o residencial. Estas cámaras, equipadas con tecnología avanzada, permiten monitorear en tiempo real y registrar actividades, ofreciendo una capa adicional de seguridad contra robos, vandalismo y otros incidentes.
-            El proceso de instalación implica un análisis detallado de las áreas a cubrir, la selección de equipos adecuados y la configuración de sistemas que aseguren una visualización clara y almacenamiento seguro de las grabaciones. Con una instalación profesional, se maximiza la eficiencia de la vigilancia, proporcionando a los usuarios tranquilidad y control sobre la seguridad de sus instalaciones." data-image="imagenes/imagen instalacion de camaras.jpg">
-                <img src="imagenes/imagen instalacion de camaras.jpg" alt="">
-                <div class="blog-txt">
-                    <p>Instalación de cámaras de seguridad</p>
-                    <img src="imagenes/mas.png" class="mas">
-                </div>
-            </div>
+                    </div>
+        </div>
 
-            <div class="blog-1" data-title="Servicio de limpieza" data-content="El servicio de limpieza profesional es fundamental para garantizar que los espacios empresariales y residenciales se mantengan impecables y saludables. Este servicio abarca desde la limpieza regular de oficinas, áreas comunes y baños, hasta la desinfección profunda y especializada de superficies y equipos.
-            Un equipo de limpieza bien entrenado utiliza productos y técnicas de alta calidad para eliminar suciedad, gérmenes y alérgenos, creando un ambiente más seguro y agradable para todos. Además, un entorno limpio y ordenado no solo mejora la apariencia del lugar, sino que también contribuye a la productividad y bienestar de los empleados y visitantes. Con un servicio de limpieza profesional, se asegura un estándar constante de higiene y presentación, adaptado a las necesidades específicas de cada cliente" data-image="imagenes/imagen servicio de limpieza.jpg">
-                <img src="imagenes/imagen servicio de limpieza.jpg" alt="">
+            <!-- Modal 1 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>Seguridad Empresarial</h2>
+                <img src="imagenes/imagen seguridad empresarial.jpg" alt="">
+                <p>La seguridad empresarial es un conjunto de estrategias y medidas diseñadas para proteger los activos, la información y las personas dentro de una organización.</p>
+                <p>Este ámbito incluye la implementación de sistemas de vigilancia, control de acceso, ciberseguridad y protocolos de emergencia, con el objetivo de prevenir y mitigar riesgos tanto internos como externos.</p>
+                <p>A través de una combinación de tecnología avanzada y prácticas operativas efectivas, la seguridad empresarial busca crear un entorno seguro y confiable que permita a las empresas operar de manera eficiente y sin interrupciones.</p>
+            <button class="btn-4">Contratar servicio</button>
+            </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="blog-1" onclick="openModal('modal2')">
+            <img src="imagenes/imagen instalacion de camaras.jpg" alt="">
                 <div class="blog-txt">
-                    <p>Servicio de limpieza</p>
-                    <img src="imagenes/mas.png" class="mas">
+                <p>Instalación de cámaras de seguridad</p>
+                <img src="imagenes/mas.png" class="mas">
                 </div>
+    </div>
+
+        <!-- Modal 2 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>Instalacion de cámaras de seguridad</h2>
+                <img src="imagenes/imagen instalacion de camaras.jpg" alt="">
+                <p>La instalación de cámaras de seguridad es una medida esencial para garantizar la vigilancia y protección continuas en cualquier entorno empresarial o residencial.</p>
+                <p>Estas cámaras, equipadas con tecnología avanzada, permiten monitorear en tiempo real y registrar actividades, ofreciendo una capa adicional de seguridad contra robos, vandalismo y otros incidentes.</p>
+                <p>El proceso de instalación implica un análisis detallado de las áreas a cubrir, la selección de equipos adecuados y la configuración de sistemas que aseguren una visualización clara y almacenamiento seguro de las grabaciones.</p>
+                <p>Con una instalación profesional, se maximiza la eficiencia de la vigilancia, proporcionando a los usuarios tranquilidad y control sobre la seguridad de sus instalaciones.</p>
+                <p>Este ámbito incluye la implementación de sistemas de vigilancia, control de acceso, ciberseguridad y protocolos de emergencia, con el objetivo de prevenir y mitigar riesgos tanto internos como externos.</p>
+                <p>A través de una combinación de tecnología avanzada y prácticas operativas efectivas, la seguridad empresarial busca crear un entorno seguro y confiable que permita a las empresas operar de manera eficiente y sin interrupciones.</p>
+            <button class="btn-4">Contratar servicio</button>
             </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="blog-1" onclick="openModal('modal2')">
+            <img src="imagenes/imagen instalacion de camaras.jpg" alt="">
+                <div class="blog-txt">
+                <p>Servicio de limpieza</p>
+                <img src="imagenes/mas.png" class="mas">
+                </div>
+    </div>
+
+        <!-- Modal 3 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>Instalacion de cámaras de seguridad</h2>
+                <img src="imagenes/imagen servicio de limpieza.jpg" alt="">
+                <p>El servicio de limpieza profesional es fundamental para garantizar que los espacios empresariales y residenciales se mantengan impecables y saludables.</p>
+                <p>Este servicio abarca desde la limpieza regular de oficinas, áreas comunes y baños, hasta la desinfección profunda y especializada de superficies y equipos.</p>
+                <p>Un equipo de limpieza bien entrenado utiliza productos y técnicas de alta calidad para eliminar suciedad, gérmenes y alérgenos, creando un ambiente más seguro y agradable para todos.</p>
+                <p>Además, un entorno limpio y ordenado no solo mejora la apariencia del lugar, sino que también contribuye a la productividad y bienestar de los empleados y visitantes.</p>
+                <p>Con un servicio de limpieza profesional, se asegura un estándar constante de higiene y presentación, adaptado a las necesidades específicas de cada cliente</p>
+            <button class="btn-4">Contratar servicio</button>
+            </div>
+        </div>
+
             
-        
-            <!-- Modal -->
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2 id="modalTitle"></h2>
-                    <img id="modalImage" src="" alt="">
-                    <p id="modalContent"></p>
-                    <button class="btn-4">Contratar servicio</button>
-                </div>
-            </div>
         </div>
     </section>
 

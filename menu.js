@@ -364,7 +364,24 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
-//EXTRACION DE TEXTO DEL MODAL DE SERVICIOS
+//PARRAFOS DEL MODAL DE SERVICIOS
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
+
+// Cerrar el modal cuando el usuario hace clic fuera del contenido del modal
+window.onclick = function(event) {
+  const modals = document.getElementsByClassName('modal');
+  for (let i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+          modals[i].style.display = "none";
+      }
+  }
+}
 
 
 
