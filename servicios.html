@@ -117,28 +117,7 @@ p {
     font-family: 'Bebas Neue', cursive;
 }
 
-/* Estilos para el modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-}
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
 
 .close {
     color: #aaa;
@@ -157,7 +136,7 @@ p {
 
 .btn-4 {
   border-radius: 5px;
-  margin-left: 50%;
+  margin-left: 70%;
   bottom: 1rem;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -192,7 +171,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: auto; /* Permitir desplazamiento en la ventana del modal */
     background-color: rgba(0, 0, 0, 0.5); /* Fondo difuminado */
 }
 
@@ -202,29 +181,42 @@ p {
     padding: 20px;
     border: 1px solid #888;
     width: 85%; /* 85% del ancho de la pantalla */
+    max-height: 90%; /* Limitar la altura máxima del modal */
+    overflow-y: auto; /* Permitir desplazamiento vertical dentro del modal */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.4s; /* Animación de entrada */
     border-radius: 2rem;
 }
 
-.modal p{
+.modal p {
     text-align: justify;
 }
 
-.modal-body {
-    display: flex;
-    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* Estilos específicos para la imagen dentro del modal */
+/* Contenedor del cuerpo del modal */
+.modal-body {
+    display: flex;
+    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
+    flex-wrap: wrap; /* Permite que el texto se mueva debajo de la imagen si es necesario */
+}
+
 .modal-content img {
-    float: left;
+  float: left;
   margin-right: 10px;
-  width: 45%;
+  width: 35%;
   height: auto;
   transition: opacity 0.3s ease;
   border-radius: 2rem;
   box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.5);
+  margin-bottom: -3rem;
+}
+
+.modal-text {
+    flex: 1; /* El texto ocupa el resto del espacio disponible */
 }
 
 .close {
@@ -633,7 +625,35 @@ p {
     .blog-1 {
         margin-bottom: 15px;
     }
+
+    .modal-content {
+        width: 95%; /* Ancho del modal en móvil */
+        margin: 10% auto; /* Aumentar margen superior en móvil */
+    }
+
+    .modal-body {
+        flex-direction: column; /* En modo móvil, coloca la imagen y el texto en columna */
+        align-items: center; /* Alinear elementos al centro en móvil */
+    }
+    .modal-content img {
+        float: left;
+        margin-right: 10px;
+        width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.9);
+        margin-bottom: 1rem;
 }
+
+    .modal-body img {
+        width: 100%; /* Imagen toma el ancho completo en móvil */
+        margin-right: 0; /* Eliminar margen derecho en móvil */
+        margin-bottom: 20px; /* Espacio entre la imagen y el texto en móvil */
+    }
+}   
+    
+
 
     </style>
 </head>
@@ -717,8 +737,8 @@ p {
         </div>
 
         <!-- Blog 3 -->
-        <div class="blog-1" onclick="openModal('modal2')">
-            <img src="imagenes/imagen instalacion de camaras.jpg" alt="">
+        <div class="blog-1" onclick="openModal('modal3')">
+            <img src="imagenes/imagen servicio de limpieza.jpg" alt="">
                 <div class="blog-txt">
                 <p>Servicio de limpieza</p>
                 <img src="imagenes/mas.png" class="mas">
@@ -726,10 +746,10 @@ p {
     </div>
 
         <!-- Modal 3 -->
-        <div id="modal2" class="modal">
+        <div id="modal3" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('modal2')">&times;</span>
-                <h2>Instalacion de cámaras de seguridad</h2>
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>Servicio de limpieza</h2>
                 <img src="imagenes/imagen servicio de limpieza.jpg" alt="">
                 <p>El servicio de limpieza profesional es fundamental para garantizar que los espacios empresariales y residenciales se mantengan impecables y saludables.</p>
                 <p>Este servicio abarca desde la limpieza regular de oficinas, áreas comunes y baños, hasta la desinfección profunda y especializada de superficies y equipos.</p>
