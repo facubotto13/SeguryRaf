@@ -140,6 +140,9 @@ body, html {
     width: 6rem;
     height: auto;
 }
+.navbar .logo-cabeza:focus{
+    outline: none;
+}
 
 /* Estilos del contenido del header */
 .header-content {
