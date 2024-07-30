@@ -168,29 +168,29 @@ p {
 
 /* Estilos para el modal */
 .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 1000; /* Por encima del resto del contenido */
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed; /* Mantener el modal fijo en la pantalla */
+    z-index: 10000; /* Asegurar que el modal esté por encima de otros elementos */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Permitir desplazamiento en la ventana del modal */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo difuminado */
+    overflow: auto; /* Permitir scroll si el contenido es grande */
+    background-color: rgba(0,0,0,0.5); /* Fondo semi-transparente */
 }
 
 .modal-content {
+    overflow: hidden; /* Limpia el float */
     background-color: white;
     margin: 5% auto; /* Centrar el modal */
     padding: 20px;
     border: 1px solid #888;
     width: 85%; /* 85% del ancho de la pantalla */
-    max-height: 90%; /* Limitar la altura máxima del modal */
-    overflow-y: auto; /* Permitir desplazamiento vertical dentro del modal */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.4s; /* Animación de entrada */
     border-radius: 2rem;
 }
+
 
 .modal p {
     text-align: justify;
@@ -199,13 +199,13 @@ p {
 h2 {
   text-align: center;
   margin-bottom: 2rem;
+  bottom: 1rem;
 }
 
 /* Contenedor del cuerpo del modal */
 .modal-body {
     display: flex;
-    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
-    flex-wrap: wrap; /* Permite que el texto se mueva debajo de la imagen si es necesario */
+    align-items: flex-start;
 }
 
 .modal-content img {
@@ -216,7 +216,6 @@ h2 {
   transition: opacity 0.3s ease;
   border-radius: 2rem;
   box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.5);
-  margin-bottom: -3rem;
 }
 
 .modal-text {
@@ -468,6 +467,13 @@ button[type="submit"]:hover {
     border-radius: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
 }
+.custom-line {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin: 10px 0;
+}
+
 
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
@@ -722,6 +728,24 @@ p {
         margin-right: 0; /* Eliminar margen derecho en móvil */
         margin-bottom: 20px; /* Espacio entre la imagen y el texto en móvil */
     }
+
+    .close {
+    color: #aaa;
+    position: absolute; /* Posicionar de manera absoluta dentro del contenedor del modal */
+    top: 2rem;
+    right: 1rem;
+    margin-right: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 }   
     
 
@@ -773,21 +797,30 @@ p {
 <div id="modal1" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal1')">&times;</span>
-        <h2>Seguridad Empresarial</h2>
-        <img src="imagenes/imagen seguridad empresarial.jpg" alt="">
-        <p>La seguridad empresarial es un conjunto de estrategias y medidas diseñadas para proteger los activos, la información y las personas dentro de una organización.</p>
-        <p>Este ámbito incluye la implementación de sistemas de vigilancia, control de acceso, ciberseguridad y protocolos de emergencia, con el objetivo de prevenir y mitigar riesgos tanto internos como externos.</p>
-        <p>A través de una combinación de tecnología avanzada y prácticas operativas efectivas, la seguridad empresarial busca crear un entorno seguro y confiable que permita a las empresas operar de manera eficiente y sin interrupciones.</p>
-        <button class="btn-4" onclick="openModal('modalForm1')">Solicitar presupuesto</button>
+        <div class="modal-body">
+            <img src="imagenes/imagen seguridad empresarial.jpg" alt="Seguridad Empresarial" class="modal-image">
+            <div class="modal-text">
+                <h2>Seguridad Empresarial</h2>
+                <hr class="custom-line">
+                <p>La seguridad empresarial es un conjunto de estrategias y medidas diseñadas para proteger los activos, la información y las personas dentro de una organización.</p>
+                <p>Este ámbito incluye la implementación de sistemas de vigilancia, control de acceso, ciberseguridad y protocolos de emergencia, con el objetivo de prevenir y mitigar riesgos tanto internos como externos.</p>
+                <p>A través de una combinación de tecnología avanzada y prácticas operativas efectivas, la seguridad empresarial busca crear un entorno seguro y confiable que permita a las empresas operar de manera eficiente y sin interrupciones.</p>
+            </div>
+        </div>
+        <hr class="custom-line">
+        <div class="button-container">
+            <button class="btn-4" onclick="openModal('modalForm1')">Solicitar presupuesto</button>
+        </div>
     </div>
 </div>
+
 
 <!-- Modal Formulario 1 -->
 <div id="modalForm1" class="modal">
     <div class="modal_form-content">
         <span class="close" onclick="closeModal('modalForm1')">&times;</span>
         <h2>Servicio de Seguridad Empresarial</h2>
-        <form action="enviar_solicitud.php" method="post">
+        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
                 <input type="text" id="name" name="name" required>
@@ -835,15 +868,21 @@ p {
         <div id="modal2" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal2')">&times;</span>
-                <h2>Instalacion de cámaras de seguridad</h2>
-                <img src="imagenes/imagen instalacion de camaras.jpg" alt="">
-                <p>La instalación de cámaras de seguridad es una medida esencial para garantizar la vigilancia y protección continuas en cualquier entorno empresarial o residencial.</p>
-                <p>Estas cámaras, equipadas con tecnología avanzada, permiten monitorear en tiempo real y registrar actividades, ofreciendo una capa adicional de seguridad contra robos, vandalismo y otros incidentes.</p>
-                <p>El proceso de instalación implica un análisis detallado de las áreas a cubrir, la selección de equipos adecuados y la configuración de sistemas que aseguren una visualización clara y almacenamiento seguro de las grabaciones.</p>
-                <p>Con una instalación profesional, se maximiza la eficiencia de la vigilancia, proporcionando a los usuarios tranquilidad y control sobre la seguridad de sus instalaciones.</p>
-                <p>Este ámbito incluye la implementación de sistemas de vigilancia, control de acceso, ciberseguridad y protocolos de emergencia, con el objetivo de prevenir y mitigar riesgos tanto internos como externos.</p>
-                <p>A través de una combinación de tecnología avanzada y prácticas operativas efectivas, la seguridad empresarial busca crear un entorno seguro y confiable que permita a las empresas operar de manera eficiente y sin interrupciones.</p>
-            <button class="btn-4">Contratar servicio</button>
+                <div class="modal-body">
+                    <img src="imagenes/imagen instalacion de camaras.jpg" alt="Instalacion de camaras de seguridad" class="modal-image">
+                    <div class="modal-text">
+                        <h2>Instalación de camaras de seguridad</h2>
+                        <hr class="custom-line">
+                        <p>La instalación de cámaras de seguridad es una medida esencial para garantizar la vigilancia y protección continuas en cualquier entorno empresarial o residencial.</p>
+                        <p>Estas cámaras, equipadas con tecnología avanzada, permiten monitorear en tiempo real y registrar actividades, ofreciendo una capa adicional de seguridad contra robos, vandalismo y otros incidentes.</p>
+                        <p>El proceso de instalación implica un análisis detallado de las áreas a cubrir, la selección de equipos adecuados y la configuración de sistemas que aseguren una visualización clara y almacenamiento seguro de las grabaciones.</p>
+                        <p>Con una instalación profesional, se maximiza la eficiencia de la vigilancia, proporcionando a los usuarios tranquilidad y control sobre la seguridad de sus instalaciones</p>
+                    </div>
+                </div>
+                <hr class="custom-line">
+                <div class="button-container">
+                    <button class="btn-4" onclick="openModal('modalForm2')">Solicitar presupuesto</button>
+                </div>
             </div>
         </div>
 
@@ -860,14 +899,22 @@ p {
         <div id="modal3" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal3')">&times;</span>
-                <h2>Servicio de limpieza</h2>
-                <img src="imagenes/imagen servicio de limpieza.jpg" alt="">
-                <p>El servicio de limpieza profesional es fundamental para garantizar que los espacios empresariales y residenciales se mantengan impecables y saludables.</p>
-                <p>Este servicio abarca desde la limpieza regular de oficinas, áreas comunes y baños, hasta la desinfección profunda y especializada de superficies y equipos.</p>
-                <p>Un equipo de limpieza bien entrenado utiliza productos y técnicas de alta calidad para eliminar suciedad, gérmenes y alérgenos, creando un ambiente más seguro y agradable para todos.</p>
-                <p>Además, un entorno limpio y ordenado no solo mejora la apariencia del lugar, sino que también contribuye a la productividad y bienestar de los empleados y visitantes.</p>
-                <p>Con un servicio de limpieza profesional, se asegura un estándar constante de higiene y presentación, adaptado a las necesidades específicas de cada cliente</p>
-            <button class="btn-4">Contratar servicio</button>
+                <div class="modal-body">
+                    <img src="imagenes/imagen servicio de limpieza.jpg" alt="Servicio de limpieza" class="modal-image">
+                    <div class="modal-text">
+                        <h2>Servicio de limpieza</h2>
+                        <hr class="custom-line">
+                        <p>El servicio de limpieza profesional es fundamental para garantizar que los espacios empresariales y residenciales se mantengan impecables y saludables.</p>
+                        <p>Este servicio abarca desde la limpieza regular de oficinas, áreas comunes y baños, hasta la desinfección profunda y especializada de superficies y equipos.</p>
+                        <p>Un equipo de limpieza bien entrenado utiliza productos y técnicas de alta calidad para eliminar suciedad, gérmenes y alérgenos, creando un ambiente más seguro y agradable para todos.</p>
+                        <p>Además, un entorno limpio y ordenado no solo mejora la apariencia del lugar, sino que también contribuye a la productividad y bienestar de los empleados y visitantes.</p>
+                        <p>Con un servicio de limpieza profesional, se asegura un estándar constante de higiene y presentación, adaptado a las necesidades específicas de cada cliente.</p>
+                    </div>
+                </div>
+                <hr class="custom-line">
+                <div class="button-container">
+                    <button class="btn-4" onclick="openModal('modalForm3')">Solicitar presupuesto</button>
+                </div>
             </div>
         </div>
 

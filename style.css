@@ -285,7 +285,6 @@ body, html {
 
 .blog-1:hover .blog-txt{
     opacity: 1; /* El texto se vuelve visible */
-    margin-bottom: 3px;
 }
 
 /* Opcional: Estilo para el botón "Leer más" */
