@@ -1,4 +1,23 @@
- //MODAL SERVICIO
+//HISTORIA MODO PRESENTACION
+document.addEventListener('DOMContentLoaded', () => {
+  const elementsToShow = document.querySelectorAll('.story-image, .story-text');
+
+  const animateOnScroll = () => {
+      elementsToShow.forEach(element => {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+
+          if (rect.top < windowHeight && rect.bottom > 0) {
+              element.classList.add('show');
+          }
+      });
+  };
+
+  window.addEventListener('scroll', animateOnScroll);
+  animateOnScroll(); // Ejecuta la función al cargar la página
+});
+
+//MODAL SERVICIO
 document.addEventListener('DOMContentLoaded', (event) => {
   var modal = document.getElementById("myModal");
   var blog1 = document.querySelector(".blog-1");
