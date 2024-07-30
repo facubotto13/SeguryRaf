@@ -819,7 +819,7 @@ p {
 <div id="modalForm1" class="modal">
     <div class="modal_form-content">
         <span class="close" onclick="closeModal('modalForm1')">&times;</span>
-        <h2>Servicio de Seguridad Empresarial</h2>
+        <h2>Seguridad Empresarial</h2>
         <hr class="custom-line">
         <form action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
@@ -843,7 +843,7 @@ p {
                     <option value="control_ingresos">Control de ingresos</option>
                     <option value="instalacion_camaras">Instalación de cámaras</option>
                     <option value="vigilancia_rutas">Vigilancia en rutas</option>
-                    <option value="seguridad_eventos">Seguridad de eventos</option>
+                    <option value="seguridad_eventos" selected>Seguridad de eventos</option>
                     <option value="limpieza">Limpieza</option>
                 </select>
             </div>
@@ -887,6 +887,47 @@ p {
             </div>
         </div>
 
+        <!-- Modal Formulario 2 -->
+<div id="modalForm2" class="modal">
+    <div class="modal_form-content">
+        <span class="close" onclick="closeModal('modalForm2')">&times;</span>
+        <h2>Instalación de camaras de seguridad</h2>
+        <hr class="custom-line">
+        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+            <div class="form-group">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Servicio deseado:</label>
+                <select id="service" name="service" required>
+                    <option value="">Seleccione un servicio</option>
+                    <option value="vigilancia">Vigilancia</option>
+                    <option value="monitoreo">Monitoreo</option>
+                    <option value="control_ingresos">Control de ingresos</option>
+                    <option value="instalacion_camaras" selected>Instalación de cámaras</option>
+                    <option value="vigilancia_rutas">Vigilancia en rutas</option>
+                    <option value="seguridad_eventos">Seguridad de eventos</option>
+                    <option value="limpieza">Limpieza</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje adicional:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit">Enviar solicitud</button>
+        </form>
+    </div>
+</div>
+
         <!-- Blog 3 -->
         <div class="blog-1" onclick="openModal('modal3')">
             <img src="imagenes/imagen servicio de limpieza.jpg" alt="">
@@ -918,6 +959,47 @@ p {
                 </div>
             </div>
         </div>
+
+        <!-- Modal Formulario 3 -->
+<div id="modalForm3" class="modal">
+    <div class="modal_form-content">
+        <span class="close" onclick="closeModal('modalForm3')">&times;</span>
+        <h2>Servicio de Limpieza</h2>
+        <hr class="custom-line">
+        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+            <div class="form-group">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Servicio deseado:</label>
+                <select id="service" name="service" required>
+                    <option value="">Seleccione un servicio</option>
+                    <option value="vigilancia">Vigilancia</option>
+                    <option value="monitoreo">Monitoreo</option>
+                    <option value="control_ingresos">Control de ingresos</option>
+                    <option value="instalacion_camaras">Instalación de cámaras</option>
+                    <option value="vigilancia_rutas">Vigilancia en rutas</option>
+                    <option value="seguridad_eventos">Seguridad de eventos</option>
+                    <option value="limpieza" selected>Limpieza</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje adicional:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit">Enviar solicitud</button>
+        </form>
+    </div>
+</div>
 
             
         </div>
