@@ -336,10 +336,11 @@ body, html {
 .close-btn {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-}
+    margin-right: 10px;
+  }
 
 .close-btn:hover,
 .close-btn:focus {
