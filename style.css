@@ -431,7 +431,7 @@ body, html {
     position: fixed;
     bottom: 20px; /* Espacio desde la parte inferior */
     right: 20px; /* Espacio desde la parte derecha */
-    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+    z-index: 500; /* Asegura que el botón esté por encima de otros elementos */
 }
 
 
