@@ -611,4 +611,35 @@ body, html {
         width: 80px; /* Reduce el tamaño de la imagen */
         height: 80px;
     }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 10px;
+        border: 1px solid #888;
+        width: 90%;
+        height: auto;
+        border-radius: 2rem;
+    }
+    
+        .modal-body {
+            flex-direction: column; /* En modo móvil, coloca la imagen y el texto en columna */
+            align-items: center; /* Alinear elementos al centro en móvil */
+        }
+        .modal-content img {
+            float: left;
+            margin-right: 10px;
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+            border-radius: 2rem;
+            box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.9);
+            margin-bottom: 1rem;
+    }
+    
+        .modal-body img {
+            width: 100%; /* Imagen toma el ancho completo en móvil */
+            margin-right: 0; /* Eliminar margen derecho en móvil */
+            margin-bottom: 20px; /* Espacio entre la imagen y el texto en móvil */
+        }
 }
