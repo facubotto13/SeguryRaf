@@ -444,6 +444,29 @@ body, html {
     z-index: 500; /* Asegura que el botón esté por encima de otros elementos */
 }
 
+.service-imagen-container {
+    position: relative; /* Contenedor relativo para la imagen grande */
+    width: 100%;
+    height: auto;
+}
+
+.service-imagen {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+    border-radius: 1rem;
+}
+
+.mas {
+    position: absolute;
+    bottom: 10px; /* Ajusta el valor según sea necesario */
+    right: 10px;  /* Ajusta el valor según sea necesario */
+    width: 10%;
+    height: auto;
+    margin-left: 0; /* No se necesita margen a la izquierda */
+    border-bottom: 0px solid #ccc; /* No se necesita borde */
+}
+
 
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
@@ -652,4 +675,29 @@ body, html {
             margin-right: 0; /* Eliminar margen derecho en móvil */
             margin-bottom: 20px; /* Espacio entre la imagen y el texto en móvil */
         }
+
+        .service-imagen-container {
+            position: relative; /* Contenedor relativo para la imagen grande */
+            width: 100%;
+            height: auto;
+        }
+        
+        .service-imagen {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+            border-radius: 1rem;
+        }
+        
+        .mas {
+            position: absolute;
+            bottom: 10px; /* Ajusta el valor según sea necesario */
+            right: 10px;  /* Ajusta el valor según sea necesario */
+            width: 10%;
+            height: auto;
+            margin-left: 0; /* No se necesita margen a la izquierda */
+            border-bottom: 0px solid #ccc; /* No se necesita borde */
+        }
+        
+        
 }

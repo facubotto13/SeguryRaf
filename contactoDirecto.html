@@ -137,32 +137,35 @@ p {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
 }
 
 .form-group input,
+.form-group select,
 .form-group textarea {
-    width: 100%;
-    padding: 10px 0;
+    width: calc(100% - 0px); /* Ajuste para el padding */
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #4C87C1;
-    outline: none;
-    box-shadow: 0 0 5px rgba(145, 38, 76, 0.5);
+.form-group textarea {
+    resize: vertical;
 }
 
-
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 button[type="submit"]:hover {
-    background-color: #18446F;
+    background-color: #45a049;
 }
 
-/* Estilos del footer */
 /* Estilos del footer */
 .footer {
     background-color: #d1d0d0; /* Fondo oscuro */
@@ -331,13 +334,19 @@ button[type="submit"]:hover {
 }
 
 .botonera {
-    margin-top: -130px;
+    margin-top: -150px;
+    text-align: center;
+}
+.botonera button{
+    height: 5rem;
+    width: 20rem;
+    margin-top: 1rem;
 }
 
 
  /* Estilos para el botón */
         #contacto-Contratar {
-        padding: 10px 20px;
+        
         font-size: 25px;
         background-color: #007bff;
         color: white;
@@ -348,7 +357,7 @@ button[type="submit"]:hover {
         transition: transform 0.3s, box-shadow 0.3s;
         }
         #contacto-Otro {
-        padding: 10px 20px;
+        
         font-size: 25px;
         background-color: #007bff;
         color: white;
@@ -359,7 +368,7 @@ button[type="submit"]:hover {
         transition: transform 0.3s, box-shadow 0.3s;
         }
         #contacto-Otro2 {
-        padding: 10px 20px;
+        
         font-size: 25px;
         background-color: #007bff;
         color: white;
@@ -383,26 +392,32 @@ button[type="submit"]:hover {
         }
         /* Estilos para el modal */
         .modal {
-            display: none; /* Oculto por defecto */
+            display: none;
             position: fixed;
-            z-index: 1000000;
+            z-index: 100000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con opacidad */
+            background-color: rgba(0, 0, 0, 0.9);
+            padding-top: 60px;
         }
         .modal-content {
-            background-color: white;
-            margin: 10% auto; /* 10% de margen superior */
+            background-color: #fefefe;
+            margin: 5% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
-            max-width: 500px; /* Ancho máximo del modal */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 0.5s;
+            max-width: 500px;
+            border-radius: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9); 
+        }
+        .modal-content label{
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -420,102 +435,18 @@ button[type="submit"]:hover {
             text-decoration: none;
             cursor: pointer;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        button[type="submit"] {
-            padding: 10px 20px;
-            background-color: #2863a7;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            
-        }
-        button[type="submit"]:hover {
-            background-color: #65a8f4;
-        }
-    .botonera{
-        text-align:center;
-        margin-bottom: 4rem;
-    }
-    .botonera button{
-        margin-left: 2rem;
-        text-align:center;
-        width: 20rem;
-        height: 7rem;
-        font-size: 25px;
-    }
-    form button {
-    width: 200px; /* Ajusta el ancho del botón según tus necesidades */
-    height: 50px; /* Ajusta la altura del botón según tus necesidades */
+
+        .custom-line {
+  border: none;
+  height: 2px;
+  background-color: #000;
+  margin: 10px 0;
 }
+     
 
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
 
-    form button {
-    width: 200px; /* Ajusta el ancho del botón según tus necesidades */
-    height: 50px; /* Ajusta la altura del botón según tus necesidades */
-}
-
-/* Estilos para el botón */
-#contacto-Contratar {
-        padding: 10px 20px;
-        font-size: 20px;
-        background-color: #007bff;
-        color: white;
-        border: 1px solid #0056b3;
-        border-bottom-width: 4px; /* Grosor del borde inferior */
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-        transition: transform 0.3s, box-shadow 0.3s;
-        }
-        #contacto-Otro {
-        padding: 10px 20px;
-        font-size: 20px;
-        background-color: #007bff;
-        color: white;
-        border: 1px solid #0056b3;
-        border-bottom-width: 4px; /* Grosor del borde inferior */
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-        transition: transform 0.3s, box-shadow 0.3s;
-        }
-        #contacto-Otro2 {
-        padding: 10px 20px;
-        font-size: 20px;
-        background-color: #007bff;
-        color: white;
-        border: 1px solid #0056b3;
-        border-bottom-width: 4px; /* Grosor del borde inferior */
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-        transition: transform 0.3s, box-shadow 0.3s;
-        }
-        #contacto-Contratar:hover {
-        transform: translateY(2px); /* Efecto de elevación */
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
-        }
-        #contacto-Otro:hover {
-        transform: translateY(2px); /* Efecto de elevación */
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
-        }
-        #contacto-Otro2:hover {
-        transform: translateY(2px); /* Efecto de elevación */
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
-        }
 
         .botonera{
         display: flex; /* Usa flexbox para alinear elementos */
@@ -523,15 +454,16 @@ button[type="submit"]:hover {
         justify-content: center; /* Centra horizontalmente los elementos */
         align-items: center; /* Centra verticalmente los elementos */
         height: 10rem; /* Ajusta la altura según tu diseño */
-        margin-top: 0;
-        margin-left: -2rem;
+        margin-top: 130px;
     }
         .botonera button{
-        margin-top: 5px;
-        width: 20rem;
-        height: 6rem;
-        font-size: 1.5rem; /* Ajusta el tamaño de la letra según tus necesidades */
-        text-align: center; /* Centra el texto dentro del botón */
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        
 
     }
     #background-video {
@@ -666,39 +598,6 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
     margin-top: 2rem;
 }
 
-.contact-form-container {
-    max-width: 85%;
-    padding: 15px; /* Reduce el padding general */
-    box-shadow: none; /* Elimina la sombra en pantallas más pequeñas */
-    margin-top: -90px;
-}
-
-.contact-form-container h2 {
-    font-size: 1.8em; /* Reduce el tamaño del título */
-    margin-bottom: 15px; /* Añade un margen inferior para separar del formulario */
-}
-
-.contact-form-container h2::after {
-    width: 60px; /* Reduce el ancho de la línea */
-}
-
-.form-group label {
-    font-size: 0.9em; /* Reduce el tamaño del texto de etiqueta */
-}
-
-.form-group input,
-.form-group textarea {
-    width: 95%;
-    padding: 8px; /* Ajusta el padding interior */
-    font-size: 0.9em; /* Reduce el tamaño del texto de entrada */
-}
-
-button[type="submit"] {
-    width: 80%; /* Ancho del botón según tus necesidades */
-    height: 50px; /* Altura del botón según tus necesidades */
-    font-size: 1rem; /* Tamaño de la fuente del botón */
-    margin-top: 1rem; /* Espacio opcional encima del botón */
-}
 .container-map {
     margin: 0 auto;
     padding: 20px;
@@ -773,6 +672,7 @@ button[type="submit"] {
 .blog-1 {
     margin-bottom: 15px;
 }
+
 }
 
     </style>
@@ -795,6 +695,7 @@ button[type="submit"] {
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Contratar un servicio</h2>
+            <hr class="custom-line">
             <form action="enviar_solicitud.php" method="post">
                 <div class="form-group">
                     <label for="name">Nombre completo:</label>
@@ -835,6 +736,7 @@ button[type="submit"] {
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Trabaja con nosotros</h2>
+        <hr class="custom-line">
         <form action="https://formspree.io/f/xrbzqpgg" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
@@ -880,6 +782,7 @@ button[type="submit"] {
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>SeguryRaf</h2>
+            <hr class="custom-line">
         <form method="POST" action="https://formsubmit.co/joaquin_sola@hotmail.com">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
