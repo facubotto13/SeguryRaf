@@ -467,6 +467,7 @@ button[type="submit"]:hover {
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-size: 20px;
         
 
     }
@@ -576,6 +577,11 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
 .logo {
     display: none;
 }
+h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 3rem;
+}
 .header {
         min-height: 20vh;
         height: 12rem;
@@ -599,7 +605,7 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
 
 .header h1 {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 6rem;
 }
 
 .container-map {
@@ -615,7 +621,7 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
 
 .container-map .text {
     background-color: #f2f2f2; /* Fondo gris más claro */
-    width: 20rem;
+    width: 17.5rem;
     margin: auto;
     margin-top: 1rem;
 }
@@ -677,6 +683,14 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
     margin-bottom: 15px;
 }
 
+.botonera {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    margin-top: 13rem;
+  }
 }
 
     </style>
@@ -716,14 +730,10 @@ height: auto; /* Ajusta la altura automáticamente para mantener la proporción 
                 <div class="form-group">
                     <label for="service">Servicio deseado:</label>
                     <select id="service" name="service" required>
-                        <option value="">Seleccione un servicio</option>
-                        <option value="vigilancia">Vigilancia</option>
-                        <option value="monitoreo">Monitoreo</option>
-                        <option value="control_ingresos">Control de ingresos</option>
-                        <option value="instalacion_camaras">Instalación de cámaras</option>
-                        <option value="vigilancia_rutas">Vigilancia en rutas</option>
-                        <option value="seguridad_eventos">Seguridad de eventos</option>
-                        <option value="limpieza">Limpieza</option>
+                        <option value="" selected>Seleccione un servicio</option>
+                        <option value="seguridad_eventos" >Seguridad empresarial</option>
+                        <option value="instalacion_camaras">Instalación de cámaras de seguridad</option>
+                        <option value="limpieza">Servicio de limpieza</option>
                     </select>
                 </div>
                 <div class="form-group">
