@@ -176,7 +176,7 @@ p {
     width: 100%;
     height: 100%;
     overflow: auto; /* Permitir scroll si el contenido es grande */
-    background-color: rgba(0,0,0,0.5); /* Fondo semi-transparente */
+    background-color: rgba(0,0,0,0.7); /* Fondo semi-transparente */
 }
 
 .modal-content {
@@ -471,14 +471,39 @@ button[type="submit"]:hover {
     width: 80%;
     max-width: 500px;
     max-height: 90%; /* Ajusta según sea necesario */
-    border-radius: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
     position: fixed;
     top: 10px; /* Ajusta según sea necesario */
     left: 50%;
     transform: translateX(-50%);
-    overflow-y: auto; 
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
 }
+
+/* Estilos para la barra de desplazamiento */
+.modal_form-content::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+    
+}
+
+.modal_form-content::-webkit-scrollbar-track {
+    background: #858383; /* Color de fondo de la pista de desplazamiento */
+}
+
+.modal_form-content::-webkit-scrollbar-thumb {
+    background: #007bff; /* Color de la barra de desplazamiento */
+    border-radius: 10px; /* Redondear las esquinas de la barra de desplazamiento */
+}
+
+.modal_form-content::-webkit-scrollbar-thumb:hover {
+    background: #007bff; /* Color de la barra de desplazamiento cuando se pasa el cursor por encima */
+}
+
+/* Ocultar las flechas de desplazamiento */
+.modal_form-content::-webkit-scrollbar-button {
+    display: none;
+}
+
+
 
 .modal_form label{
     display: block;
