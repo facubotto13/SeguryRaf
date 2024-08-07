@@ -48,6 +48,7 @@
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+    
 }
 
         .story-section {
@@ -101,12 +102,12 @@
             transform: translateY(0);
             margin-top: 20px;
             width: 100%;
-            height: 500px;
+            height: 100%;
         }
 
    
 
-        .company-logos {
+    .company-logos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -120,15 +121,23 @@
     align-items: center;
     opacity: 0; /* Oculta los logos inicialmente */
     animation: fadeIn 1s forwards; /* Aplica la animación de aparición */
+    background-color: #ffffff; /* Cambia el color según tu preferencia */
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 15px; /* Para redondear las esquinas */
+    width: calc(100% / 3 - 40px); /* Tres elementos por fila, restando los márgenes */
+    max-width: calc(100% / 3 - 40px);
+    box-sizing: border-box; /* Para incluir el padding y border en el ancho total */
 }
 
 .company img {
     width: 150px; /* Tamaño fijo para todas las imágenes */
     height: 150px; /* Asegurando que sean cuadradas */
-    object-fit: cover; /* Asegura que las imágenes se recorten adecuadamente */
+    object-fit: contain; /* Asegura que las imágenes se recorten adecuadamente */
     border-radius: 15px; /* Para redondear las esquinas */
     margin-bottom: 10px; /* Espacio entre la imagen y el texto */
 }
+
 .company p {
     font-size: 1rem; /* Ajusta el tamaño de la fuente */
     color: #333; /* Ajusta el color del texto */
@@ -562,21 +571,52 @@
                 <!-- Contenedor de imágenes -->
                 <div class="company-logos">
                     <div class="company" style="animation-delay: 0s;" >
-                        <img src="imagenes/BOCA.jpg" alt="Empresa 1">
-                        <p>Boca Juniors</p>
+                        <img src="imagenes/clientes/Banco Patagonia.png" alt="Empresa 1">
+                        <p>Banco Patagonia</p>
                     </div>
                     <div class="company" style="animation-delay: 0.5s;">
-                        <img src="imagenes/Rafaela.png" alt="Empresa 2">
-                        <p>Atletico de Rafaela</p>
+                        <img src="imagenes/clientes/Electro Luz.png" alt="Empresa 2">
+                        <p>Proyección Electroluz</p>
                     </div>
                     <div class="company" style="animation-delay: 1s;">
-                        <img src="imagenes/SantaFe.png" alt="Empresa 3">
-                        <p>Gobierno de Santa Fe</p>
+                        <img src="imagenes/clientes/Hospital de Ceres.jpg" alt="Empresa 3">
+                        <p>Hospital Regional de Ceres</p>
                     </div>
                     <div class="company" style="animation-delay: 1.5s;">
-                        <img src="imagenes/BSAS.png" alt="Empresa 4">
-                        <p>Gobierno de Ciudad</p>
-                        <p>de Buenos Aires</p>
+                        <img src="imagenes/clientes/John Deere.png" alt="Empresa 4">
+                        <p>John Deere</p>
+                    </div>
+                    <div class="company" style="animation-delay: 2s;">
+                        <img src="imagenes/clientes/Las Taperitas.png" alt="Empresa 5">
+                        <p>Las Taperitas</p>
+                    </div>
+                    <div class="company" style="animation-delay: 2.5s;">
+                        <img src="imagenes/clientes/Marengo.png" alt="Empresa 6">
+                        <p>Grupo Marengo</p>
+                    </div>
+                    <div class="company" style="animation-delay: 3s;">
+                        <img src="imagenes/clientes/Megatone.png" alt="Empresa 7">
+                        <p>Megatone</p>
+                    </div>
+                    <div class="company" style="animation-delay: 3.5s;">
+                        <img src="imagenes/clientes/Municipalidad de Rafaela.png" alt="Empresa 8">
+                        <p>Municipalidad de Rafaela</p>
+                    </div>
+                    <div class="company" style="animation-delay: 4s;">
+                        <img src="imagenes/clientes/Municipalidad de Sunchales.png" alt="Empresa 9">
+                        <p>Municipalidad de Sunchales</p>
+                    </div>
+                    <div class="company" style="animation-delay: 4.5s;">
+                        <img src="imagenes/clientes/Pinta Pub.png" alt="Empresa 10">
+                        <p>Pinta Pub</p>
+                    </div>
+                    <div class="company" style="animation-delay: 5s;">
+                        <img src="imagenes/clientes/Sueño dorado.png" alt="Empresa 11">
+                        <p>Sueño Dorado</p>
+                    </div>
+                    <div class="company" style="animation-delay: 5.5s;">
+                        <img src="imagenes/clientes/Valvulas 3B.png" alt="Empresa 12">
+                        <p>Válvulas 3b</p>
                     </div>
                     <!-- Agrega más imágenes según sea necesario -->
                 </div>
