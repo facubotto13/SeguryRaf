@@ -96,8 +96,9 @@ p {
 }
 
 .blog-1 img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* O puedes usar un ancho fijo, por ejemplo, width: 300px; */
+    height: 300px; /* Ajusta la altura fija según tus necesidades */
+    object-fit: cover; /* Mantiene la proporción y recorta lo necesario */
     border-bottom: 1px solid #ccc;
 }
 
@@ -854,7 +855,7 @@ button[type="submit"]:hover {
         <div class="blog-content">
             <!-- Blog 1 -->
 <div class="blog-1" onclick="openModal('modal1')">
-    <img src="imagenes/imagen seguridad empresarial.jpg" alt="">
+    <img src="imagenes/seguridad empresarial.jpg" alt="">
     <div class="blog-txt">
         <p>Seguridad empresarial</p>
         <img src="imagenes/mas.png" class="mas">
@@ -866,7 +867,7 @@ button[type="submit"]:hover {
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal1')">&times;</span>
         <div class="modal-body">
-            <img src="imagenes/imagen seguridad empresarial.jpg" alt="Seguridad Empresarial" class="modal-image">
+            <img src="imagenes/seguridad empresarial.jpg" alt="Seguridad Empresarial" class="modal-image">
             <div class="modal-text">
                 <h2>Seguridad empresarial</h2>
                 <hr class="custom-line">
@@ -922,7 +923,7 @@ button[type="submit"]:hover {
 
         <!-- Blog 2 -->
         <div class="blog-1" onclick="openModal('modal2')">
-            <img src="imagenes/imagen instalacion de camaras.jpg" alt="">
+            <img src="imagenes/instalacion camaras.jpeg" alt="">
                 <div class="blog-txt">
                 <p>Instalación de cámaras de seguridad</p>
                 <img src="imagenes/mas.png" class="mas">
@@ -934,7 +935,7 @@ button[type="submit"]:hover {
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal2')">&times;</span>
                 <div class="modal-body">
-                    <img src="imagenes/imagen instalacion de camaras.jpg" alt="Instalacion de camaras de seguridad" class="modal-image">
+                    <img src="imagenes/instalacion camaras.jpeg" alt="Instalacion de camaras de seguridad" class="modal-image">
                     <div class="modal-text">
                         <h2>Instalación de camaras de seguridad</h2>
                         <hr class="custom-line">
@@ -990,7 +991,7 @@ button[type="submit"]:hover {
 
         <!-- Blog 3 -->
         <div class="blog-1" onclick="openModal('modal3')">
-            <img src="imagenes/imagen servicio de limpieza.jpg" alt="">
+            <img src="imagenes/servicio limpieza.jpg" alt="">
                 <div class="blog-txt">
                 <p>Servicio de limpieza</p>
                 <img src="imagenes/mas.png" class="mas">
@@ -1002,7 +1003,7 @@ button[type="submit"]:hover {
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal3')">&times;</span>
                 <div class="modal-body">
-                    <img src="imagenes/imagen servicio de limpieza.jpg" alt="Servicio de limpieza" class="modal-image">
+                    <img src="imagenes/servicio limpieza.jpg" alt="Servicio de limpieza" class="modal-image">
                     <div class="modal-text">
                         <h2>Servicio de limpieza</h2>
                         <hr class="custom-line">
