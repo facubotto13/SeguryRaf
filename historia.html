@@ -408,12 +408,15 @@
         flex-direction: column; /* Cambia a una disposición de columna en pantallas más pequeñas */
         align-items: center; /* Centra los elementos */
         margin-top: -160px;
+        display: block;
     }
 
-    .story-image,
+    .story-image {
+        width: 100%; /* Asegura que ambos elementos ocupen todo el ancho disponible */
+    }
     .story-text {
-        max-width: 100%; /* Asegura que ambos elementos ocupen todo el ancho disponible */
-        margin-bottom: 20px; /* Añade espacio entre los elementos */
+        width: 100%; /* Asegura que ambos elementos ocupen todo el ancho disponible */
+        margin-bottom: 100px;
     }
 
     .story-text {
