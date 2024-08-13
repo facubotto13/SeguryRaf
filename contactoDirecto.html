@@ -755,7 +755,7 @@ h1 {
             <form action="enviar_solicitud.php" method="post">
                 <div class="form-group">
                     <label for="name">Nombre completo:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo electrónico:</label>
@@ -763,7 +763,7 @@ h1 {
                 </div>
                 <div class="form-group">
                     <label for="phone">Teléfono:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone" pattern="\d+" title="Solo números permitidos" required>
                 </div>
                 <div class="form-group">
                     <label for="service">Servicio deseado:</label>
@@ -776,7 +776,7 @@ h1 {
                 </div>
                 <div class="form-group">
                     <label for="message">Mensaje adicional:</label>
-                    <textarea id="message" name="message" rows="5"></textarea>
+                    <textarea id="message" name="message" rows="5" pattern="[A-Za-z0-9 ]+" title="Solo letras y números permitidos, sin caracteres especiales"></textarea>
                 </div>
                 <button type="submit">Enviar solicitud</button>
             </form>
@@ -792,7 +792,7 @@ h1 {
         <form action="https://formspree.io/f/xrbzqpgg" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -800,7 +800,7 @@ h1 {
             </div>
             <div class="form-group">
                 <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" pattern="\d+" title="Solo números permitidos" required>            
             </div>
             <div class="form-group">
                 <label for="position">Puesto al que aplica:</label>
@@ -813,7 +813,7 @@ h1 {
             </div>
             <div class="form-group">
                 <label for="message">Mensaje adicional:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+                <textarea id="message" name="message" rows="5" pattern="[A-Za-z0-9 ]+" title="Solo letras y números permitidos, sin caracteres especiales"></textarea>
             </div>
             <div class="form-group">
                 <label for="cv">Adjuntar currículum:</label>
@@ -834,7 +834,7 @@ h1 {
         <form method="POST" action="https://formsubmit.co/joaquin_sola@hotmail.com">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -842,11 +842,11 @@ h1 {
             </div>
             <div class="form-group">
                 <label for="subject">Asunto del mensaje:</label>
-                <input type="text" id="subject" name="subject" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z0-9 ]+" title="Solo letras  y numeros permitidos" required>
             </div>
             <div class="form-group">
                 <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" pattern="[A-Za-z0-9 ]+" title="Solo letras y números permitidos, sin caracteres especiales"></textarea>
             </div>
             <button type="submit">Enviar</button>
 

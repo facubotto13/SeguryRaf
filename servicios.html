@@ -410,6 +410,14 @@ p{
 .form-group {
     margin-bottom: 15px;
 }
+.error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+input:invalid, textarea:invalid {
+ border-color: red;
+ }
 
 .form-group label {
     display: block;
@@ -890,10 +898,11 @@ button[type="submit"]:hover {
         <span class="close" onclick="closeModal('modalForm1')">&times;</span>
         <h2>Seguridad empresarial</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+        <form id="myForm" action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+                <span class="error" id="nameError">Ingrese solo letras.</span>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -901,20 +910,22 @@ button[type="submit"]:hover {
             </div>
             <div class="form-group">
                 <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" pattern="\d+" title="Solo números permitidos" required>
+                <span class="error" id="phoneError">Ingrese solo números.</span>
             </div>
             <div class="form-group">
                 <label for="service">Servicio deseado:</label>
                 <select id="service" name="service" required>
                     <option value="">Seleccione un servicio</option>
-                    <option value="seguridad_eventos" selected>Seguridad empresarial</option>
+                    <option value="seguridad_eventos">Seguridad empresarial</option>
                     <option value="instalacion_camaras">Instalación de cámaras de seguridad</option>
-                    <option value="limpieza">Servicio de limpieza</option>
+                    <option value="limpieza" selected>Servicio de limpieza</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="message">Mensaje adicional:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+                <textarea id="message" name="message" rows="5" pattern="[A-Za-z0-9 ]+" title="Solo letras y números permitidos, sin caracteres especiales"></textarea>
+                <span class="error" id="messageError">Ingrese solo letras y números, sin caracteres especiales.</span>
             </div>
             <button type="submit">Enviar solicitud</button>
         </form>
@@ -958,10 +969,11 @@ button[type="submit"]:hover {
         <span class="close" onclick="closeModal('modalForm2')">&times;</span>
         <h2>Instalación de camaras de seguridad</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+        <form id="myForm" action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+                <span class="error" id="nameError">Ingrese solo letras.</span>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -969,20 +981,22 @@ button[type="submit"]:hover {
             </div>
             <div class="form-group">
                 <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" pattern="\d+" title="Solo números permitidos" required>
+                <span class="error" id="phoneError">Ingrese solo números.</span>
             </div>
             <div class="form-group">
                 <label for="service">Servicio deseado:</label>
                 <select id="service" name="service" required>
                     <option value="">Seleccione un servicio</option>
-                    <option value="seguridad_eventos" >Seguridad empresarial</option>
-                    <option value="instalacion_camaras" selected>Instalación de cámaras de seguridad</option>
-                    <option value="limpieza">Servicio de limpieza</option>
+                    <option value="seguridad_eventos">Seguridad empresarial</option>
+                    <option value="instalacion_camaras">Instalación de cámaras de seguridad</option>
+                    <option value="limpieza" selected>Servicio de limpieza</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="message">Mensaje adicional:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+                <textarea id="message" name="message" rows="5" pattern="[A-Za-z0-9 ]+" title="Solo letras y números permitidos, sin caracteres especiales"></textarea>
+                <span class="error" id="messageError">Ingrese solo letras y números, sin caracteres especiales.</span>
             </div>
             <button type="submit">Enviar solicitud</button>
         </form>
@@ -1026,10 +1040,11 @@ button[type="submit"]:hover {
         <span class="close" onclick="closeModal('modalForm3')">&times;</span>
         <h2>Servicio de Limpieza</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+        <form id="myForm" action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+                <span class="error" id="nameError">Ingrese solo letras.</span>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -1037,23 +1052,26 @@ button[type="submit"]:hover {
             </div>
             <div class="form-group">
                 <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" pattern="\d+" title="Solo números permitidos" required>
+                <span class="error" id="phoneError">Ingrese solo números.</span>
             </div>
             <div class="form-group">
                 <label for="service">Servicio deseado:</label>
                 <select id="service" name="service" required>
                     <option value="">Seleccione un servicio</option>
-                    <option value="seguridad_eventos" >Seguridad empresarial</option>
+                    <option value="seguridad_eventos">Seguridad empresarial</option>
                     <option value="instalacion_camaras">Instalación de cámaras de seguridad</option>
                     <option value="limpieza" selected>Servicio de limpieza</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="message">Mensaje adicional:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+                <textarea id="message" name="message" rows="5" pattern="[A-Za-z0-9 ]+" title="Solo letras y números permitidos, sin caracteres especiales"></textarea>
+                <span class="error" id="messageError">Ingrese solo letras y números, sin caracteres especiales.</span>
             </div>
             <button type="submit">Enviar solicitud</button>
         </form>
+        
     </div>
 </div>
 
