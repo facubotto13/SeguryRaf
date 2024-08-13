@@ -1,4 +1,12 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const companies = document.querySelectorAll('.company');
 
+  companies.forEach(company => {
+      company.style.animation = 'none';
+      company.offsetHeight; /* Trigger reflow */
+      company.style.animation = null;
+  });
+});
 // Opcional: Manejar el evento de entrada para ocultar el mensaje de error cuando el usuario empieza a escribir
 document.querySelectorAll('input, textarea').forEach(input => {
   input.addEventListener('input', function() {
