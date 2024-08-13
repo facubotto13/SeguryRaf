@@ -1,5 +1,4 @@
 
-
 // Opcional: Manejar el evento de entrada para ocultar el mensaje de error cuando el usuario empieza a escribir
 document.querySelectorAll('input, textarea').forEach(input => {
   input.addEventListener('input', function() {
@@ -207,8 +206,6 @@ function closeMenu() {
     }
   });
 
-  
-
 
 //FUNCION PARA QUE SE CIERRE EL MENU CUANDO ME DESPLAZO EN LA PANTALLA CON EL ANCLAJE #
 document.addEventListener("DOMContentLoaded", function() {
@@ -341,9 +338,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Cambia el fondo cada 6 segundos (6000 milisegundos)
   setInterval(changeBackground, 6000);
 });
-
-
-
 
 
 // Función para mostrar más noticias al hacer clic en el botón "Ver más"
