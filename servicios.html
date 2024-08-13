@@ -780,11 +780,20 @@ p {
     }
 
     .close {
-    color: #aaa;
+    color: #000000;
     position: absolute; /* Posicionar de manera absoluta dentro del contenedor del modal */
     top: 2rem;
     right: 1rem;
     margin-right: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-form{
+     color: #000000;
+    position: absolute; /* Posicionar de manera absoluta dentro del contenedor del modal */
+    top: -2px;
+    right: 1rem;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
@@ -815,7 +824,22 @@ button[type="submit"]:hover {
     background-color: #0d3d57;
 }
 }   
-    
+@media only screen and (min-width: 1920px) {
+    .header h1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  font-size: 3em;
+  text-align: center;
+  z-index: 1;
+}
+
+#noticias {
+  margin-top: -200px;
+}
+}  
 
 
     </style>
@@ -887,13 +911,13 @@ button[type="submit"]:hover {
 <!-- Modal Formulario 1 -->
 <div id="modalForm1" class="modal">
     <div class="modal_form-content">
-        <span class="close" onclick="closeModal('modalForm1')">&times;</span>
+        <span class="close-form" onclick="closeModal('modalForm1')">&times;</span>
         <h2>Seguridad empresarial</h2>
         <hr class="custom-line">
         <form action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -955,13 +979,13 @@ button[type="submit"]:hover {
         <!-- Modal Formulario 2 -->
 <div id="modalForm2" class="modal">
     <div class="modal_form-content">
-        <span class="close" onclick="closeModal('modalForm2')">&times;</span>
+        <span class="close-form" onclick="closeModal('modalForm2')">&times;</span>
         <h2>Instalación de camaras de seguridad</h2>
         <hr class="custom-line">
         <form action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -1023,13 +1047,13 @@ button[type="submit"]:hover {
         <!-- Modal Formulario 3 -->
 <div id="modalForm3" class="modal">
     <div class="modal_form-content">
-        <span class="close" onclick="closeModal('modalForm3')">&times;</span>
+        <span class="close-form" onclick="closeModal('modalForm3')">&times;</span>
         <h2>Servicio de Limpieza</h2>
         <hr class="custom-line">
         <form action="https://formspree.io/f/xrbzqpgg" method="POST">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
