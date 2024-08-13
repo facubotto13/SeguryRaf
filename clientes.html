@@ -107,13 +107,14 @@
 
    
 
-    .company-logos {
+        .company-logos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     align-items: flex-start; /* Asegura que todos los elementos se alineen en la parte superior */
 }
+
 .company {
     text-align: center;
     display: flex;
@@ -121,6 +122,7 @@
     align-items: center;
     opacity: 0; /* Oculta los logos inicialmente */
     animation: fadeIn 1s ease-in-out forwards; /* Aplica la animación de aparición */
+    animation-delay: 0s; /* Asegura que la animación se inicie de inmediato */
     background-color: #ffffff; /* Cambia el color según tu preferencia */
     justify-content: center;
     margin-bottom: 10px;
@@ -129,6 +131,18 @@
     max-width: calc(100% / 4 - 30px);
     box-sizing: border-box; /* Para incluir el padding y border en el ancho total */
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Puedes ajustar la cantidad de desplazamiento según lo necesites */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .company img {
     width: 150px; /* Tamaño fijo para todas las imágenes */
