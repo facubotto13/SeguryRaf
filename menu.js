@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD:js/menu.js
+
 document.addEventListener("DOMContentLoaded", function () {
   const companies = document.querySelectorAll('.company');
 
@@ -391,19 +390,6 @@ window.onclick = function(event) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-=======
-
-
 // Opcional: Manejar el evento de entrada para ocultar el mensaje de error cuando el usuario empieza a escribir
 document.querySelectorAll('input, textarea').forEach(input => {
   input.addEventListener('input', function() {
@@ -816,19 +802,6 @@ window.onclick = function(event) {
       }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> parent of 1c20baa (PROBAR):menu.js
-=======
 //HISTORIA MODO PRESENTACION
 document.addEventListener('DOMContentLoaded', () => {
   const elementsToShow = document.querySelectorAll('.story-image, .story-text');
@@ -1232,15 +1205,3 @@ window.onclick = function(event) {
       }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> parent of 8f742e6 (Expresiones regulares en formularios)
