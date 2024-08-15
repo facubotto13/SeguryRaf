@@ -1,12 +1,11 @@
-window.addEventListener('scroll', function() {
-  const scrollIndicator = document.querySelector('.scroll-indicator');
-  if (window.scrollY > 150) { // Ajusta el valor según sea necesario
-      scrollIndicator.style.display = 'none';
-  } else {
-      scrollIndicator.style.display = 'block';
+document.addEventListener('DOMContentLoaded', function() {
+  const showElement = document.querySelector('.show');
+  
+  // Muestra el elemento de inmediato sin esperar a hacer scroll
+  if (showElement) {
+      showElement.classList.add('visible');
   }
 });
-
 
 //HISTORIA MODO PRESENTACION
 document.addEventListener('DOMContentLoaded', () => {
