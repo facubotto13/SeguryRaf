@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const elements = document.querySelectorAll('.story-image, .story-text, .company');
+  elements.forEach(element => {
+      element.classList.add('show');
+  });
+});
+
 //HISTORIA MODO PRESENTACION
 document.addEventListener('DOMContentLoaded', () => {
   const elementsToShow = document.querySelectorAll('.story-image, .story-text');
