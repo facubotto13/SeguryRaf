@@ -1,3 +1,9 @@
+//DESHABILITAR CLICK DERECHO
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const showElement = document.querySelector('.show');
   
@@ -208,7 +214,7 @@ function closeMenu() {
         });
       });
     } else {
-      console.error('No se encontró el botón del menú o el menú.');
+      //console.error('No se encontró el botón del menú o el menú.');
     }
   });
 
@@ -251,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modal) {
                 modal.style.display = 'block';
             } else {
-                console.error(`Modal with ID ${modalId} not found.`);
+                //console.error(`Modal with ID ${modalId} not found.`);
             }
         });
     });
@@ -423,19 +429,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Verifica si el modal fue encontrado
   if (!modal) {
-      console.error('Modal with ID "myModal" not found.');
+      //console.error('Modal with ID "myModal" not found.');
       return;
   }
 
   // Verifica si el bloque de noticias fue encontrado
   if (!blog1) {
-      console.error('Element with class "blog-1" not found.');
+      //console.error('Element with class "blog-1" not found.');
       return;
   }
 
   // Verifica si el botón de cierre fue encontrado
   if (!span) {
-      console.error('Element with class "close" not found.');
+      //console.error('Element with class "close" not found.');
       return;
   }
 
@@ -469,13 +475,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Verifica si el modal fue encontrado
   if (!modal) {
-      console.error('Modal with ID "myModal" not found.');
+      //console.error('Modal with ID "myModal" not found.');
       return;
   }
 
   // Verifica si el botón de cierre fue encontrado
   if (!span) {
-      console.error('Element with class "close" not found.');
+      //console.error('Element with class "close" not found.');
       return;
   }
 
@@ -590,7 +596,7 @@ function closeMenu() {
         });
       });
     } else {
-      console.error('No se encontró el botón del menú o el menú.');
+      //console.error('No se encontró el botón del menú o el menú.');
     }
   });
 
@@ -657,7 +663,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modal) {
                 modal.style.display = 'block';
             } else {
-                console.error(`Modal with ID ${modalId} not found.`);
+                //console.error(`Modal with ID ${modalId} not found.`);
             }
         });
     });
@@ -742,13 +748,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentLayer = layers[currentIndex];
     const nextLayer = layers[nextIndex];
 
-    console.log(`Changing from image ${currentIndex + 1} to image ${nextIndex + 1}`);
+    //console.log(`Changing from image ${currentIndex + 1} to image ${nextIndex + 1}`);
 
     nextLayer.classList.add('visible');
     currentLayer.classList.remove('visible');
 
     currentIndex = nextIndex;
-    console.log(`Current image index is now ${currentIndex}`);
+    //console.log(`Current image index is now ${currentIndex}`);
   }
 
   // Cambia el fondo cada 6 segundos (6000 milisegundos)
@@ -826,19 +832,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Verifica si el modal fue encontrado
   if (!modal) {
-      console.error('Modal with ID "myModal" not found.');
+      //console.error('Modal with ID "myModal" not found.');
       return;
   }
 
   // Verifica si el bloque de noticias fue encontrado
   if (!blog1) {
-      console.error('Element with class "blog-1" not found.');
+      //console.error('Element with class "blog-1" not found.');
       return;
   }
 
   // Verifica si el botón de cierre fue encontrado
   if (!span) {
-      console.error('Element with class "close" not found.');
+      //console.error('Element with class "close" not found.');
       return;
   }
 
@@ -872,13 +878,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Verifica si el modal fue encontrado
   if (!modal) {
-      console.error('Modal with ID "myModal" not found.');
+      //console.error('Modal with ID "myModal" not found.');
       return;
   }
 
   // Verifica si el botón de cierre fue encontrado
   if (!span) {
-      console.error('Element with class "close" not found.');
+      //console.error('Element with class "close" not found.');
       return;
   }
 
@@ -993,7 +999,7 @@ function closeMenu() {
         });
       });
     } else {
-      console.error('No se encontró el botón del menú o el menú.');
+      //console.error('No se encontró el botón del menú o el menú.');
     }
   });
 
@@ -1060,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modal) {
                 modal.style.display = 'block';
             } else {
-                console.error(`Modal with ID ${modalId} not found.`);
+                //console.error(`Modal with ID ${modalId} not found.`);
             }
         });
     });
@@ -1145,13 +1151,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentLayer = layers[currentIndex];
     const nextLayer = layers[nextIndex];
 
-    console.log(`Changing from image ${currentIndex + 1} to image ${nextIndex + 1}`);
+    //console.log(`Changing from image ${currentIndex + 1} to image ${nextIndex + 1}`);
 
     nextLayer.classList.add('visible');
     currentLayer.classList.remove('visible');
 
     currentIndex = nextIndex;
-    console.log(`Current image index is now ${currentIndex}`);
+    //console.log(`Current image index is now ${currentIndex}`);
   }
 
   // Cambia el fondo cada 6 segundos (6000 milisegundos)
