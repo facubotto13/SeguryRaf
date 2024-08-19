@@ -485,6 +485,67 @@ button[type="submit"]:hover {
   margin: 10px 0;
 }
 
+.modal-message {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en pantalla */
+    z-index: 9999; /* Siempre encima */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+    display: flex; /* Usar flexbox para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.modal-message-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.85);
+    border-radius: 2rem;
+    text-align: center; /* Centra el texto */
+    position: relative; /* Para que el botón de cerrar se posicione correctamente */
+    left: 5%;
+    margin-top: 40px;
+}
+
+.close-message-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-message-modal:hover,
+.close-message-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-message-content img {
+    display: block; /* Asegura que la imagen se muestre como bloque */
+    margin: 20px auto 0; /* Margen superior para separación, centrado horizontalmente */
+    max-width: 100%; /* Se ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+p {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+
+     
 
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
@@ -729,6 +790,13 @@ h1 {
     height: 10rem;
     margin-top: 13rem;
   }
+
+  p {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 20px;
+  margin-top: 35px;
+}
 }
 @media only screen and (min-width: 1920px) {
     .header h1 {
@@ -763,43 +831,51 @@ h1 {
     </div>
 <div class="botonera">
 
-    <!-- CONTRATA SERVICIO-->
-    <button id="contacto-Otro">Contratar un servicio</button>
-    <div id="modalOtroForm" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Contratar un servicio</h2>
-            <hr class="custom-line">
-            <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" id="form">
-                <div class="form-group">
-                    <label for="name">Nombre completo:</label>
-                    <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Teléfono:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="service">Servicio deseado:</label>
-                    <select id="service" name="service" required>
-                        <option value="" selected>Seleccione un servicio</option>
-                        <option value="seguridad_eventos" >Seguridad empresarial</option>
-                        <option value="instalacion_camaras">Instalación de cámaras de seguridad</option>
-                        <option value="limpieza">Servicio de limpieza</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje adicional:</label>
-                    <textarea id="message" name="message" rows="5"></textarea>
-                </div>
-                <button type="submit">Enviar solicitud</button>
-            </form>
+<!-- CONTRATA SERVICIO-->
+<button id="contacto-Otro">Contratar un servicio</button>
+<div id="modalOtroForm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contratar un servicio</h2>
+        <hr class="custom-line">
+        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
+            <div class="form-group">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Servicio deseado:</label>
+                <select id="service" name="service" required>
+                    <option value="" selected>Seleccione un servicio</option>
+                    <option value="seguridad_eventos">Seguridad empresarial</option>
+                    <option value="instalacion_camaras">Instalación de cámaras de seguridad</option>
+                    <option value="limpieza">Servicio de limpieza</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje adicional:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit">Enviar solicitud</button>
+        </form>
+        <div id="message-modal" class="modal-message" style="display:none;">
+            <div class="modal-message-content">
+                <span class="close-message-modal">&times;</span>
+                <p id="form-message"></p>
+                <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+            </div>
         </div>
     </div>
+</div>
+
 <!-- TRABAJA CON NOSOTROS-->
 <button id="contacto-Contratar">Trabaja con nosotros</button>
 <div id="modalForm" class="modal">
@@ -807,7 +883,7 @@ h1 {
         <span class="close">&times;</span>
         <h2>Trabaja con nosotros</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" id="form">
+        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
                 <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
@@ -824,7 +900,7 @@ h1 {
                 <label for="position">Puesto al que aplica:</label>
                 <select id="service" name="service" required>
                     <option value="" selected>Seleccione un servicio</option>
-                    <option value="seguridad_eventos" >Seguridad empresarial</option>
+                    <option value="seguridad_eventos">Seguridad empresarial</option>
                     <option value="instalacion_camaras">Instalación de cámaras de seguridad</option>
                     <option value="limpieza">Servicio de limpieza</option>
                 </select>
@@ -839,20 +915,28 @@ h1 {
             </div>
             <button type="submit">Enviar solicitud</button>
         </form>
+        <div id="message-modal" class="modal-message" style="display:none;">
+            <div class="modal-message-content">
+                <span class="close-message-modal">&times;</span>
+                <p id="form-message"></p>
+                <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+            </div>
+        </div>
     </div>
 </div>
 
-    <!-- CONTACTO-->
-    <button id="contacto-Otro2">Contactar</button>
-    <div id="modalOtroForm2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>SeguryRaf</h2>
-            <hr class="custom-line">
-            <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" id="form">
+<!-- CONTACTO-->
+<button id="contacto-Otro2">Contactar</button>
+<div id="modalOtroForm2" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>SeguryRaf</h2>
+        <hr class="custom-line">
+        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+            </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required>
@@ -865,10 +949,17 @@ h1 {
                 <label for="message">Mensaje:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit">Enviar solicitud</button>
+            <button type="submit">Enviar Solicitud</button>
         </form>
+        <div id="message-modal" class="modal-message" style="display:none;">
+            <div class="modal-message-content">
+                <span class="close-message-modal">&times;</span>
+                <p id="form-message"></p>
+                <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+            </div>
         </div>
     </div>
+</div>
 </div>
 
 
@@ -958,6 +1049,52 @@ h1 {
             }
         }
     )
+    </script>
+    <script>
+        document.querySelectorAll('.form').forEach((form) => {
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const action = this.action;
+        
+        try {
+            const response = await fetch(action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            let message = '';
+            const showSuccessImage = response.ok;
+            
+            if (response.ok) {
+                message = "Formulario enviado con éxito.";
+            } else {
+                message = "Hubo un problema al enviar el formulario.";
+            }
+            
+            const modalMessage = this.parentNode.querySelector('.modal-message');
+            const formMessage = modalMessage.querySelector('#form-message');
+            const successImage = modalMessage.querySelector('#success-image');
+            
+            formMessage.textContent = message;
+            successImage.style.display = showSuccessImage ? 'block' : 'none';
+            modalMessage.style.display = 'block';
+        } catch (error) {
+            console.error("Error al enviar el formulario:", error);
+        }
+    });
+});
+
+document.querySelectorAll('.close-message-modal').forEach((closeBtn) => {
+    closeBtn.addEventListener('click', function() {
+        this.closest('.modal-message').style.display = 'none';
+    });
+});
+
+
     </script>
 </body>
 </html>
