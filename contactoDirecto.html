@@ -484,7 +484,7 @@ button[type="submit"]:hover {
   background-color: #000;
   margin: 10px 0;
 }
-     
+
 
 /* Media query para pantallas de ancho máximo 991px */
 @media (max-width: 991px) {
@@ -770,10 +770,10 @@ h1 {
             <span class="close">&times;</span>
             <h2>Contratar un servicio</h2>
             <hr class="custom-line">
-            <form action="enviar_solicitud.php" method="post">
+            <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" id="form">
                 <div class="form-group">
                     <label for="name">Nombre completo:</label>
-                    <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+                    <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo electrónico:</label>
@@ -807,11 +807,11 @@ h1 {
         <span class="close">&times;</span>
         <h2>Trabaja con nosotros</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/xrbzqpgg" method="post" enctype="multipart/form-data">
+        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" id="form">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
-            </div>
+                <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
+            </div>            
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required>
@@ -849,11 +849,10 @@ h1 {
             <span class="close">&times;</span>
             <h2>SeguryRaf</h2>
             <hr class="custom-line">
-        <form method="POST" action="https://formsubmit.co/joaquin_sola@hotmail.com">
+            <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" id="form">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
-            </div>
+                <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required>
@@ -866,12 +865,7 @@ h1 {
                 <label for="message">Mensaje:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit">Enviar</button>
-
-            <input type="hidden" name="_next" value="http://127.0.0.1:5500">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="Formulario Enviado!">
-            <input type="hidden" name="_template" value="table">
+            <button type="submit">Enviar solicitud</button>
         </form>
         </div>
     </div>

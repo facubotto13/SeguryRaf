@@ -1,8 +1,9 @@
-//DESHABILITAR CLICK DERECHO
+
+/*DESHABILITAR CLICK DERECHO
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
-
+*/
 
 document.addEventListener('DOMContentLoaded', function() {
   const showElement = document.querySelector('.show');
