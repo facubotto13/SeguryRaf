@@ -550,6 +550,66 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
+.modal-message {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en pantalla */
+    z-index: 9999; /* Siempre encima */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+    display: flex; /* Usar flexbox para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.modal-message-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.85);
+    border-radius: 2rem;
+    text-align: center; /* Centra el texto */
+    position: relative; /* Para que el botón de cerrar se posicione correctamente */
+    left: 5%;
+    margin-top: 40px;
+}
+
+.close-message-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-message-modal:hover,
+.close-message-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-message-content img {
+    display: block; /* Asegura que la imagen se muestre como bloque */
+    margin: 20px auto 0; /* Margen superior para separación, centrado horizontalmente */
+    max-width: 100%; /* Se ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+.modal p.p_form {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+
 
 
 /* Media query para pantallas de ancho máximo 991px */
@@ -850,6 +910,8 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0d3d57;
 }
+
+
 }   
 @media only screen and (min-width: 1920px) {
     .header h1 {
@@ -942,10 +1004,10 @@ button[type="submit"]:hover {
         <span class="close-form" onclick="closeModal('modalForm1')">&times;</span>
         <h2>Seguridad empresarial</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+            <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -970,6 +1032,13 @@ button[type="submit"]:hover {
             </div>
             <button type="submit">Enviar solicitud</button>
         </form>
+        <div id="message-modal" class="modal-message" style="display:none;">
+            <div class="modal-message-content">
+                <span class="close-message-modal">&times;</span>
+                <p class="p_form" id="form-message"></p>
+                <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+            </div>
+        </div>
     </div>
 </div>
 
@@ -1010,10 +1079,10 @@ button[type="submit"]:hover {
         <span class="close-form" onclick="closeModal('modalForm2')">&times;</span>
         <h2>Instalación de camaras de seguridad</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -1038,6 +1107,13 @@ button[type="submit"]:hover {
             </div>
             <button type="submit">Enviar solicitud</button>
         </form>
+        <div id="message-modal" class="modal-message" style="display:none;">
+            <div class="modal-message-content">
+                <span class="close-message-modal">&times;</span>
+                <p class="p_form" id="form-message"></p>
+                <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+            </div>
+        </div>
     </div>
 </div>
 
@@ -1078,10 +1154,10 @@ button[type="submit"]:hover {
         <span class="close-form" onclick="closeModal('modalForm3')">&times;</span>
         <h2>Servicio de Limpieza</h2>
         <hr class="custom-line">
-        <form action="https://formspree.io/f/xrbzqpgg" method="POST">
+        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
             <div class="form-group">
                 <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Solo letras permitidas" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras permitidas" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -1106,6 +1182,13 @@ button[type="submit"]:hover {
             </div>
             <button type="submit">Enviar solicitud</button>
         </form>
+        <div id="message-modal" class="modal-message" style="display:none;">
+            <div class="modal-message-content">
+                <span class="close-message-modal">&times;</span>
+                <p class="p_form" id="form-message"></p>
+                <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+            </div>
+        </div>
     </div>
 </div>
 
@@ -1133,6 +1216,53 @@ button[type="submit"]:hover {
         <img src="imagenes/wpp.webp" alt="WhatsApp">
     </a>
     <script src="js/menu.js"></script> <!-- Asegúrate de enlazar tu archivo JavaScript -->
+    <script>
+    document.querySelectorAll('.form').forEach((form) => {
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const action = this.action;
+        
+        try {
+            const response = await fetch(action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            let message = '';
+            if (response.ok) {
+                message = "Formulario enviado con éxito.";
+                this.reset();  // Resetea los campos del formulario
+            } else {
+                message = "Hubo un problema al enviar el formulario.";
+            }
+            
+            const modalMessage = this.parentNode.querySelector('.modal-message');
+            const formMessage = modalMessage.querySelector('#form-message');
+            formMessage.textContent = message;
+
+            if (response.ok) {
+                const successImage = modalMessage.querySelector('#success-image');
+                successImage.style.display = 'block';
+            }
+            
+            modalMessage.style.display = 'block';
+        } catch (error) {
+            console.error("Error al enviar el formulario:", error);
+        }
+    });
+});
+
+document.querySelectorAll('.close-message-modal').forEach((closeBtn) => {
+    closeBtn.addEventListener('click', function() {
+        this.closest('.modal-message').style.display = 'none';
+    });
+});
+
+    </script>
 
 </body>
 </html>
