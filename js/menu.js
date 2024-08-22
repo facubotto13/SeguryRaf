@@ -607,10 +607,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.menu .navbar');
     const menuContainer = document.querySelector('.menu.container');
 
-    menuToggle.addEventListener('click', function() {
+   /* menuToggle.addEventListener('click', function() {
         navbar.classList.toggle('active');
         menuContainer.classList.toggle('scrolled'); // Ajustar según sea necesario
-    });
+    });*/
 
     // Cerrar el menú si se hace clic en el mismo botón de toggle
     menuToggle.addEventListener('click', function(event) {
@@ -1010,10 +1010,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.menu .navbar');
     const menuContainer = document.querySelector('.menu.container');
 
-    menuToggle.addEventListener('click', function() {
+    /*menuToggle.addEventListener('click', function() {
         navbar.classList.toggle('active');
         menuContainer.classList.toggle('scrolled'); // Ajustar según sea necesario
-    });
+    });*/
 
     // Cerrar el menú si se hace clic en el mismo botón de toggle
     menuToggle.addEventListener('click', function(event) {
