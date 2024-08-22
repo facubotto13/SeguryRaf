@@ -601,16 +601,16 @@ function closeMenu() {
     }
   });
 
-  
+ /*  
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.img.menu');
     const navbar = document.querySelector('.menu .navbar');
     const menuContainer = document.querySelector('.menu.container');
 
-   /* menuToggle.addEventListener('click', function() {
+   menuToggle.addEventListener('click', function() {
         navbar.classList.toggle('active');
         menuContainer.classList.toggle('scrolled'); // Ajustar según sea necesario
-    });*/
+    });
 
     // Cerrar el menú si se hace clic en el mismo botón de toggle
     menuToggle.addEventListener('click', function(event) {
@@ -619,7 +619,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menuContainer.classList.remove('scrolled'); // Ajustar según sea necesario
         }
     });
-});
+});*/
 
 //FUNCION PARA QUE SE CIERRE EL MENU CUANDO ME DESPLAZO EN LA PANTALLA CON EL ANCLAJE #
 document.addEventListener("DOMContentLoaded", function() {
@@ -777,7 +777,7 @@ function mostrarMas() {
   swiper.update();
 }
 
-// Inicialización de Swiper
+/* Inicialización de Swiper
 var swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   spaceBetween: 10,
@@ -786,7 +786,7 @@ var swiper = new Swiper('.swiper-container', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
   },
-});
+});*/
 
 //PARRAFOS DEL MODAL DE SERVICIOS
 function openModal(modalId) {
@@ -1004,16 +1004,16 @@ function closeMenu() {
     }
   });
 
-  
+  /*
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.img.menu');
     const navbar = document.querySelector('.menu .navbar');
     const menuContainer = document.querySelector('.menu.container');
 
-    /*menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function() {
         navbar.classList.toggle('active');
         menuContainer.classList.toggle('scrolled'); // Ajustar según sea necesario
-    });*/
+    });
 
     // Cerrar el menú si se hace clic en el mismo botón de toggle
     menuToggle.addEventListener('click', function(event) {
@@ -1022,7 +1022,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menuContainer.classList.remove('scrolled'); // Ajustar según sea necesario
         }
     });
-});
+});*/
 
 //FUNCION PARA QUE SE CIERRE EL MENU CUANDO ME DESPLAZO EN LA PANTALLA CON EL ANCLAJE #
 document.addEventListener("DOMContentLoaded", function() {
@@ -1180,7 +1180,7 @@ function mostrarMas() {
   swiper.update();
 }
 
-// Inicialización de Swiper
+/* Inicialización de Swiper
 var swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   spaceBetween: 10,
@@ -1189,7 +1189,7 @@ var swiper = new Swiper('.swiper-container', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
   },
-});
+});*/
 
 //PARRAFOS DEL MODAL DE SERVICIOS
 function openModal(modalId) {
