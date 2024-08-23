@@ -1074,48 +1074,52 @@ button[type="submit"]:hover {
         </div>
 
         <!-- Modal Formulario 2 -->
-<div id="modalForm2" class="modal">
-    <div class="modal_form-content">
-        <span class="close-form" onclick="closeModal('modalForm2')">&times;</span>
-        <h2>Instalación de camaras de seguridad</h2>
-        <hr class="custom-line">
-        <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
-            <div class="form-group">
-                <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras permitidas" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="service">Servicio deseado:</label>
-                <select id="service" name="service" required>
-                    <option value="">Seleccione un servicio</option>
-                    <option value="seguridad_eventos" >Seguridad empresarial</option>
-                    <option value="instalacion_camaras" selected>Instalación de cámaras de seguridad</option>
-                    <option value="limpieza">Servicio de limpieza</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Mensaje adicional:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
-            </div>
-            <button type="submit">Enviar solicitud</button>
-        </form>
-        <div id="message-modal" class="modal-message" style="display:none;">
-            <div class="modal-message-content">
-                <span class="close-message-modal">&times;</span>
-                <p class="p_form" id="form-message"></p>
-                <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+        <div id="modalForm2" class="modal">
+            <div class="modal_form-content">
+                <span class="close-form" onclick="closeModal('modalForm2')">&times;</span>
+                <h2>Instalación de camaras de seguridad</h2>
+                <hr class="custom-line">
+                <form action="https://formspree.io/f/manwdpoq" method="post" enctype="multipart/form-data" class="form">
+                    <div class="form-group">
+                        <label for="name">Nombre completo:</label>
+                        <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Solo letras permitidas" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Servicio deseado:</label>
+                        <select id="service" name="service" required>
+                            <option value="">Seleccione un servicio</option>
+                            <option value="seguridad_eventos">Seguridad empresarial</option>
+                            <option value="instalacion_camaras" selected>Instalación de cámaras de seguridad</option>
+                            <option value="limpieza">Servicio de limpieza</option>
+                        </select>
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje adicional:</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit">Enviar solicitud</button>
+                </form>
+                <div id="message-modal" class="modal-message" style="display:none;">
+                    <div class="modal-message-content">
+                        <span class="close-message-modal">&times;</span>
+                        <p class="p_form" id="form-message"></p>
+                        <img id="success-image" src="imagenes/Logo-removebg-preview.png" alt="Success" style="display:none; max-width: 100%; height: auto;">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
         <!-- Blog 3 -->
         <div class="blog-1" onclick="openModal('modal3')">
@@ -1217,12 +1221,43 @@ button[type="submit"]:hover {
     </a>
     <script src="js/menu.js"></script> <!-- Asegúrate de enlazar tu archivo JavaScript -->
     <script>
-    document.querySelectorAll('.form').forEach((form) => {
+   
+   document.querySelectorAll('.form').forEach((form) => {
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
+        let isValid = true;
         const formData = new FormData(this);
         const action = this.action;
-        
+        let firstInvalidField = null;
+
+        // Limpiar mensajes de error previos
+        this.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+        // Validación básica de campos
+        this.querySelectorAll('input, textarea, select').forEach(input => {
+            if (input.required && !input.value.trim()) {
+                const errorElement = input.nextElementSibling;
+                errorElement.textContent = 'Este campo es obligatorio.';
+                errorElement.style.color = 'red';
+                isValid = false;
+
+                // Guardar la referencia del primer campo inválido
+                if (!firstInvalidField) {
+                    firstInvalidField = input;
+                }
+            }
+        });
+
+        if (!isValid) {
+            const formMessage = this.parentNode.querySelector('.modal-message #form-message');
+            formMessage.textContent = `Hay errores en el campo: ${firstInvalidField.previousElementSibling.textContent}. Por favor, corrígelos e inténtalo de nuevo.`;
+            this.parentNode.querySelector('.modal-message').style.display = 'block';
+
+            // Enfocar el primer campo inválido
+            firstInvalidField.focus();
+            return;
+        }
+
         try {
             const response = await fetch(action, {
                 method: "POST",
@@ -1231,24 +1266,22 @@ button[type="submit"]:hover {
                     'Accept': 'application/json'
                 }
             });
-            
+
             let message = '';
+            const modalMessage = this.parentNode.querySelector('.modal-message');
+            const formMessage = modalMessage.querySelector('#form-message');
+            const successImage = modalMessage.querySelector('#success-image');
+
             if (response.ok) {
                 message = "Formulario enviado con éxito.";
                 this.reset();  // Resetea los campos del formulario
+                successImage.style.display = 'block';
             } else {
                 message = "Hubo un problema al enviar el formulario.";
+                successImage.style.display = 'none';
             }
-            
-            const modalMessage = this.parentNode.querySelector('.modal-message');
-            const formMessage = modalMessage.querySelector('#form-message');
-            formMessage.textContent = message;
 
-            if (response.ok) {
-                const successImage = modalMessage.querySelector('#success-image');
-                successImage.style.display = 'block';
-            }
-            
+            formMessage.textContent = message;
             modalMessage.style.display = 'block';
         } catch (error) {
             console.error("Error al enviar el formulario:", error);
@@ -1256,11 +1289,6 @@ button[type="submit"]:hover {
     });
 });
 
-document.querySelectorAll('.close-message-modal').forEach((closeBtn) => {
-    closeBtn.addEventListener('click', function() {
-        this.closest('.modal-message').style.display = 'none';
-    });
-});
 
     </script>
 
