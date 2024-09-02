@@ -245,44 +245,67 @@ document.addEventListener('scroll', function() {
 
 // menu.js
 document.addEventListener('DOMContentLoaded', () => {
-    const modals = document.querySelectorAll('.modal');
-    const btns = document.querySelectorAll('.btn-4');
-    const closeBtns = document.querySelectorAll('.close-btn');
-    const volverBtns = document.querySelectorAll('.volver-btn');
+  const modals = document.querySelectorAll('.modal');
+  const btns = document.querySelectorAll('.btn-4');
+  const closeBtns = document.querySelectorAll('.close-btn');
+  const volverBtns = document.querySelectorAll('.volver-btn');
 
-    btns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const modalId = btn.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'block';
-            } else {
-                //console.error(`Modal with ID ${modalId} not found.`);
-            }
-        });
-    });
+  const openModal = (modal) => {
+      modal.style.display = 'block';
+      // Añadimos una entrada al historial
+      history.pushState({ modalOpen: true }, '', '');
+  };
 
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.closest('.modal').style.display = 'none';
-        });
-    });
+  const closeModal = (modal) => {
+      modal.style.display = 'none';
+      // Retrocedemos en el historial
+      if (history.state && history.state.modalOpen) {
+          history.back();
+      }
+  };
 
-    volverBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.closest('.modal').style.display = 'none';
-        });
-    });
+  btns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const modalId = btn.getAttribute('data-modal');
+          const modal = document.getElementById(modalId);
+          if (modal) {
+              openModal(modal);
+          } else {
+              console.error(`Modal with ID ${modalId} not found.`);
+          }
+      });
+  });
 
-    window.addEventListener('click', (e) => {
-        modals.forEach(modal => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    });
+  closeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+          closeModal(btn.closest('.modal'));
+      });
+  });
+
+  volverBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+          closeModal(btn.closest('.modal'));
+      });
+  });
+
+  window.addEventListener('click', (e) => {
+      modals.forEach(modal => {
+          if (e.target === modal) {
+              closeModal(modal);
+          }
+      });
+  });
+
+  window.addEventListener('popstate', (e) => {
+      modals.forEach(modal => {
+          if (modal.style.display === 'block') {
+              closeModal(modal);
+          }
+      });
+  });
 });
+
 /*
 document.getElementById("toggle-ver").addEventListener("click", function() {
   var hiddenElements = document.querySelectorAll(".blog-1.hidden");
