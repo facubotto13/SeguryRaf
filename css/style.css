@@ -45,7 +45,11 @@ body, html {
     z-index: 2;
   }
 
-
+  .p_noticias{
+    text-align: justify;
+    color: black;
+    font-size: 1.2rem;
+}
 
 
 
@@ -171,13 +175,22 @@ body, html {
     padding: 50px 0;
     text-align: center;
 }
+.h2_noticias{
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 2rem;
+    text-align: justify;
+}
 
-.blog h2 {
+
+
+ h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #333;
     font-family: 'Poppins', Arial, sans-serif;
 }
+
+
 
 .blog p {
     font-size: 1.2em;
@@ -215,8 +228,8 @@ body, html {
 .service-imagen-Modulo1 {
     float: left; /* O right para alinear a la derecha */
     margin-right: 10px; /* Espacio entre la imagen y el texto */
-    width: 45%;
-    height: auto;
+    width: 600px;
+    height: 650px;
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */
     border-radius: 2rem;
     box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.5); /* Color de la sombra y desenfoque */;
@@ -331,6 +344,8 @@ body, html {
 
 .modal p{
     text-align: justify;
+    color: black;
+    
 }
 
 @keyframes fadeIn {
@@ -453,9 +468,9 @@ body, html {
 
 .service-imagen {
     width: 100%;
-    height: auto;
+    height: 100%;
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-    border-radius: 1rem;
+    
 }
 
 .mas {
@@ -685,9 +700,9 @@ body, html {
         
         .service-imagen {
             width: 100%;
-            height: auto;
+            height: 100%;
             transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-            border-radius: 1rem;
+     
         }
         
         .mas {
