@@ -307,20 +307,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/*
+
 document.getElementById("toggle-ver").addEventListener("click", function() {
+  // Selecciona las noticias ocultas y las visibles
   var hiddenElements = document.querySelectorAll(".blog-1.hidden");
   var visibleElements = document.querySelectorAll(".blog-1:not(.hidden)");
 
   if (this.textContent === "Ver más") {
+      // Si el texto del botón es "Ver más", muestra las noticias ocultas
       hiddenElements.forEach(function(element) {
           element.classList.remove("hidden");
       });
       this.textContent = "Ver menos";
   } else {
-      hiddenElements.forEach(function(element) {
-          element.classList.add("hidden");
-      });
+      // Si el texto del botón es "Ver menos", oculta las noticias después de la cuarta
       visibleElements.forEach(function(element, index) {
           if (index >= 4) {
               element.classList.add("hidden");
@@ -329,7 +329,17 @@ document.getElementById("toggle-ver").addEventListener("click", function() {
       this.textContent = "Ver más";
   }
 });
-*/
+
+// Al cargar la página, asegúrate de que las noticias después de la cuarta estén ocultas
+window.addEventListener("DOMContentLoaded", function() {
+  var blogElements = document.querySelectorAll(".blog-1");
+  blogElements.forEach(function(element, index) {
+      if (index >= 4) {
+          element.classList.add("hidden");
+      }
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('.header');
   const images = [
