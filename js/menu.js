@@ -5,6 +5,46 @@
     });
 */
 
+var swiperModal = new Swiper('.swiper-container-modal', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  loop: true,
+  speed: 500, // Transición rápida (500 ms)
+  navigation: {
+    nextEl: '.swiper-button-next-modal',
+    prevEl: '.swiper-button-prev-modal',
+  },
+  pagination: {
+    el: '.swiper-pagination-modal',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2500, // Cambia cada 2.5 segundos (puedes ajustar este valor)
+    disableOnInteraction: false,
+  },
+});
+
+
+//FOTOS TRANSITORIAS EN NOTICIA
+var swiperInner = new Swiper('.swiper-container-inner', {
+  slidesPerView: 1, // Muestra una imagen a la vez
+  spaceBetween: 10,
+  loop: true, // Carrusel en loop
+  pagination: {
+    el: '.swiper-pagination-inner',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next-inner',
+    prevEl: '.swiper-button-prev-inner',
+  },
+  autoplay: {
+    delay: 2500, // Cambia la imagen cada 2.5 segundos
+    disableOnInteraction: false,
+  },
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const showElement = document.querySelector('.show');
   
