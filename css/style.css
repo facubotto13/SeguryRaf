@@ -316,7 +316,7 @@ body, html {
     background-color: #143c63; /* Color de fondo del botón al pasar el puntero */
 }
 
-/* Estilos para el modal */
+/* Estilos genéricos para todos los modales */
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
@@ -327,37 +327,51 @@ body, html {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo difuminado */
-    
 }
 
+/* Ajustar el modal para que ocupe más espacio */
 .modal-content {
-    overflow: hidden; /* Limpia el float */
     background-color: white;
-    margin: 5% auto; /* Centrar el modal */
+    margin: 2% auto; /* Reducir el margen superior para centrar mejor */
     padding: 20px;
     border: 1px solid #888;
-    width: 85%; /* 85% del ancho de la pantalla */
+    width: 90%; /* Aumentar el ancho del modal */
+    max-width: 1200px; /* Limitar el tamaño máximo del modal */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.4s; /* Animación de entrada */
-    border-radius: 2rem;
+    border-radius: 10px;
+    overflow: hidden; /* Para asegurar que el contenido no se desborde */
 }
 
-.modal-text-content{
-    width: 700px;
-    right: 0; /* Lo coloca al máximo a la derecha */
+/* Asegurar que las imágenes dentro del modal se ajusten correctamente */
+.modal-content img {
+    float: left;
+    max-width: 50%; /* Ajustar el ancho de la imagen al 50% */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 10px; /* Suavizar los bordes de la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
-.modal p{
-    text-align: justify;
+/* Ajustar el contenedor del texto */
+.modal-text-content {
+    width: 100%; /* Ajustar el ancho del texto al 50% */
+    display: flex; /* Usar flexbox para la disposición del texto */
+    flex-direction: column; /* Alinear el texto en columna */
+    margin-top: 0; /* Eliminar margen superior */
+    justify-content: flex-start; /* Alinear el contenido en la parte superior */
+}
+
+/* Estilos para los párrafos dentro de los modales */
+.modal p {
     color: black;
-    
 }
 
+/* Animación de entrada */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+/* Botón de cerrar modal */
 .close-btn {
     color: #aaa;
     float: right;
@@ -365,8 +379,7 @@ body, html {
     font-weight: bold;
     cursor: pointer;
     margin-right: 10px;
-  }
-  
+}
 
 .close-btn:hover,
 .close-btn:focus {
@@ -503,6 +516,7 @@ body, html {
   
     transition: opacity 0.3s ease; /* Transición suave para la opacidad */
     border-radius: 1rem;
+    width: 100%;
     
 }
 
