@@ -1329,3 +1329,32 @@ window.onclick = function(event) {
       }
   }
 }
+
+
+/* CARRUSEL MODAL */
+let slideIndex = 0;
+showSlidesAuto();
+
+function showSlidesAuto() {
+    let slides = document.getElementsByClassName("carousel-image");
+
+    // Quita la clase 'active' de todas las imágenes
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+
+    slideIndex++;
+
+    // Reinicia el índice si llega al final de las imágenes
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    // Añade la clase 'active' a la imagen actual
+    slides[slideIndex - 1].classList.add("active");
+
+    // Cambia de imagen cada 2 segundos
+    setTimeout(showSlidesAuto, 2000); // Cambia cada 2000 ms (2 segundos)
+}
+
+

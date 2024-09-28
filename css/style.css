@@ -342,10 +342,51 @@ body, html {
     overflow: hidden; /* Para asegurar que el contenido no se desborde */
 }
 
+/* Contenedor del carrusel y el texto */
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* Estilos del carrusel */
+.carousel {
+    width: 50%; /* Ajusta el ancho de las imágenes */
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+/* Estilos del texto a la derecha */
+.text-content {
+    width: 50%; /* Ajusta el ancho del texto */
+    padding-left: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.h2_noticias {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.p_noticias {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
 /* Asegurar que las imágenes dentro del modal se ajusten correctamente */
 .modal-content img {
     float: left;
-    max-width: 50%; /* Ajustar el ancho de la imagen al 50% */
+    max-width: 100%; /* Ajustar el ancho de la imagen al 50% */
     height: auto; /* Mantener la proporción de la imagen */
     border-radius: 10px; /* Suavizar los bordes de la imagen */
     margin-right: 20px; /* Espacio entre la imagen y el texto */
