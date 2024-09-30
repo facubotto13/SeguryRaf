@@ -366,7 +366,10 @@ body, html {
 }
 
 /* Estilos del texto a la derecha */
-
+.text-content {
+    width: 50%; /* Ajusta el ancho del texto */
+    padding-left: 20px; /* Espacio entre la imagen y el texto */
+}
 
 .h2_noticias {
     font-size: 1.5em;
@@ -843,8 +846,10 @@ body, html {
             width: 100%; /* Asegura que el texto ocupe todo el ancho del modal */
             text-align: justify; /* Mantiene el texto justificado */
             margin-top: 10px; /* Añade un margen superior al texto para separar de las imágenes */
+            padding-left: 0px;
           }
 
+      
         
 
         
