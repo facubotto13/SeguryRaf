@@ -353,7 +353,6 @@ body, html {
 .carousel {
     width: 50%; /* Ajusta el ancho de las imágenes */
     position: relative;
-    overflow: hidden;
 }
 
 .carousel-image {
@@ -367,10 +366,7 @@ body, html {
 }
 
 /* Estilos del texto a la derecha */
-.text-content {
-    width: 50%; /* Ajusta el ancho del texto */
-    padding-left: 20px; /* Espacio entre la imagen y el texto */
-}
+
 
 .h2_noticias {
     font-size: 1.5em;
@@ -388,8 +384,9 @@ body, html {
     float: left;
     max-width: 100%; /* Ajustar el ancho de la imagen al 50% */
     height: auto; /* Mantener la proporción de la imagen */
-    border-radius: 10px; /* Suavizar los bordes de la imagen */
+    border-radius: 5px; /* Suavizar los bordes de la imagen */
     margin-right: 20px; /* Espacio entre la imagen y el texto */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* Ajustar el contenedor del texto */
@@ -757,7 +754,10 @@ body, html {
         width: 90%;
         height: auto;
         border-radius: 2rem;
-    }
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos estén en columna */
+        align-items: center; /* Centra el contenido horizontalmente */
+      }
     
         .modal-body {
             flex-direction: column; /* En modo móvil, coloca la imagen y el texto en columna */
@@ -772,6 +772,7 @@ body, html {
             border-radius: 2rem;
             box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.9);
             margin-bottom: 1rem;
+            margin-top: 30px;
     }
     
         .modal-body img {
@@ -802,6 +803,54 @@ body, html {
             margin-left: 0; /* No se necesita margen a la izquierda */
             border-bottom: 0px solid #ccc; /* No se necesita borde */
         }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute; 
+            top: 10px; 
+            right: 10px; 
+            z-index: 100; 
+            padding: 10px; /* Aumenta el área clicable */
+        }
+        
+
+          .modal-content {
+            display: block; /* Cambia el modal a bloque para móviles */
+            padding: 10px;
+          }
+        
+          /* Asegura que el contenedor del carrusel y el texto se apilen verticalmente */
+          .carousel-container {
+            display: flex;
+            flex-direction: column; /* Hace que los elementos se apilen en columna */
+            align-items: center; /* Centra los elementos horizontalmente */
+          }
+        
+          .carousel {
+            width: 100%; /* Asegura que el carrusel ocupe todo el ancho disponible */
+            margin-bottom: 15px; /* Añade espacio debajo del carrusel */
+          }
+        
+          .carousel img {
+            width: 100%; /* La imagen ocupará el ancho completo del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+          }
+        
+          .text-content {
+            width: 100%; /* Asegura que el texto ocupe todo el ancho del modal */
+            text-align: justify; /* Mantiene el texto justificado */
+            margin-top: 10px; /* Añade un margen superior al texto para separar de las imágenes */
+          }
+
+        
+
+        
+
+          
+          
         
         
 }
