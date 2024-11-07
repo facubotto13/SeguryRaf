@@ -311,28 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.getElementById("toggle-ver").addEventListener("click", function() {
-  // Selecciona las noticias ocultas y las visibles
-  var hiddenElements = document.querySelectorAll(".blog-1.hidden");
-  var visibleElements = document.querySelectorAll(".blog-1:not(.hidden)");
-
-  if (this.textContent === "Ver más") {
-      // Si el texto del botón es "Ver más", muestra las noticias ocultas
-      hiddenElements.forEach(function(element) {
-          element.classList.remove("hidden");
-      });
-      this.textContent = "Ver menos";
-  } else {
-      // Si el texto del botón es "Ver menos", oculta las noticias después de la cuarta
-      visibleElements.forEach(function(element, index) {
-          if (index >= 4) {
-              element.classList.add("hidden");
-          }
-      });
-      this.textContent = "Ver más";
-  }
-});
-
 // Al cargar la página, asegúrate de que las noticias después de la cuarta estén ocultas
 window.addEventListener("DOMContentLoaded", function() {
   var blogElements = document.querySelectorAll(".blog-1");
@@ -1206,72 +1184,5 @@ window.onclick = function(event) {
   }
 }
 
-
-/* CARRUSEL MODAL */
-let slideIndex = 0;
-showSlidesAuto();
-
-function showSlidesAuto() {
-    let slides = document.getElementsByClassName("carousel-image");
-
-    // Quita la clase 'active' de todas las imágenes
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-    }
-
-    slideIndex++;
-
-    // Reinicia el índice si llega al final de las imágenes
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-
-    // Añade la clase 'active' a la imagen actual
-    slides[slideIndex - 1].classList.add("active");
-
-    // Cambia de imagen cada 2 segundos
-    setTimeout(showSlidesAuto, 3500); // Cambia cada 3500 ms
-}
-
-
-//IMAGEN CARRUSEL EN LA NOTICIA
-var swiperModal = new Swiper('.swiper-container-modal', {
-  slidesPerView: 1,
-  spaceBetween: 10,
-  loop: true,
-  speed: 500, // Transición rápida (500 ms)
-  navigation: {
-    nextEl: '.swiper-button-next-modal',
-    prevEl: '.swiper-button-prev-modal',
-  },
-  pagination: {
-    el: '.swiper-pagination-modal',
-    clickable: true,
-  },
-  autoplay: {
-    delay: 2500, // Cambia cada 2.5 segundos (puedes ajustar este valor)
-    disableOnInteraction: false,
-  },
-});
-
-
-//FOTOS TRANSITORIAS EN NOTICIA
-var swiperInner = new Swiper('.swiper-container-inner', {
-  slidesPerView: 1, // Muestra una imagen a la vez
-  spaceBetween: 10,
-  loop: true, // Carrusel en loop
-  pagination: {
-    el: '.swiper-pagination-inner',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next-inner',
-    prevEl: '.swiper-button-prev-inner',
-  },
-  autoplay: {
-    delay: 2500, // Cambia la imagen cada 2.5 segundos
-    disableOnInteraction: false,
-  },
-});
 
 
