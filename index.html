@@ -72,6 +72,55 @@
         </h3>
         <div class="blog-content">
 
+            <!-- NOTICIA  9 LIMPIEZA VALVET-->
+            <div class="blog-1 swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Primera diapositiva con un carrusel interno -->
+                    <div class="swiper-slide">
+                        <!-- Carrusel interno -->
+                        <div class="swiper-container-inner">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="imagenes/Noticia Velvet/IMG-20241204-WA0014.jpg" alt="Imagen 1" class="service-imagen">
+                                    <img src="imagenes/mas.png" class="mas">
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="imagenes/Noticia Velvet/IMG-20241204-WA0015.jpg" alt="Imagen 2" class="service-imagen">
+                                    <img src="imagenes/mas.png" class="mas">
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="imagenes/Noticia Velvet/IMG-20241204-WA0016.jpg" alt="Imagen 3" class="service-imagen">
+                                    <img src="imagenes/mas.png" class="mas">
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="imagenes/Noticia Velvet/IMG-20241204-WA0017.jpg" alt="Imagen 4" class="service-imagen">
+                                    <img src="imagenes/mas.png" class="mas">
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="imagenes/Noticia Velvet/IMG-20241204-WA0018.jpg" alt="Imagen 5" class="service-imagen">
+                                    <img src="imagenes/mas.png" class="mas">
+                                    <div class="image-overlay"></div>
+                                </div>
+                               
+                            </div>
+                            <!-- Paginación y navegación si lo deseas -->
+                            <div class="swiper-pagination-inner"></div>
+                            <div class="swiper-button-next-inner"></div>
+                            <div class="swiper-button-prev-inner"></div>
+                        </div>
+            
+                        <div class="blog-txt">
+                            <p>Servicio de limpieza en Velvet Comfort & Desing</p>
+                            <a href="#" class="btn-4" data-modal="modal9">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- NOTICIA  Busqueda laboral-->
             <div class="blog-1 swiper-container">
                 <div class="swiper-wrapper">
@@ -448,6 +497,46 @@
         </div>
     </div>
 
+    <!-- Modal 9 -->
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            
+            <!-- Contenedor del Carrusel y Texto -->
+            <div class="carousel-container">
+                <!-- Carrusel de Imágenes -->
+                <div class="carousel">
+                    <img class="carousel-image active" src="imagenes/Noticia Velvet/IMG-20241204-WA0014.jpg" alt="Imagen 1">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0015.jpg" alt="Imagen 2">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0016.jpg" alt="Imagen 3">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0017.jpg" alt="Imagen 4">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0018.jpg" alt="Imagen 5">
+                    <!-- Puedes agregar más imágenes aquí -->
+                </div>
+
+                <!-- Contenido de Texto -->
+                <div class="text-content">
+                    <h2 class="h2_noticias"><strong>Velvet Comfort & Design confía en nuestros servicios de limpieza</strong></h2>
+
+                        <p>En <strong>SeguryRaf</strong>, estamos comprometidos con ofrecer servicios de limpieza de calidad para todo tipo de negocios. Nos enorgullece haber trabajado con <strong>Velvet Comfort & Design</strong>, asegurando que sus espacios brillen y estén impecables.</p>
+
+                        <p>Nuestro equipo realizó:</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>✨ <strong>Limpieza de vidrieras.</strong></li>
+                            <li>✨ <strong>Limpieza del sector de ventas.</strong></li>
+                            <li>✨ <strong>Limpieza de depósitos.</strong></li>
+                            <li>✨ <strong>Limpieza de oficinas.</strong></li>
+                        </ul>
+
+                        <p>Agradecemos la confianza que <strong>Velvet Comfort & Design</strong> ha depositado en nosotros y seguimos a disposición para garantizar espacios limpios y ordenados.</p>
+
+                        <p>¿Tu empresa necesita servicios de limpieza personalizados? Contáctanos al 📲 <strong>3492-681340</strong> y encontraremos la solución ideal para ti.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -473,49 +562,49 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        /* CARRUSEL MODAL */
-let slideIndex = 0;
-showSlidesAuto();
+                /* CARRUSEL MODAL */
+        let slideIndex = 0;
+        showSlidesAuto();
 
-        function showSlidesAuto() {
-    let slides = document.getElementsByClassName("carousel-image");
+                function showSlidesAuto() {
+            let slides = document.getElementsByClassName("carousel-image");
 
-    // Quita la clase 'active' de todas las imágenes
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-    }
+            // Quita la clase 'active' de todas las imágenes
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
 
-    slideIndex++;
+            slideIndex++;
 
-    // Reinicia el índice si llega al final de las imágenes
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
+            // Reinicia el índice si llega al final de las imágenes
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
 
-    // Añade la clase 'active' a la imagen actual
-    slides[slideIndex - 1].classList.add("active");
+            // Añade la clase 'active' a la imagen actual
+            slides[slideIndex - 1].classList.add("active");
 
-    // Cambia de imagen cada 2 segundos
-    setTimeout(showSlidesAuto, 3500); // Cambia cada 3500 ms
-}
-        //FOTOS TRANSITORIAS EN NOTICIA
-var swiperInner = new Swiper('.swiper-container-inner', {
-  slidesPerView: 1, // Muestra una imagen a la vez
-  spaceBetween: 10,
-  loop: true, // Carrusel en loop
-  pagination: {
-    el: '.swiper-pagination-inner',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next-inner',
-    prevEl: '.swiper-button-prev-inner',
-  },
-  autoplay: {
-    delay: 2500, // Cambia la imagen cada 2.5 segundos
-    disableOnInteraction: false,
-  },
-});
+            // Cambia de imagen cada 2 segundos
+            setTimeout(showSlidesAuto, 3500); // Cambia cada 3500 ms
+        }
+                //FOTOS TRANSITORIAS EN NOTICIA
+        var swiperInner = new Swiper('.swiper-container-inner', {
+        slidesPerView: 1, // Muestra una imagen a la vez
+        spaceBetween: 10,
+        loop: true, // Carrusel en loop
+        pagination: {
+            el: '.swiper-pagination-inner',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next-inner',
+            prevEl: '.swiper-button-prev-inner',
+        },
+        autoplay: {
+            delay: 2500, // Cambia la imagen cada 2.5 segundos
+            disableOnInteraction: false,
+        },
+        });
     </script>
     <script src="js/menu.js"></script>
 </body>
