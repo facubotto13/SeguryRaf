@@ -711,13 +711,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Detectar el ancho de la pantalla y definir imágenes según el dispositivo
   const images = window.innerWidth <= 768 ? [
-    'imagenes/movil1.png',
-    'imagenes/movil2.png',
-    'imagenes/movil3.png'
+    'imagenes/movil1.webp',
+    'imagenes/movil2.webp',
+    'imagenes/movil3.webp'
   ] : [
-    'imagenes/1.png',
-    'imagenes/2.png',
-    'imagenes/3.png'
+    'imagenes/1.webp',
+    'imagenes/2.webp',
+    'imagenes/3.webp'
   ];
 
   let currentIndex = 0;
