@@ -720,6 +720,15 @@ document.addEventListener('DOMContentLoaded', function() {
     'imagenes/3.webp'
   ];
 
+  // Pre-cargar las imágenes del slider
+  images.forEach(imageSrc => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = imageSrc;
+    link.as = 'image';
+    document.head.appendChild(link);
+  });
+
   let currentIndex = 0;
 
   // Crear las tres capas de fondo y la capa de contenido
@@ -756,16 +765,10 @@ document.addEventListener('DOMContentLoaded', function() {
     currentIndex = nextIndex;
   }
 
-  // Pre-cargar las imágenes para que se carguen antes de usarse
-  images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-
-  // Cambiar el fondo cada 6 segundos (6000 milisegundos)
+  // Cambia el fondo cada 6 segundos (6000 milisegundos)
   setInterval(changeBackground, 6000);
-
 });
+
 
 
 
