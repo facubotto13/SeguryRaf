@@ -403,8 +403,8 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             
-            <!-- Contenedor del Carrusel y Texto -->
-            <div class="carousel-container">
+                    <!-- Carrusel Manual -->
+                <div id="carouselModal6" class="carousel-container">
                 <!-- Carrusel de Imágenes -->
                 <div class="carousel">
                     <img class="carousel-image active" src="imagenes/Noticia Expo/Segry Expo DJ.JPG" alt="Imagen 1">
@@ -502,15 +502,15 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             
-            <!-- Contenedor del Carrusel y Texto -->
-            <div class="carousel-container">
+                    <!-- Carrusel Manual -->
+                <div id="carouselModal9" class="carousel-container">
                 <!-- Carrusel de Imágenes -->
                 <div class="carousel">
-                    <img class="carousel-image active" src="imagenes/Noticia Velvet/IMG-20241204-WA0014.jpg" alt="Imagen 1">
-                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0015.jpg" alt="Imagen 2">
-                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0016.jpg" alt="Imagen 3">
-                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0017.jpg" alt="Imagen 4">
-                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0018.jpg" alt="Imagen 5">
+                    <img class="carousel-image active" src="imagenes/Noticia Velvet/IMG-20241204-WA0014.jpg" alt="Imagen 18">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0015.jpg" alt="Imagen 19">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0016.jpg" alt="Imagen 20">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0017.jpg" alt="Imagen 21">
+                    <img class="carousel-image" src="imagenes/Noticia Velvet/IMG-20241204-WA0018.jpg" alt="Imagen 22">
                     <!-- Puedes agregar más imágenes aquí -->
                 </div>
 
@@ -562,49 +562,61 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-                /* CARRUSEL MODAL */
-        let slideIndex = 0;
-        showSlidesAuto();
+  // CARRUSEL MANUAL
+function showSlidesAuto(carouselId) {
+    const carousel = document.getElementById(carouselId); // Selecciona el carrusel por ID
+    const slides = carousel.getElementsByClassName("carousel-image");
+    let slideIndex = 0;
 
-                function showSlidesAuto() {
-            let slides = document.getElementsByClassName("carousel-image");
-
-            // Quita la clase 'active' de todas las imágenes
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-            }
-
-            slideIndex++;
-
-            // Reinicia el índice si llega al final de las imágenes
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-
-            // Añade la clase 'active' a la imagen actual
-            slides[slideIndex - 1].classList.add("active");
-
-            // Cambia de imagen cada 2 segundos
-            setTimeout(showSlidesAuto, 3500); // Cambia cada 3500 ms
+    function showNextSlide() {
+        // Quita la clase 'active' de todas las imágenes
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
         }
-                //FOTOS TRANSITORIAS EN NOTICIA
-        var swiperInner = new Swiper('.swiper-container-inner', {
-        slidesPerView: 1, // Muestra una imagen a la vez
-        spaceBetween: 10,
-        loop: true, // Carrusel en loop
-        pagination: {
-            el: '.swiper-pagination-inner',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next-inner',
-            prevEl: '.swiper-button-prev-inner',
-        },
-        autoplay: {
-            delay: 2500, // Cambia la imagen cada 2.5 segundos
-            disableOnInteraction: false,
-        },
-        });
+
+        slideIndex++;
+
+        // Reinicia el índice si llega al final de las imágenes
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        // Añade la clase 'active' a la imagen actual
+        slides[slideIndex - 1].classList.add("active");
+
+        // Cambia de imagen cada 3.5 segundos
+        setTimeout(showNextSlide, 3500);
+    }
+
+    // Inicia el carrusel
+    showNextSlide();
+}
+
+// Inicia el carrusel manual con el ID correspondiente
+showSlidesAuto("carouselModal6");
+// Inicia el carrusel manual con el ID correspondiente para modal9
+showSlidesAuto("carouselModal9");
+// CADA VEZ QUE SE AGREGUE UN MODAL CON IMAGENES, HAY QUE LLAMARLO
+
+// CARRUSEL CON SWIPER
+var swiperInner = new Swiper('.swiper-container-inner', {
+    slidesPerView: 1, // Muestra una imagen a la vez
+    spaceBetween: 10,
+    loop: true, // Carrusel en loop
+    pagination: {
+        el: '.swiper-pagination-inner',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next-inner',
+        prevEl: '.swiper-button-prev-inner',
+    },
+    autoplay: {
+        delay: 2500, // Cambia la imagen cada 2.5 segundos
+        disableOnInteraction: false,
+    },
+});
+
     </script>
     <script src="js/menu.js"></script>
 </body>
