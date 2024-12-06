@@ -756,9 +756,17 @@ document.addEventListener('DOMContentLoaded', function() {
     currentIndex = nextIndex;
   }
 
-  // Cambia el fondo cada 6 segundos (6000 milisegundos)
+  // Pre-cargar las imágenes para que se carguen antes de usarse
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+  // Cambiar el fondo cada 6 segundos (6000 milisegundos)
   setInterval(changeBackground, 6000);
+
 });
+
 
 
 
