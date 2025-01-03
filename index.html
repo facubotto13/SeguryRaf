@@ -29,24 +29,16 @@
 
         /* Imagen para dispositivos móviles */
         @media (max-width: 767px) {
-                .hero-section {
-                    background-image: url('imagenes/movil1.webp'); /* Imagen para móviles */
-    background-size: contain; /* Escala la imagen */
-    background-repeat: no-repeat; /* Evita repeticiones */
-    background-position: top center; /* Centra horizontalmente y fija en la parte superior */
-    height: 100vh; /* Usa el 100% de la altura de la pantalla */
-    width: 100%; /* Usa el 100% del ancho */
-    margin: 0; /* Elimina márgenes */
-    padding: 0; /* Elimina paddings */
+    .hero-section {
+        background-image: url('imagenes/movil1.webp'); /* Imagen para móviles */
+        background-size: contain; /* Asegura que la imagen se vea completa */
+        background-repeat: no-repeat; /* Evita repeticiones */
+        background-position: top center; /* Centra horizontalmente y fija en la parte superior */
+        height: auto; /* Deja que la altura se ajuste automáticamente */
+        aspect-ratio: 16/9; /* Ajusta según la proporción de la imagen */
     }
-    #noticias {
-
-  padding: 0;
-  position: relative;
-  margin-top: -50rem;
 }
-            
-        }
+
 
         
         
@@ -84,7 +76,7 @@
 <body>
     <!-- Hero section: Imagen inicial ocupando toda la pantalla -->
     <div class="hero-section">
-        <div class="scroll-down">Desplázate hacia abajo</div>
+        <div class="scroll-down"></div>
     </div>
 
     <header class="header">
